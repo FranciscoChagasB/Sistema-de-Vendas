@@ -22,3 +22,40 @@ D:\Download\Sistema de Vendas\Sistema-de-Vendas\Interface\obj\Debug\Interface.cs
 D:\Download\Sistema de Vendas\Sistema-de-Vendas\Interface\obj\Debug\Interface.csproj.CoreCompileInputs.cache
 D:\Download\Sistema de Vendas\Sistema-de-Vendas\Interface\obj\Debug\Interface.exe
 D:\Download\Sistema de Vendas\Sistema-de-Vendas\Interface\obj\Debug\Interface.pdb
+\\servidor\PUBLICO\ALUNOS - JUREMA\Francisco das Chagas Bezerra da Silva\Projeto Final\Interface\bin\Debug\Interface.exe.config
+\\servidor\PUBLICO\ALUNOS - JUREMA\Francisco das Chagas Bezerra da Silva\Projeto Final\Interface\bin\Debug\Interface.exe
+\\servidor\PUBLICO\ALUNOS - JUREMA\Francisco das Chagas Bezerra da Silva\Projeto Final\Interface\bin\Debug\Interface.pdb
+\\servidor\PUBLICO\ALUNOS - JUREMA\Francisco das Chagas Bezerra da Silva\Projeto Final\Interface\obj\Debug\Interface.csproj.AssemblyReference.cache
+\\servidor\PUBLICO\ALUNOS - JUREMA\Francisco das Chagas Bezerra da Silva\Projeto Final\Interface\obj\Debug\Interface.csproj.SuggestedBindingRedirects.cache
+\\servidor\PUBLICO\ALUNOS - JUREMA\Francisco das Chagas Bezerra da Silva\Projeto Final\Interface\obj\Debug\Interface.frmClientes.resources
+\\servidor\PUBLICO\ALUNOS - JUREMA\Francisco das Chagas Bezerra da Silva\Projeto Final\Interface\obj\Debug\Interface.frmPrincipal.resources
+\\servidor\PUBLICO\ALUNOS - JUREMA\Francisco das Chagas Bezerra da Silva\Projeto Final\Interface\obj\Debug\Interface.frmUsuarios.resources
+\\servidor\PUBLICO\ALUNOS - JUREMA\Francisco das Chagas Bezerra da Silva\Projeto Final\Interface\obj\Debug\Interface.Properties.Resources.resources
+\\servidor\PUBLICO\ALUNOS - JUREMA\Francisco das Chagas Bezerra da Silva\Projeto Final\Interface\obj\Debug\Interface.csproj.GenerateResource.cache
+\\servidor\PUBLICO\ALUNOS - JUREMA\Francisco das Chagas Bezerra da Silva\Projeto Final\Interface\obj\Debug\Interface.csproj.CoreCompileInputs.cache
+\\servidor\PUBLICO\ALUNOS - JUREMA\Francisco das Chagas Bezerra da Silva\Projeto Final\Interface\obj\Debug\Interface.exe
+\\servidor\PUBLICO\ALUNOS - JUREMA\Francisco das Chagas Bezerra da Silva\Projeto Final\Interface\obj\Debug\Interface.pdb
+C:\Users\Francisco\Desktop\Interface\bin\Debug\Interface.exe.config
+C:\Users\Francisco\Desktop\Interface\bin\Debug\Interface.exe
+C:\Users\Francisco\Desktop\Interface\bin\Debug\Interface.pdb
+C:\Users\Francisco\Desktop\Interface\bin\Debug\RegraNegocio.dll
+C:\Users\Francisco\Desktop\Interface\bin\Debug\AcessoDados.dll
+C:\Users\Francisco\Desktop\Interface\bin\Debug\RegraNegocio.pdb
+C:\Users\Francisco\Desktop\Interface\bin\Debug\AcessoDados.pdb
+C:\Users\Francisco\Desktop\Interface\obj\Debug\Interface.csproj.AssemblyReference.cache
+C:\Users\Francisco\Desktop\Interface\obj\Debug\Interface.csproj.SuggestedBindingRedirects.cache
+C:\Users\Francisco\Desktop\Interface\obj\Debug\Interface.frmClientes.resources
+C:\Users\Francisco\Desktop\Interface\obj\Debug\Interface.frmPrincipal.resources
+C:\Users\Francisco\Desktop\Interface\obj\Debug\Interface.frmUsuarios.resources
+C:\Users\Francisco\Desktop\Interface\obj\Debug\Interface.Properties.Resources.resources
+C:\Users\Francisco\Desktop\Interface\obj\Debug\Interface.csproj.GenerateResource.cache
+C:\Users\Francisco\Desktop\Interface\obj\Debug\Interface.csproj.CoreCompileInputs.cache
+C:\Users\Francisco\Desktop\Interface\obj\Debug\Interface.csproj.CopyComplete
+C:\Users\Francisco\Desktop\Interface\obj\Debug\Interface.exe
+C:\Users\Francisco\Desktop\Interface\obj\Debug\Interface.pdb
+D:\Download\Sistema de Vendas\Sistema-de-Vendas\Interface\bin\Debug\RegraNegocio.dll
+D:\Download\Sistema de Vendas\Sistema-de-Vendas\Interface\bin\Debug\AcessoDados.dll
+D:\Download\Sistema de Vendas\Sistema-de-Vendas\Interface\bin\Debug\RegraNegocio.pdb
+D:\Download\Sistema de Vendas\Sistema-de-Vendas\Interface\bin\Debug\AcessoDados.pdb
+D:\Download\Sistema de Vendas\Sistema-de-Vendas\Interface\obj\Debug\Interface.frmUsuarios.resources
+D:\Download\Sistema de Vendas\Sistema-de-Vendas\Interface\obj\Debug\Interface.csproj.CopyComplete

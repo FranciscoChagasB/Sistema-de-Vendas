@@ -116,5 +116,11 @@
   <ItemGroup>
     <None Include="Resources\ajuda.png" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="D:\Download\Sistema de Vendas\Sistema-de-Vendas\RegraNegocio\RegraNegocio.csproj">
+      <Project>{b18bcc52-b183-4871-b8f9-a3017967c306}</Project>
+      <Name>RegraNegocio</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
