@@ -19,7 +19,7 @@ namespace AcessoDados
         {
             try
             {
-                using (SqlConnection conexao = new SqlConnection(/*string de conexão com o banco.*/))
+                using (SqlConnection conexao = new SqlConnection(Conexao.stringConexao))
                 {
                     //inicia a conexao com o banco de dados.
                     conexao.Open();
@@ -49,7 +49,7 @@ namespace AcessoDados
         {
             try
             {
-                using (SqlConnection conexao = new SqlConnection(/*string de conexão com o banco*/))
+                using (SqlConnection conexao = new SqlConnection(Conexao.stringConexao))
                 {
                     //inicia a conexao com o banco de dados.
                     conexao.Open();
@@ -81,7 +81,7 @@ namespace AcessoDados
         {
             try
             {
-                using (SqlConnection conexao = new SqlConnection(/*string de conexão com o banco*/))
+                using (SqlConnection conexao = new SqlConnection(Conexao.stringConexao))
                 {
                     //inicia a conexao com o banco de dados.
                     conexao.Open();
@@ -110,13 +110,13 @@ namespace AcessoDados
         {
             try
             {
-                using (SqlConnection conexao = new SqlConnection(/*string de conexão com o banco*/))
+                using (SqlConnection conexao = new SqlConnection(Conexao.stringConexao))
                 {
                     //inicia a conexao com o banco de dados.
                     conexao.Open();
 
                     //cria um texto com os comandos a serem inseridos no script.
-                    sql.Append("SELECT * FROM Nivel_Usuario");
+                    sql.Append("SELECT * FROM Nivel_Usuarios");
                     sql.Append(" ORDER BY ID_NIVEL ASC");
 
                     //cria o script com o os comandos inseridos no texto "sql.Append" e o executa.

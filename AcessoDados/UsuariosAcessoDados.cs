@@ -19,7 +19,7 @@ namespace AcessoDados
         {
             try
             {
-                using (SqlConnection conexao = new SqlConnection(/*string de conexão com o banco*/))
+                using (SqlConnection conexao = new SqlConnection(Conexao.stringConexao))
                 {
                     //inicia a conexao com o banco de dados.
                     conexao.Open();
@@ -53,7 +53,7 @@ namespace AcessoDados
         {
             try
             {
-                using (SqlConnection conexao = new SqlConnection(/*string de conexão com o banco*/))
+                using (SqlConnection conexao = new SqlConnection(Conexao.stringConexao))
                 {
                     //inicia a conexao com o banco de dados.
                     conexao.Open();
@@ -89,7 +89,7 @@ namespace AcessoDados
         {
             try
             {
-                using (SqlConnection conexao = new SqlConnection(/*string de conexão com o banco*/))
+                using (SqlConnection conexao = new SqlConnection(Conexao.stringConexao))
                 {
                     //inicia a conexao com o banco de dados.
                     conexao.Open();
@@ -118,14 +118,14 @@ namespace AcessoDados
         {
             try
             {
-                using (SqlConnection conexao = new SqlConnection(/*string de conexão com o banco*/))
+                using (SqlConnection conexao = new SqlConnection(Conexao.stringConexao))
                 {
                     //inicia a conexao com o banco de dados.
                     conexao.Open();
 
                     //cria um texto com os comandos a serem inseridos no script.
-                    sql.Append("SELECT Usuarios.*, NOME_NIVEL FROM Usuarios INNER JOIN Nivel_Acesso");
-                    sql.Append(" ON Usuarios.ID_NIVEL = Nivel_Acesso.ID_NIVEL");
+                    sql.Append("SELECT Usuarios.*, NOME_NIVEL FROM Usuarios INNER JOIN Nivel_Usuarios");
+                    sql.Append(" ON Usuarios.ID_NIVEL = Nivel_Usuarios.ID_NIVEL");
                     sql.Append(" ORDER BY NOME_USUARIO ASC");
 
                     //cria o script com o os comandos inseridos no texto "sql.Append" e o executa.
@@ -146,7 +146,7 @@ namespace AcessoDados
         {
             try
             {
-                using (SqlConnection conexao = new SqlConnection(/*string de conexão com o banco*/))
+                using (SqlConnection conexao = new SqlConnection(Conexao.stringConexao))
                 {
                     //inicia a conexao com o banco de dados.
                     conexao.Open();
@@ -177,7 +177,7 @@ namespace AcessoDados
         {
             try
             {
-                using (SqlConnection conexao = new SqlConnection(/*string de conexão com o banco*/))
+                using (SqlConnection conexao = new SqlConnection(Conexao.stringConexao))
                 {
                     //inicia a conexao com o banco de dados.
                     conexao.Open();
@@ -209,14 +209,14 @@ namespace AcessoDados
         {
             try
             {
-                using (SqlConnection conexao = new SqlConnection(/*string de conexão com o banco*/))
+                using (SqlConnection conexao = new SqlConnection(Conexao.stringConexao))
                 {
                     //inicia a conexao com o banco de dados.
                     conexao.Open();
 
                     //cria um texto com os comandos a serem inseridos no script.
-                    sql.Append("SELECT Usuarios.*, NOME_NIVEL FROM Usuarios INNER JOIN Nivel_Acesso");
-                    sql.Append(" ON Usuarios.ID_NIVEL = Nivel_Acesso.ID_NIVEL");
+                    sql.Append("SELECT Usuarios.*, NOME_NIVEL FROM Usuarios INNER JOIN Nivel_Usuarios");
+                    sql.Append(" ON Usuarios.ID_NIVEL = Nivel_Usuarios.ID_NIVEL");
                     sql.Append(" WHERE ID_USUARIO = @idUsuario");
 
                     //configura os parâmetros que serão os dados inseridos na camada RegraNegocio.

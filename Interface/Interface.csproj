@@ -122,5 +122,11 @@
       <Name>RegraNegocio</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user_img.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\niveis_img.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

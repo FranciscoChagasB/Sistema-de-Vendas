@@ -20,15 +20,31 @@ namespace Interface
         }
 
         private void btnClientes_Click(object sender, EventArgs e)
+        //Ação do botão btnClientes que inicializa o formulário frmClientes.
         {
             frmClientes formClientes = new frmClientes();
             formClientes.ShowDialog();
         }
 
         private void mstripClientes_Click(object sender, EventArgs e)
+        //Ação do botão de menu mstripClientes que inicializa o formulário frmClientes.
         {
             frmClientes formClientes = new frmClientes();
             formClientes.ShowDialog();
+        }
+
+        private void btnUsuarios_Click(object sender, EventArgs e)
+        //Ação do botão btnUsuarios que inicializa o formulário frmUsuarios.
+        {
+            frmUsuarios formUsuarios = new frmUsuarios();
+            formUsuarios.ShowDialog();
+        }
+
+        private void mstripUsuarios_Click(object sender, EventArgs e)
+        //Ação do botão de menu mstripUsuarios que inicializa o formulário frmUsuarios.
+        {
+            frmUsuarios formUsuarios = new frmUsuarios();
+            formUsuarios.ShowDialog();
         }
     }
 }
