@@ -102,6 +102,9 @@ namespace Interface
                 //Após a ação, atualiza a lista de usuários e limpa os campos do formulário.
                 ListarUsuarios();
                 Limpar();
+
+                //Traz de volta a aba de procura para visualizar os clientes cadastrados.
+                tbcUsuarios.SelectedTab = tbpProcura;
             }
             catch (Exception ex)
             {
@@ -115,6 +118,7 @@ namespace Interface
 
             try
             {
+                //Preenche cada componente do formulário com as informações do DataGrid correspondentes.
                 txtRegistro.Text = dtgUsuarios.CurrentRow.Cells["ID_USUARIO"].Value.ToString();
                 txtNome.Text = dtgUsuarios.CurrentRow.Cells["NOME"].Value.ToString();
                 txtLogin.Text = dtgUsuarios.CurrentRow.Cells["LOGIN"].Value.ToString();

@@ -16,7 +16,7 @@ namespace AcessoDados
         DataTable dadosTabela = new DataTable();
 
         public void Salvar(string nome, string endereco, string bairro, string cep, string cidade, string estado, string telefone,
-                           string email, DateTime dataCadastro, DateTime nascimento, string observacoes, string situacao) //parâmetros que serão inseridos.
+                           string email, DateTime dataCadastro, DateTime nascimento, string observacoes, string status) //parâmetros que serão inseridos.
         {
             try
             {
@@ -26,9 +26,9 @@ namespace AcessoDados
 
                     sql.Append("INSERT INTO Clientes (NOME_CLIENTE, ENDERECO_CLIENTE, BAIRRO_CLIENTE, CEP_CLIENTE,");
                     sql.Append(" CIDADE_CLIENTE, ESTADO_CLIENTE, TELEFONE_CLIENTE, EMAIL_CLIENTE,");
-                    sql.Append(" DATA_CADASTRO_CLIENTE, NASCIMENTO_CLIENTE, OBSERVACOES_CLIENTE, SITUACAO_CLIENTE)");
+                    sql.Append(" DATA_CADASTRO_CLIENTE, NASCIMENTO_CLIENTE, OBSERVACOES_CLIENTE, STATUS_CLIENTE)");
                     sql.Append("VALUES (@nome, @endereco, @bairro, @cep, @cidade, @estado, @telefone,");
-                    sql.Append(" @email, @dataCadastro, @nascimento, @observacao, @situacao)");
+                    sql.Append(" @email, @dataCadastro, @nascimento, @observacao, @status)");
 
                     //configuração dos parâmetros inseridos com parâmetros no script.
                     comandoSql.Parameters.Add(new SqlParameter("@nome", nome));
@@ -42,7 +42,7 @@ namespace AcessoDados
                     comandoSql.Parameters.Add(new SqlParameter("@dataCadastro", dataCadastro));
                     comandoSql.Parameters.Add(new SqlParameter("@nascimento", nascimento));
                     comandoSql.Parameters.Add(new SqlParameter("@observacao", observacoes));
-                    comandoSql.Parameters.Add(new SqlParameter("@situacao", situacao));
+                    comandoSql.Parameters.Add(new SqlParameter("@status", status));
 
                     comandoSql.CommandText = sql.ToString(); //converter texto para script sql server.
                     comandoSql.Connection = conexao; //iniciar a conexao com o banco.
@@ -186,7 +186,7 @@ namespace AcessoDados
         }
 
         public void Alterar(int idCliente, string nome, string endereco, string bairro, string cep, string cidade, string estado, string telefone,
-                          string email, DateTime dataCadastro, DateTime nascimento, string observacoes, string situacao) //parâmetros que serão inseridos.
+                          string email, DateTime dataCadastro, DateTime nascimento, string observacoes, string status) //parâmetros que serão inseridos.
         {
             try
             {
@@ -197,7 +197,7 @@ namespace AcessoDados
                     sql.Append("UPDATE Clientes");
                     sql.Append(" SET NOME_CLIENTE=@nome, ENDERECO_CLIENTE=@endereco, BAIRRO_CLIENTE=@bairro, CEP_CLIENTE=@cep, CIDADE_CLIENTE=@cidade, ");
                     sql.Append(" ESTADO_CLIENTE=@estado, TELEFONE_CLIENTE=@telefone, EMAIL_CLIENTE=@email, DATA_CADASTRO_CLIENTE=@dataCadastro, ");
-                    sql.Append(" NASCIMENTO_CLIENTE=@nascimento, OBSERVACOES_CLIENTE=@observacao, SITUACAO_CLIENTE=@situacao");
+                    sql.Append(" NASCIMENTO_CLIENTE=@nascimento, OBSERVACOES_CLIENTE=@observacao, STATUS_CLIENTE=@status");
                     sql.Append(" WHERE (ID_CLIENTE=@idCliente)");
 
                     //configuração dos parâmetros inseridos com parâmetros no script.
@@ -213,7 +213,7 @@ namespace AcessoDados
                     comandoSql.Parameters.Add(new SqlParameter("@dataCadastro", dataCadastro));
                     comandoSql.Parameters.Add(new SqlParameter("@nascimento", nascimento));
                     comandoSql.Parameters.Add(new SqlParameter("@observacao", observacoes));
-                    comandoSql.Parameters.Add(new SqlParameter("@situacao", situacao));
+                    comandoSql.Parameters.Add(new SqlParameter("@status", status));
 
                     comandoSql.CommandText = sql.ToString();
                     comandoSql.Connection = conexao;

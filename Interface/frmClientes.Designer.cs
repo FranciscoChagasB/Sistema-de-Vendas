@@ -43,6 +43,14 @@
             this.btnNovo = new System.Windows.Forms.Button();
             this.tbcClientes = new System.Windows.Forms.TabControl();
             this.tbpProcura = new System.Windows.Forms.TabPage();
+            this.cboOrdenar = new System.Windows.Forms.ComboBox();
+            this.txtCodCliente = new System.Windows.Forms.TextBox();
+            this.txtNomeCliente = new System.Windows.Forms.TextBox();
+            this.btnPesquisar = new System.Windows.Forms.Button();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.dtgClientes = new System.Windows.Forms.DataGridView();
             this.ID_CLIENTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NOME_CLIENTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -58,7 +66,8 @@
             this.OBSERVACOES_CLIENTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SITUACAO_CLIENTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tbpCadastro = new System.Windows.Forms.TabPage();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnSalvar = new System.Windows.Forms.Button();
+            this.btnLimpar = new System.Windows.Forms.Button();
             this.cboStatus = new System.Windows.Forms.ComboBox();
             this.gbDocumentosPessoaFisica = new System.Windows.Forms.GroupBox();
             this.txtCpf = new System.Windows.Forms.MaskedTextBox();
@@ -99,14 +108,6 @@
             this.txtObservacao = new System.Windows.Forms.TextBox();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.cboOrdenar = new System.Windows.Forms.ComboBox();
-            this.txtCodCliente = new System.Windows.Forms.TextBox();
-            this.txtNomeCliente = new System.Windows.Forms.TextBox();
-            this.btnPesquisar = new System.Windows.Forms.Button();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bdnClientes)).BeginInit();
             this.bdnClientes.SuspendLayout();
@@ -246,6 +247,7 @@
             this.btnAlterar.Text = "Alterar Cliente";
             this.btnAlterar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAlterar.UseVisualStyleBackColor = true;
+            this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
             // 
             // btnNovo
             // 
@@ -292,6 +294,95 @@
             this.tbpProcura.TabIndex = 0;
             this.tbpProcura.Text = "Procura";
             this.tbpProcura.UseVisualStyleBackColor = true;
+            // 
+            // cboOrdenar
+            // 
+            this.cboOrdenar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboOrdenar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboOrdenar.FormattingEnabled = true;
+            this.cboOrdenar.Items.AddRange(new object[] {
+            "Código",
+            "Nome",
+            "Situacao"});
+            this.cboOrdenar.Location = new System.Drawing.Point(855, 52);
+            this.cboOrdenar.Margin = new System.Windows.Forms.Padding(4);
+            this.cboOrdenar.Name = "cboOrdenar";
+            this.cboOrdenar.Size = new System.Drawing.Size(143, 28);
+            this.cboOrdenar.TabIndex = 198;
+            // 
+            // txtCodCliente
+            // 
+            this.txtCodCliente.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtCodCliente.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtCodCliente.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCodCliente.Location = new System.Drawing.Point(13, 52);
+            this.txtCodCliente.Margin = new System.Windows.Forms.Padding(4);
+            this.txtCodCliente.MaxLength = 50;
+            this.txtCodCliente.Name = "txtCodCliente";
+            this.txtCodCliente.Size = new System.Drawing.Size(119, 29);
+            this.txtCodCliente.TabIndex = 197;
+            // 
+            // txtNomeCliente
+            // 
+            this.txtNomeCliente.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtNomeCliente.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtNomeCliente.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNomeCliente.Location = new System.Drawing.Point(167, 52);
+            this.txtNomeCliente.Margin = new System.Windows.Forms.Padding(4);
+            this.txtNomeCliente.MaxLength = 50;
+            this.txtNomeCliente.Name = "txtNomeCliente";
+            this.txtNomeCliente.Size = new System.Drawing.Size(510, 29);
+            this.txtNomeCliente.TabIndex = 196;
+            // 
+            // btnPesquisar
+            // 
+            this.btnPesquisar.Location = new System.Drawing.Point(685, 54);
+            this.btnPesquisar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnPesquisar.Name = "btnPesquisar";
+            this.btnPesquisar.Size = new System.Drawing.Size(100, 28);
+            this.btnPesquisar.TabIndex = 195;
+            this.btnPesquisar.Text = "Pesquisar";
+            this.btnPesquisar.UseVisualStyleBackColor = true;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(851, 32);
+            this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(82, 16);
+            this.label19.TabIndex = 194;
+            this.label19.Text = "Ordenar por:";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(163, 32);
+            this.label18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(110, 16);
+            this.label18.TabIndex = 193;
+            this.label18.Text = "Nome do Cliente:";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(9, 32);
+            this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(117, 16);
+            this.label16.TabIndex = 192;
+            this.label16.Text = "Código do Cliente:";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(9, 9);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(57, 16);
+            this.label7.TabIndex = 191;
+            this.label7.Text = "Procura:";
             // 
             // dtgClientes
             // 
@@ -453,7 +544,8 @@
             // 
             // tbpCadastro
             // 
-            this.tbpCadastro.Controls.Add(this.button1);
+            this.tbpCadastro.Controls.Add(this.btnSalvar);
+            this.tbpCadastro.Controls.Add(this.btnLimpar);
             this.tbpCadastro.Controls.Add(this.cboStatus);
             this.tbpCadastro.Controls.Add(this.gbDocumentosPessoaFisica);
             this.tbpCadastro.Controls.Add(this.gbDocumentosPessoaJuridica);
@@ -492,16 +584,28 @@
             this.tbpCadastro.Text = "Cadastro";
             this.tbpCadastro.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btnSalvar
             // 
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.button1.Location = new System.Drawing.Point(861, 337);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(253, 31);
-            this.button1.TabIndex = 190;
-            this.button1.Text = "Limpar Campos";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnSalvar.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.btnSalvar.Location = new System.Drawing.Point(769, 336);
+            this.btnSalvar.Name = "btnSalvar";
+            this.btnSalvar.Size = new System.Drawing.Size(213, 32);
+            this.btnSalvar.TabIndex = 235;
+            this.btnSalvar.Text = "Salvar Usuário";
+            this.btnSalvar.UseVisualStyleBackColor = true;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
+            // 
+            // btnLimpar
+            // 
+            this.btnLimpar.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.btnLimpar.Location = new System.Drawing.Point(989, 336);
+            this.btnLimpar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnLimpar.Name = "btnLimpar";
+            this.btnLimpar.Size = new System.Drawing.Size(212, 32);
+            this.btnLimpar.TabIndex = 190;
+            this.btnLimpar.Text = "Limpar Campos";
+            this.btnLimpar.UseVisualStyleBackColor = true;
+            this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
             // 
             // cboStatus
             // 
@@ -998,95 +1102,6 @@
             this.label2.TabIndex = 174;
             this.label2.Text = "Nome:";
             // 
-            // cboOrdenar
-            // 
-            this.cboOrdenar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboOrdenar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboOrdenar.FormattingEnabled = true;
-            this.cboOrdenar.Items.AddRange(new object[] {
-            "Código",
-            "Nome",
-            "Situacao"});
-            this.cboOrdenar.Location = new System.Drawing.Point(855, 52);
-            this.cboOrdenar.Margin = new System.Windows.Forms.Padding(4);
-            this.cboOrdenar.Name = "cboOrdenar";
-            this.cboOrdenar.Size = new System.Drawing.Size(143, 28);
-            this.cboOrdenar.TabIndex = 198;
-            // 
-            // txtCodCliente
-            // 
-            this.txtCodCliente.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtCodCliente.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtCodCliente.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCodCliente.Location = new System.Drawing.Point(13, 52);
-            this.txtCodCliente.Margin = new System.Windows.Forms.Padding(4);
-            this.txtCodCliente.MaxLength = 50;
-            this.txtCodCliente.Name = "txtCodCliente";
-            this.txtCodCliente.Size = new System.Drawing.Size(119, 29);
-            this.txtCodCliente.TabIndex = 197;
-            // 
-            // txtNomeCliente
-            // 
-            this.txtNomeCliente.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtNomeCliente.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtNomeCliente.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNomeCliente.Location = new System.Drawing.Point(167, 52);
-            this.txtNomeCliente.Margin = new System.Windows.Forms.Padding(4);
-            this.txtNomeCliente.MaxLength = 50;
-            this.txtNomeCliente.Name = "txtNomeCliente";
-            this.txtNomeCliente.Size = new System.Drawing.Size(510, 29);
-            this.txtNomeCliente.TabIndex = 196;
-            // 
-            // btnPesquisar
-            // 
-            this.btnPesquisar.Location = new System.Drawing.Point(685, 54);
-            this.btnPesquisar.Margin = new System.Windows.Forms.Padding(4);
-            this.btnPesquisar.Name = "btnPesquisar";
-            this.btnPesquisar.Size = new System.Drawing.Size(100, 28);
-            this.btnPesquisar.TabIndex = 195;
-            this.btnPesquisar.Text = "Pesquisar";
-            this.btnPesquisar.UseVisualStyleBackColor = true;
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(851, 32);
-            this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(82, 16);
-            this.label19.TabIndex = 194;
-            this.label19.Text = "Ordenar por:";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(163, 32);
-            this.label18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(110, 16);
-            this.label18.TabIndex = 193;
-            this.label18.Text = "Nome do Cliente:";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(9, 32);
-            this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(117, 16);
-            this.label16.TabIndex = 192;
-            this.label16.Text = "Código do Cliente:";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(9, 9);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(57, 16);
-            this.label7.TabIndex = 191;
-            this.label7.Text = "Procura:";
-            // 
             // frmClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1197,7 +1212,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn SITUACAO_CLIENTE;
         private System.Windows.Forms.ComboBox cboStatus;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnLimpar;
         private System.Windows.Forms.ComboBox cboOrdenar;
         private System.Windows.Forms.TextBox txtCodCliente;
         private System.Windows.Forms.TextBox txtNomeCliente;
@@ -1206,5 +1221,6 @@
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button btnSalvar;
     }
 }

@@ -12,13 +12,13 @@ namespace RegraNegocio
     {
         AcessoDados.ClientesAcessoDados novoCliente = new AcessoDados.ClientesAcessoDados();
         public void Salvar(string nome, string endereco, string bairro, string cep, string cidade, string estado, string telefone,
-                           string email, DateTime dataCadastro, DateTime nascimento, string observacoes, string situacao) //Parâmetros a serem adicionados.
+                           string email, DateTime dataCadastro, DateTime nascimento, string observacoes, string status) //Parâmetros a serem adicionados.
         {
             try
             {
                 novoCliente = new AcessoDados.ClientesAcessoDados();
                 novoCliente.Salvar(nome, endereco, bairro, cep, cidade, estado, telefone,
-                                   email, dataCadastro, nascimento, observacoes, situacao); //parametros indicados no método.
+                                   email, dataCadastro, nascimento, observacoes, status); //parametros indicados no método.
             }
             catch (Exception ex)
             {
@@ -102,13 +102,13 @@ namespace RegraNegocio
         }
 
         public void Alterar(int idCliente, string nome, string endereco, string bairro, string cep, string cidade, string estado, string telefone,
-                           string email, DateTime dataCadastro, DateTime nascimento, string observacoes, string situacao) //Parâmetros a serem adicionados.
+                           string email, DateTime dataCadastro, DateTime nascimento, string observacoes, string status) //Parâmetros a serem adicionados.
         {
             try
             {
                 novoCliente = new AcessoDados.ClientesAcessoDados();
                 novoCliente.Alterar(idCliente, nome, endereco, bairro, cep, cidade, estado, telefone,
-                                   email, dataCadastro, nascimento, observacoes, situacao); //Parâmetros indicados no método.
+                                   email, dataCadastro, nascimento, observacoes, status); //Parâmetros indicados no método.
             }
             catch (Exception ex)
             {
