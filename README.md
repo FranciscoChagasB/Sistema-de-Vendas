@@ -20,6 +20,7 @@ O banco de dados utilizado: SQL Server
 
 As funcionalidades que o sistema terá serão:
 
+- Cadastro de funcionários: permite cadastrar e gerenciar informações sobre os funcionários da empresa.
 - Cadastro de produtos: permite cadastrar e gerenciar informações sobre os produtos vendidos pela empresa.
 - Cadastro de clientes: permite cadastrar e gerenciar informações sobre os clientes da empresa.
 - Realização de vendas: permite registrar a venda de produtos para os clientes, selecionando os produtos vendidos, definindo o valor da venda, emitindo notas fiscais, entre outras operações.
