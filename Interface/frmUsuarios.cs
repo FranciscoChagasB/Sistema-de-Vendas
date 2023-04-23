@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,7 +15,6 @@ namespace Interface
     {
         RegraNegocio.UsuariosRegraNegocio novoUsuario;
         RegraNegocio.NiveisRegraNegocio novoNivel;
-        RegraNegocio.Criptografia criptografar;
 
         public frmUsuarios()
         {
@@ -94,9 +94,10 @@ namespace Interface
                     MessageBox.Show("Usuário cadastrado com sucesso!", "Sucesso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
-                //Caso não, informa que o usuário já está cadastrado.
+                //Caso não, altera um usuário já cadastrado.
                 {
-                    MessageBox.Show("Você está tentando cadastrar um usuário já cadastrado!", "Usuário já cadastrado!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    novoUsuario.Alterar(Convert.ToInt32(txtRegistro.Text), txtNome.Text, dtpDataCadastro.Value.Date, txtLogin.Text, Convert.ToInt32(cboNivel.SelectedValue), txtSenha.Text, txtReeSenha.Text, cboStatus.Text);
+                    MessageBox.Show("Usuário alterado com sucesso!", "Sucesso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
 
                 //Após a ação, atualiza a lista de usuários e limpa os campos do formulário.
@@ -144,6 +145,30 @@ namespace Interface
             Limpar();
         }
 
-        
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            //Verifica se o resultado foi Yes para a pergunta se deseja excluir o cadastro.
+            if (MessageBox.Show("Deseja realmente excluir esse registro?", "Deseja Excluir?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                try
+                {
+                    //Se sim, realiza o método Excluir, mostra mensagem do sucesso dessa ação, lista os usuários no DataGrid e limpa todos os campos.
+                    novoUsuario = new RegraNegocio.UsuariosRegraNegocio();
+                    novoUsuario.Excluir(Convert.ToInt32(dtgUsuarios.CurrentRow.Cells["ID_USUARIO"].Value));
+                    MessageBox.Show("Usuário excluído com sucesso!", "Sucesso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    //Após a ação, atualiza a lista de clientes e limpa os campos do formulário.
+                    ListarUsuarios();
+                    Limpar();
+
+                    //Traz de volta a aba de procura para visualizar os usuários cadastrados.
+                    tbcUsuarios.SelectedTab = tbpProcura;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
     }
 }

@@ -59,3 +59,4 @@ D:\Download\Sistema de Vendas\Sistema-de-Vendas\Interface\bin\Debug\RegraNegocio
 D:\Download\Sistema de Vendas\Sistema-de-Vendas\Interface\bin\Debug\AcessoDados.pdb
 D:\Download\Sistema de Vendas\Sistema-de-Vendas\Interface\obj\Debug\Interface.frmUsuarios.resources
 D:\Download\Sistema de Vendas\Sistema-de-Vendas\Interface\obj\Debug\Interface.csproj.CopyComplete
+D:\Download\Sistema de Vendas\Sistema-de-Vendas\Interface\obj\Debug\Interface.frmLogin.resources

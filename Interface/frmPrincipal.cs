@@ -14,9 +14,14 @@ namespace Interface
 {
     public partial class frmPrincipal : Form
     {
-        public frmPrincipal()
+        RegraNegocio.UsuariosRegraNegocio novoUsuario;
+        string nomeUsuario, nivelUsuario;
+        int idUsuario;
+
+        public frmPrincipal(int idUsuario)
         {
             InitializeComponent();
+            this.idUsuario = idUsuario;
         }
 
         private void btnClientes_Click(object sender, EventArgs e)

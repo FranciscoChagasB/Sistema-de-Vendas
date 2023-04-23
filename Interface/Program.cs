@@ -16,7 +16,18 @@ namespace Interface
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmPrincipal());
+
+            frmLogin formularioLogin = new frmLogin();
+            formularioLogin.ShowDialog();
+
+            if (formularioLogin.DialogResult == DialogResult.OK)
+            {
+                Application.Run(new frmPrincipal(formularioLogin.idUsuario));
+            }
+            else
+            {
+                Application.Exit();
+            }
         }
     }
 }

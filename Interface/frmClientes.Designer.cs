@@ -52,19 +52,6 @@
             this.label16 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.dtgClientes = new System.Windows.Forms.DataGridView();
-            this.ID_CLIENTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NOME_CLIENTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ENDERECO_CLIENTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BAIRRO_CLIENTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CEP_CLIENTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CIDADE_CLIENTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ESTADO_CLIENTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TELEFONE_CLIENTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EMAIL_CLIENTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DATA_CADASTRO_CLIENTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NASCIMENTO_CLIENTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.OBSERVACOES_CLIENTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SITUACAO_CLIENTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tbpCadastro = new System.Windows.Forms.TabPage();
             this.btnSalvar = new System.Windows.Forms.Button();
             this.btnLimpar = new System.Windows.Forms.Button();
@@ -108,6 +95,19 @@
             this.txtObservacao = new System.Windows.Forms.TextBox();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.ID_CLIENTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NOME_CLIENTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ENDERECO_CLIENTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BAIRRO_CLIENTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CEP_CLIENTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CIDADE_CLIENTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ESTADO_CLIENTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TELEFONE_CLIENTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EMAIL_CLIENTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DATA_CADASTRO_CLIENTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NASCIMENTO_CLIENTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.OBSERVACOES_CLIENTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.STATUS_CLIENTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bdnClientes)).BeginInit();
             this.bdnClientes.SuspendLayout();
@@ -234,6 +234,7 @@
             this.btnExcluir.Text = "Excluir Cliente";
             this.btnExcluir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // btnAlterar
             // 
@@ -405,7 +406,7 @@
             this.DATA_CADASTRO_CLIENTE,
             this.NASCIMENTO_CLIENTE,
             this.OBSERVACOES_CLIENTE,
-            this.SITUACAO_CLIENTE});
+            this.STATUS_CLIENTE});
             this.dtgClientes.GridColor = System.Drawing.SystemColors.ControlDarkDark;
             this.dtgClientes.Location = new System.Drawing.Point(8, 223);
             this.dtgClientes.Margin = new System.Windows.Forms.Padding(4);
@@ -417,130 +418,6 @@
             this.dtgClientes.Size = new System.Drawing.Size(1253, 470);
             this.dtgClientes.TabIndex = 125;
             this.dtgClientes.TabStop = false;
-            // 
-            // ID_CLIENTE
-            // 
-            this.ID_CLIENTE.DataPropertyName = "ID_CLIENTE";
-            this.ID_CLIENTE.HeaderText = "Código";
-            this.ID_CLIENTE.MinimumWidth = 6;
-            this.ID_CLIENTE.Name = "ID_CLIENTE";
-            this.ID_CLIENTE.ReadOnly = true;
-            this.ID_CLIENTE.Width = 70;
-            // 
-            // NOME_CLIENTE
-            // 
-            this.NOME_CLIENTE.DataPropertyName = "NOME_CLIENTE";
-            this.NOME_CLIENTE.HeaderText = "Nome";
-            this.NOME_CLIENTE.MinimumWidth = 6;
-            this.NOME_CLIENTE.Name = "NOME_CLIENTE";
-            this.NOME_CLIENTE.ReadOnly = true;
-            this.NOME_CLIENTE.Width = 250;
-            // 
-            // ENDERECO_CLIENTE
-            // 
-            this.ENDERECO_CLIENTE.DataPropertyName = "ENDERECO_CLIENTE";
-            this.ENDERECO_CLIENTE.HeaderText = "Endereço";
-            this.ENDERECO_CLIENTE.MinimumWidth = 6;
-            this.ENDERECO_CLIENTE.Name = "ENDERECO_CLIENTE";
-            this.ENDERECO_CLIENTE.ReadOnly = true;
-            this.ENDERECO_CLIENTE.Width = 230;
-            // 
-            // BAIRRO_CLIENTE
-            // 
-            this.BAIRRO_CLIENTE.DataPropertyName = "BAIRRO_CLIENTE";
-            this.BAIRRO_CLIENTE.HeaderText = "Bairro";
-            this.BAIRRO_CLIENTE.MinimumWidth = 6;
-            this.BAIRRO_CLIENTE.Name = "BAIRRO_CLIENTE";
-            this.BAIRRO_CLIENTE.ReadOnly = true;
-            this.BAIRRO_CLIENTE.Visible = false;
-            this.BAIRRO_CLIENTE.Width = 125;
-            // 
-            // CEP_CLIENTE
-            // 
-            this.CEP_CLIENTE.DataPropertyName = "CEP_CLIENTE";
-            this.CEP_CLIENTE.HeaderText = "CEP";
-            this.CEP_CLIENTE.MinimumWidth = 6;
-            this.CEP_CLIENTE.Name = "CEP_CLIENTE";
-            this.CEP_CLIENTE.ReadOnly = true;
-            this.CEP_CLIENTE.Visible = false;
-            this.CEP_CLIENTE.Width = 125;
-            // 
-            // CIDADE_CLIENTE
-            // 
-            this.CIDADE_CLIENTE.DataPropertyName = "CIDADE_CLIENTE";
-            this.CIDADE_CLIENTE.HeaderText = "Cidade";
-            this.CIDADE_CLIENTE.MinimumWidth = 6;
-            this.CIDADE_CLIENTE.Name = "CIDADE_CLIENTE";
-            this.CIDADE_CLIENTE.ReadOnly = true;
-            this.CIDADE_CLIENTE.Width = 180;
-            // 
-            // ESTADO_CLIENTE
-            // 
-            this.ESTADO_CLIENTE.DataPropertyName = "ESTADO_CLIENTE";
-            this.ESTADO_CLIENTE.HeaderText = "Estado";
-            this.ESTADO_CLIENTE.MinimumWidth = 6;
-            this.ESTADO_CLIENTE.Name = "ESTADO_CLIENTE";
-            this.ESTADO_CLIENTE.ReadOnly = true;
-            this.ESTADO_CLIENTE.Visible = false;
-            this.ESTADO_CLIENTE.Width = 125;
-            // 
-            // TELEFONE_CLIENTE
-            // 
-            this.TELEFONE_CLIENTE.DataPropertyName = "TELEFONE_CLIENTE";
-            this.TELEFONE_CLIENTE.HeaderText = "Telefone";
-            this.TELEFONE_CLIENTE.MinimumWidth = 6;
-            this.TELEFONE_CLIENTE.Name = "TELEFONE_CLIENTE";
-            this.TELEFONE_CLIENTE.ReadOnly = true;
-            this.TELEFONE_CLIENTE.Width = 125;
-            // 
-            // EMAIL_CLIENTE
-            // 
-            this.EMAIL_CLIENTE.DataPropertyName = "EMAIL_CLIENTE";
-            this.EMAIL_CLIENTE.HeaderText = "Email";
-            this.EMAIL_CLIENTE.MinimumWidth = 6;
-            this.EMAIL_CLIENTE.Name = "EMAIL_CLIENTE";
-            this.EMAIL_CLIENTE.ReadOnly = true;
-            this.EMAIL_CLIENTE.Visible = false;
-            this.EMAIL_CLIENTE.Width = 125;
-            // 
-            // DATA_CADASTRO_CLIENTE
-            // 
-            this.DATA_CADASTRO_CLIENTE.DataPropertyName = "DATA_CADASTRO_CLIENTE";
-            this.DATA_CADASTRO_CLIENTE.HeaderText = "Data";
-            this.DATA_CADASTRO_CLIENTE.MinimumWidth = 6;
-            this.DATA_CADASTRO_CLIENTE.Name = "DATA_CADASTRO_CLIENTE";
-            this.DATA_CADASTRO_CLIENTE.ReadOnly = true;
-            this.DATA_CADASTRO_CLIENTE.Visible = false;
-            this.DATA_CADASTRO_CLIENTE.Width = 125;
-            // 
-            // NASCIMENTO_CLIENTE
-            // 
-            this.NASCIMENTO_CLIENTE.DataPropertyName = "NASCIMENTO_CLIENTE";
-            this.NASCIMENTO_CLIENTE.HeaderText = "Nascimento";
-            this.NASCIMENTO_CLIENTE.MinimumWidth = 6;
-            this.NASCIMENTO_CLIENTE.Name = "NASCIMENTO_CLIENTE";
-            this.NASCIMENTO_CLIENTE.ReadOnly = true;
-            this.NASCIMENTO_CLIENTE.Visible = false;
-            this.NASCIMENTO_CLIENTE.Width = 125;
-            // 
-            // OBSERVACOES_CLIENTE
-            // 
-            this.OBSERVACOES_CLIENTE.DataPropertyName = "OBSERVACOES_CLIENTE";
-            this.OBSERVACOES_CLIENTE.HeaderText = "Observações";
-            this.OBSERVACOES_CLIENTE.MinimumWidth = 6;
-            this.OBSERVACOES_CLIENTE.Name = "OBSERVACOES_CLIENTE";
-            this.OBSERVACOES_CLIENTE.ReadOnly = true;
-            this.OBSERVACOES_CLIENTE.Visible = false;
-            this.OBSERVACOES_CLIENTE.Width = 125;
-            // 
-            // SITUACAO_CLIENTE
-            // 
-            this.SITUACAO_CLIENTE.DataPropertyName = "SITUACAO_CLIENTE";
-            this.SITUACAO_CLIENTE.HeaderText = "Situação";
-            this.SITUACAO_CLIENTE.MinimumWidth = 6;
-            this.SITUACAO_CLIENTE.Name = "SITUACAO_CLIENTE";
-            this.SITUACAO_CLIENTE.ReadOnly = true;
-            this.SITUACAO_CLIENTE.Width = 125;
             // 
             // tbpCadastro
             // 
@@ -591,7 +468,7 @@
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(213, 32);
             this.btnSalvar.TabIndex = 235;
-            this.btnSalvar.Text = "Salvar Usuário";
+            this.btnSalvar.Text = "Salvar Cliente";
             this.btnSalvar.UseVisualStyleBackColor = true;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
@@ -1102,6 +979,130 @@
             this.label2.TabIndex = 174;
             this.label2.Text = "Nome:";
             // 
+            // ID_CLIENTE
+            // 
+            this.ID_CLIENTE.DataPropertyName = "ID_CLIENTE";
+            this.ID_CLIENTE.HeaderText = "Código";
+            this.ID_CLIENTE.MinimumWidth = 6;
+            this.ID_CLIENTE.Name = "ID_CLIENTE";
+            this.ID_CLIENTE.ReadOnly = true;
+            this.ID_CLIENTE.Width = 70;
+            // 
+            // NOME_CLIENTE
+            // 
+            this.NOME_CLIENTE.DataPropertyName = "NOME_CLIENTE";
+            this.NOME_CLIENTE.HeaderText = "Nome";
+            this.NOME_CLIENTE.MinimumWidth = 6;
+            this.NOME_CLIENTE.Name = "NOME_CLIENTE";
+            this.NOME_CLIENTE.ReadOnly = true;
+            this.NOME_CLIENTE.Width = 250;
+            // 
+            // ENDERECO_CLIENTE
+            // 
+            this.ENDERECO_CLIENTE.DataPropertyName = "ENDERECO_CLIENTE";
+            this.ENDERECO_CLIENTE.HeaderText = "Endereço";
+            this.ENDERECO_CLIENTE.MinimumWidth = 6;
+            this.ENDERECO_CLIENTE.Name = "ENDERECO_CLIENTE";
+            this.ENDERECO_CLIENTE.ReadOnly = true;
+            this.ENDERECO_CLIENTE.Width = 230;
+            // 
+            // BAIRRO_CLIENTE
+            // 
+            this.BAIRRO_CLIENTE.DataPropertyName = "BAIRRO_CLIENTE";
+            this.BAIRRO_CLIENTE.HeaderText = "Bairro";
+            this.BAIRRO_CLIENTE.MinimumWidth = 6;
+            this.BAIRRO_CLIENTE.Name = "BAIRRO_CLIENTE";
+            this.BAIRRO_CLIENTE.ReadOnly = true;
+            this.BAIRRO_CLIENTE.Visible = false;
+            this.BAIRRO_CLIENTE.Width = 125;
+            // 
+            // CEP_CLIENTE
+            // 
+            this.CEP_CLIENTE.DataPropertyName = "CEP_CLIENTE";
+            this.CEP_CLIENTE.HeaderText = "CEP";
+            this.CEP_CLIENTE.MinimumWidth = 6;
+            this.CEP_CLIENTE.Name = "CEP_CLIENTE";
+            this.CEP_CLIENTE.ReadOnly = true;
+            this.CEP_CLIENTE.Visible = false;
+            this.CEP_CLIENTE.Width = 125;
+            // 
+            // CIDADE_CLIENTE
+            // 
+            this.CIDADE_CLIENTE.DataPropertyName = "CIDADE_CLIENTE";
+            this.CIDADE_CLIENTE.HeaderText = "Cidade";
+            this.CIDADE_CLIENTE.MinimumWidth = 6;
+            this.CIDADE_CLIENTE.Name = "CIDADE_CLIENTE";
+            this.CIDADE_CLIENTE.ReadOnly = true;
+            this.CIDADE_CLIENTE.Width = 180;
+            // 
+            // ESTADO_CLIENTE
+            // 
+            this.ESTADO_CLIENTE.DataPropertyName = "ESTADO_CLIENTE";
+            this.ESTADO_CLIENTE.HeaderText = "Estado";
+            this.ESTADO_CLIENTE.MinimumWidth = 6;
+            this.ESTADO_CLIENTE.Name = "ESTADO_CLIENTE";
+            this.ESTADO_CLIENTE.ReadOnly = true;
+            this.ESTADO_CLIENTE.Visible = false;
+            this.ESTADO_CLIENTE.Width = 125;
+            // 
+            // TELEFONE_CLIENTE
+            // 
+            this.TELEFONE_CLIENTE.DataPropertyName = "TELEFONE_CLIENTE";
+            this.TELEFONE_CLIENTE.HeaderText = "Telefone";
+            this.TELEFONE_CLIENTE.MinimumWidth = 6;
+            this.TELEFONE_CLIENTE.Name = "TELEFONE_CLIENTE";
+            this.TELEFONE_CLIENTE.ReadOnly = true;
+            this.TELEFONE_CLIENTE.Width = 125;
+            // 
+            // EMAIL_CLIENTE
+            // 
+            this.EMAIL_CLIENTE.DataPropertyName = "EMAIL_CLIENTE";
+            this.EMAIL_CLIENTE.HeaderText = "Email";
+            this.EMAIL_CLIENTE.MinimumWidth = 6;
+            this.EMAIL_CLIENTE.Name = "EMAIL_CLIENTE";
+            this.EMAIL_CLIENTE.ReadOnly = true;
+            this.EMAIL_CLIENTE.Visible = false;
+            this.EMAIL_CLIENTE.Width = 125;
+            // 
+            // DATA_CADASTRO_CLIENTE
+            // 
+            this.DATA_CADASTRO_CLIENTE.DataPropertyName = "DATA_CADASTRO_CLIENTE";
+            this.DATA_CADASTRO_CLIENTE.HeaderText = "Data";
+            this.DATA_CADASTRO_CLIENTE.MinimumWidth = 6;
+            this.DATA_CADASTRO_CLIENTE.Name = "DATA_CADASTRO_CLIENTE";
+            this.DATA_CADASTRO_CLIENTE.ReadOnly = true;
+            this.DATA_CADASTRO_CLIENTE.Visible = false;
+            this.DATA_CADASTRO_CLIENTE.Width = 125;
+            // 
+            // NASCIMENTO_CLIENTE
+            // 
+            this.NASCIMENTO_CLIENTE.DataPropertyName = "NASCIMENTO_CLIENTE";
+            this.NASCIMENTO_CLIENTE.HeaderText = "Nascimento";
+            this.NASCIMENTO_CLIENTE.MinimumWidth = 6;
+            this.NASCIMENTO_CLIENTE.Name = "NASCIMENTO_CLIENTE";
+            this.NASCIMENTO_CLIENTE.ReadOnly = true;
+            this.NASCIMENTO_CLIENTE.Visible = false;
+            this.NASCIMENTO_CLIENTE.Width = 125;
+            // 
+            // OBSERVACOES_CLIENTE
+            // 
+            this.OBSERVACOES_CLIENTE.DataPropertyName = "OBSERVACOES_CLIENTE";
+            this.OBSERVACOES_CLIENTE.HeaderText = "Observações";
+            this.OBSERVACOES_CLIENTE.MinimumWidth = 6;
+            this.OBSERVACOES_CLIENTE.Name = "OBSERVACOES_CLIENTE";
+            this.OBSERVACOES_CLIENTE.ReadOnly = true;
+            this.OBSERVACOES_CLIENTE.Visible = false;
+            this.OBSERVACOES_CLIENTE.Width = 125;
+            // 
+            // STATUS_CLIENTE
+            // 
+            this.STATUS_CLIENTE.DataPropertyName = "STATUS_CLIENTE";
+            this.STATUS_CLIENTE.HeaderText = "Situação";
+            this.STATUS_CLIENTE.MinimumWidth = 6;
+            this.STATUS_CLIENTE.Name = "STATUS_CLIENTE";
+            this.STATUS_CLIENTE.ReadOnly = true;
+            this.STATUS_CLIENTE.Width = 125;
+            // 
             // frmClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1197,19 +1198,6 @@
         private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dtgClientes;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID_CLIENTE;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NOME_CLIENTE;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ENDERECO_CLIENTE;
-        private System.Windows.Forms.DataGridViewTextBoxColumn BAIRRO_CLIENTE;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CEP_CLIENTE;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CIDADE_CLIENTE;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ESTADO_CLIENTE;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TELEFONE_CLIENTE;
-        private System.Windows.Forms.DataGridViewTextBoxColumn EMAIL_CLIENTE;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DATA_CADASTRO_CLIENTE;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NASCIMENTO_CLIENTE;
-        private System.Windows.Forms.DataGridViewTextBoxColumn OBSERVACOES_CLIENTE;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SITUACAO_CLIENTE;
         private System.Windows.Forms.ComboBox cboStatus;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Button btnLimpar;
@@ -1222,5 +1210,18 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btnSalvar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID_CLIENTE;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NOME_CLIENTE;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ENDERECO_CLIENTE;
+        private System.Windows.Forms.DataGridViewTextBoxColumn BAIRRO_CLIENTE;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CEP_CLIENTE;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CIDADE_CLIENTE;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ESTADO_CLIENTE;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TELEFONE_CLIENTE;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EMAIL_CLIENTE;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DATA_CADASTRO_CLIENTE;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NASCIMENTO_CLIENTE;
+        private System.Windows.Forms.DataGridViewTextBoxColumn OBSERVACOES_CLIENTE;
+        private System.Windows.Forms.DataGridViewTextBoxColumn STATUS_CLIENTE;
     }
 }

@@ -41,6 +41,7 @@ namespace Interface
         }
 
         private void Limpar()
+        //Método para limpar os campos do formulário.
         {
             txtRegistro.Text = "0";
             txtNome.Clear();
@@ -62,17 +63,20 @@ namespace Interface
         }
 
         private void btnNovo_Click(object sender, EventArgs e)
+        //Ação do botão btnNovo, que altera para a aba de cadastro do formulário e limpa os campos com o método Limpar.
         {
             tbcClientes.SelectedTab = tbpCadastro;
             Limpar();
         }
 
         private void frmClientes_Load(object sender, EventArgs e)
+        //Evento load do formulário, que inicia o formulário com o método Listar.
         {
             Listar();
         }
 
         private void Listar()
+        //Método para listar todos os clientes do banco de dados no formulário na aba de procura.
         {
             novoCliente = new RegraNegocio.ClientesRegraNegocio();
             dtgClientes.DataSource = novoCliente.Listar();
@@ -123,9 +127,28 @@ namespace Interface
                 }
                 else
                 {
-                    MessageBox.Show("Você está tentando cadastrar um cliente já cadastrado!", "Cliente já cadastrado!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    //Se não, se o código for diferente de 0 e o RadioButton referente à pessoa física estiver selecionado,
+                    if (rbPessoaFisica.Checked == true)
+                    {
+                        //realizará o método Alterar e AlterarPessoaFisica, para as tabelas Cliente e Pessoa_fisica receberem as mudanças,
+                        novoCliente.Alterar(Convert.ToInt32(txtRegistro.Text), txtNome.Text, txtEndereco.Text, txtBairro.Text, txtCep.Text,
+                                            txtCidade.Text, txtEstado.Text, txtTelefone.Text, txtEmail.Text, dtpDataCadastro.Value.Date,
+                                            dtpNascimento.Value.Date, txtObservacao.Text, cboStatus.Text);
+                        novoCliente = new RegraNegocio.ClientesRegraNegocio();
+                        novoCliente.AlterarPessoaFisica(Convert.ToInt32(txtRegistro.Text), txtCpf.Text, txtRg.Text);
+                        MessageBox.Show("Cliente alterado com sucesso!", "Sucesso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        //senão, significa que o rbPessoaJuridica está selecionado e realiza os métodos Alterar e AlterarPessoaJuridica.
+                        novoCliente.Alterar(Convert.ToInt32(txtRegistro.Text), txtNome.Text, txtEndereco.Text, txtBairro.Text, txtCep.Text,
+                                            txtCidade.Text, txtEstado.Text, txtTelefone.Text, txtEmail.Text, dtpDataCadastro.Value.Date,
+                                            dtpNascimento.Value.Date, txtObservacao.Text, cboStatus.Text);
+                        novoCliente = new RegraNegocio.ClientesRegraNegocio();
+                        novoCliente.AlterarPessoaJuridica(Convert.ToInt32(txtRegistro.Text), txtCnpj.Text, txtIe.Text);
+                        MessageBox.Show("Cliente alterado com sucesso!", "Sucesso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
                 }
-
                 //Após a ação, atualiza a lista de clientes e limpa os campos do formulário.
                 Listar();
                 Limpar();
@@ -197,8 +220,36 @@ namespace Interface
         }
 
         private void btnLimpar_Click(object sender, EventArgs e)
+        //Ação do botão btnLimpar, que chama o método Limpar para limpar os campos do formulário.
         {
             Limpar();
         }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            //Verifica se o resultado foi Yes para a pergunta se deseja excluir o cadastro.
+            if (MessageBox.Show("Deseja realmente excluir?", "Deseja excluir?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                try
+                {
+                    //Se sim, realiza o método Excluir, mostra mensagem do sucesso dessa ação, lista os clientes no DataGrid e limpa todos os campos.
+                    novoCliente = new RegraNegocio.ClientesRegraNegocio();
+                    novoCliente.Excluir(Convert.ToInt32(dtgClientes.CurrentRow.Cells["ID_CLIENTE"].Value));
+                    MessageBox.Show("Cliente excluído com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    //Após a ação, atualiza a lista de clientes e limpa os campos do formulário.
+                    Listar();
+                    Limpar();
+
+                    //Traz de volta a aba de procura para visualizar os clientes cadastrados.
+                    tbcClientes.SelectedTab = tbpProcura;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
     }
-}
+ }
+
