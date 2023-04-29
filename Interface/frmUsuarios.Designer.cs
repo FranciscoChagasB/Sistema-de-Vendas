@@ -44,14 +44,6 @@
             this.tbcUsuarios = new System.Windows.Forms.TabControl();
             this.tbpProcura = new System.Windows.Forms.TabPage();
             this.dtgUsuarios = new System.Windows.Forms.DataGridView();
-            this.ID_USUARIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NOME = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DATA = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LOGIN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SENHA = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.STATUS = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ID_NIVEL = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NOME_NIVEL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cboOrdenar = new System.Windows.Forms.ComboBox();
             this.txtCodUsuario = new System.Windows.Forms.TextBox();
             this.txtNomeUsuario = new System.Windows.Forms.TextBox();
@@ -81,6 +73,26 @@
             this.txtLogin = new System.Windows.Forms.TextBox();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.tbpNiveis = new System.Windows.Forms.TabPage();
+            this.txtCodNivel = new System.Windows.Forms.TextBox();
+            this.txtNomeNivel = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.dtgNivelUsuario = new System.Windows.Forms.DataGridView();
+            this.codProcura = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nomeProcura = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataProcura = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.loginProcura = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.senhaProcura = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.statusProcura = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codnivelProcura = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nomenivelProcura = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codNivelUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nomeNivelUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gpbNiveis = new System.Windows.Forms.GroupBox();
+            this.btnFormNiveis = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bdnUsuarios)).BeginInit();
             this.bdnUsuarios.SuspendLayout();
@@ -88,6 +100,9 @@
             this.tbpProcura.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgUsuarios)).BeginInit();
             this.tbpCadastro.SuspendLayout();
+            this.tbpNiveis.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgNivelUsuario)).BeginInit();
+            this.gpbNiveis.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -237,6 +252,7 @@
             // 
             this.tbcUsuarios.Controls.Add(this.tbpProcura);
             this.tbcUsuarios.Controls.Add(this.tbpCadastro);
+            this.tbcUsuarios.Controls.Add(this.tbpNiveis);
             this.tbcUsuarios.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tbcUsuarios.Location = new System.Drawing.Point(199, 0);
             this.tbcUsuarios.Margin = new System.Windows.Forms.Padding(4);
@@ -274,97 +290,22 @@
             this.dtgUsuarios.BackgroundColor = System.Drawing.Color.White;
             this.dtgUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgUsuarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ID_USUARIO,
-            this.NOME,
-            this.DATA,
-            this.LOGIN,
-            this.SENHA,
-            this.STATUS,
-            this.ID_NIVEL,
-            this.NOME_NIVEL});
+            this.codProcura,
+            this.nomeProcura,
+            this.dataProcura,
+            this.loginProcura,
+            this.senhaProcura,
+            this.statusProcura,
+            this.codnivelProcura,
+            this.nomenivelProcura});
             this.dtgUsuarios.Location = new System.Drawing.Point(14, 223);
             this.dtgUsuarios.Margin = new System.Windows.Forms.Padding(4);
             this.dtgUsuarios.Name = "dtgUsuarios";
             this.dtgUsuarios.ReadOnly = true;
-            this.dtgUsuarios.RowHeadersVisible = false;
             this.dtgUsuarios.RowHeadersWidth = 51;
             this.dtgUsuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgUsuarios.Size = new System.Drawing.Size(1253, 470);
             this.dtgUsuarios.TabIndex = 208;
-            // 
-            // ID_USUARIO
-            // 
-            this.ID_USUARIO.DataPropertyName = "ID_USUARIO";
-            this.ID_USUARIO.HeaderText = "Código";
-            this.ID_USUARIO.MinimumWidth = 6;
-            this.ID_USUARIO.Name = "ID_USUARIO";
-            this.ID_USUARIO.ReadOnly = true;
-            this.ID_USUARIO.Width = 70;
-            // 
-            // NOME
-            // 
-            this.NOME.DataPropertyName = "NOME_USUARIO";
-            this.NOME.HeaderText = "Nome";
-            this.NOME.MinimumWidth = 6;
-            this.NOME.Name = "NOME";
-            this.NOME.ReadOnly = true;
-            this.NOME.Width = 260;
-            // 
-            // DATA
-            // 
-            this.DATA.DataPropertyName = "DATA_CADASTRO";
-            this.DATA.HeaderText = "Data de Cadastro";
-            this.DATA.MinimumWidth = 6;
-            this.DATA.Name = "DATA";
-            this.DATA.ReadOnly = true;
-            this.DATA.Width = 140;
-            // 
-            // LOGIN
-            // 
-            this.LOGIN.DataPropertyName = "LOGIN_USUARIO";
-            this.LOGIN.HeaderText = "Login";
-            this.LOGIN.MinimumWidth = 6;
-            this.LOGIN.Name = "LOGIN";
-            this.LOGIN.ReadOnly = true;
-            this.LOGIN.Width = 190;
-            // 
-            // SENHA
-            // 
-            this.SENHA.DataPropertyName = "SENHA_USUARIO";
-            this.SENHA.HeaderText = "Senha";
-            this.SENHA.MinimumWidth = 6;
-            this.SENHA.Name = "SENHA";
-            this.SENHA.ReadOnly = true;
-            this.SENHA.Visible = false;
-            this.SENHA.Width = 125;
-            // 
-            // STATUS
-            // 
-            this.STATUS.DataPropertyName = "STATUS_USUARIO";
-            this.STATUS.HeaderText = "Status";
-            this.STATUS.MinimumWidth = 6;
-            this.STATUS.Name = "STATUS";
-            this.STATUS.ReadOnly = true;
-            this.STATUS.Width = 120;
-            // 
-            // ID_NIVEL
-            // 
-            this.ID_NIVEL.DataPropertyName = "ID_NIVEL";
-            this.ID_NIVEL.HeaderText = "Id_Nivel";
-            this.ID_NIVEL.MinimumWidth = 6;
-            this.ID_NIVEL.Name = "ID_NIVEL";
-            this.ID_NIVEL.ReadOnly = true;
-            this.ID_NIVEL.Visible = false;
-            this.ID_NIVEL.Width = 125;
-            // 
-            // NOME_NIVEL
-            // 
-            this.NOME_NIVEL.DataPropertyName = "NOME_NIVEL";
-            this.NOME_NIVEL.HeaderText = "Nível";
-            this.NOME_NIVEL.MinimumWidth = 6;
-            this.NOME_NIVEL.Name = "NOME_NIVEL";
-            this.NOME_NIVEL.ReadOnly = true;
-            this.NOME_NIVEL.Width = 150;
             // 
             // cboOrdenar
             // 
@@ -408,10 +349,10 @@
             // 
             // btnPesquisar
             // 
-            this.btnPesquisar.Location = new System.Drawing.Point(691, 54);
+            this.btnPesquisar.Location = new System.Drawing.Point(691, 52);
             this.btnPesquisar.Margin = new System.Windows.Forms.Padding(4);
             this.btnPesquisar.Name = "btnPesquisar";
-            this.btnPesquisar.Size = new System.Drawing.Size(100, 28);
+            this.btnPesquisar.Size = new System.Drawing.Size(100, 29);
             this.btnPesquisar.TabIndex = 204;
             this.btnPesquisar.Text = "Pesquisar";
             this.btnPesquisar.UseVisualStyleBackColor = true;
@@ -730,6 +671,221 @@
             this.label2.TabIndex = 220;
             this.label2.Text = "Nome:";
             // 
+            // tbpNiveis
+            // 
+            this.tbpNiveis.Controls.Add(this.gpbNiveis);
+            this.tbpNiveis.Controls.Add(this.dtgNivelUsuario);
+            this.tbpNiveis.Controls.Add(this.button1);
+            this.tbpNiveis.Controls.Add(this.label9);
+            this.tbpNiveis.Controls.Add(this.txtCodNivel);
+            this.tbpNiveis.Controls.Add(this.txtNomeNivel);
+            this.tbpNiveis.Controls.Add(this.label6);
+            this.tbpNiveis.Controls.Add(this.label8);
+            this.tbpNiveis.Location = new System.Drawing.Point(4, 25);
+            this.tbpNiveis.Name = "tbpNiveis";
+            this.tbpNiveis.Size = new System.Drawing.Size(1280, 703);
+            this.tbpNiveis.TabIndex = 2;
+            this.tbpNiveis.Text = "Niveis de Usuários";
+            this.tbpNiveis.UseVisualStyleBackColor = true;
+            // 
+            // txtCodNivel
+            // 
+            this.txtCodNivel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtCodNivel.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtCodNivel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCodNivel.Location = new System.Drawing.Point(18, 54);
+            this.txtCodNivel.Margin = new System.Windows.Forms.Padding(4);
+            this.txtCodNivel.MaxLength = 50;
+            this.txtCodNivel.Name = "txtCodNivel";
+            this.txtCodNivel.Size = new System.Drawing.Size(119, 29);
+            this.txtCodNivel.TabIndex = 210;
+            // 
+            // txtNomeNivel
+            // 
+            this.txtNomeNivel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtNomeNivel.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtNomeNivel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNomeNivel.Location = new System.Drawing.Point(177, 54);
+            this.txtNomeNivel.Margin = new System.Windows.Forms.Padding(4);
+            this.txtNomeNivel.MaxLength = 50;
+            this.txtNomeNivel.Name = "txtNomeNivel";
+            this.txtNomeNivel.Size = new System.Drawing.Size(510, 29);
+            this.txtNomeNivel.TabIndex = 209;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(174, 34);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(100, 16);
+            this.label6.TabIndex = 208;
+            this.label6.Text = "Nome do Nível:";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(15, 34);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(107, 16);
+            this.label8.TabIndex = 207;
+            this.label8.Text = "Código do Nível:";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(15, 9);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(57, 16);
+            this.label9.TabIndex = 211;
+            this.label9.Text = "Procura:";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(695, 54);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(100, 29);
+            this.button1.TabIndex = 212;
+            this.button1.Text = "Pesquisar";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // dtgNivelUsuario
+            // 
+            this.dtgNivelUsuario.AllowUserToAddRows = false;
+            this.dtgNivelUsuario.AllowUserToDeleteRows = false;
+            this.dtgNivelUsuario.AllowUserToResizeColumns = false;
+            this.dtgNivelUsuario.AllowUserToResizeRows = false;
+            this.dtgNivelUsuario.BackgroundColor = System.Drawing.Color.White;
+            this.dtgNivelUsuario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgNivelUsuario.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.codNivelUsuario,
+            this.nomeNivelUsuario});
+            this.dtgNivelUsuario.Location = new System.Drawing.Point(14, 116);
+            this.dtgNivelUsuario.Margin = new System.Windows.Forms.Padding(4);
+            this.dtgNivelUsuario.Name = "dtgNivelUsuario";
+            this.dtgNivelUsuario.ReadOnly = true;
+            this.dtgNivelUsuario.RowHeadersWidth = 51;
+            this.dtgNivelUsuario.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dtgNivelUsuario.Size = new System.Drawing.Size(781, 277);
+            this.dtgNivelUsuario.TabIndex = 213;
+            // 
+            // codProcura
+            // 
+            this.codProcura.DataPropertyName = "ID_USUARIO";
+            this.codProcura.HeaderText = "Código";
+            this.codProcura.MinimumWidth = 6;
+            this.codProcura.Name = "codProcura";
+            this.codProcura.ReadOnly = true;
+            this.codProcura.Width = 70;
+            // 
+            // nomeProcura
+            // 
+            this.nomeProcura.DataPropertyName = "NOME_USUARIO";
+            this.nomeProcura.HeaderText = "Nome";
+            this.nomeProcura.MinimumWidth = 6;
+            this.nomeProcura.Name = "nomeProcura";
+            this.nomeProcura.ReadOnly = true;
+            this.nomeProcura.Width = 260;
+            // 
+            // dataProcura
+            // 
+            this.dataProcura.DataPropertyName = "DATA_CADASTRO";
+            this.dataProcura.HeaderText = "Data de Cadastro";
+            this.dataProcura.MinimumWidth = 6;
+            this.dataProcura.Name = "dataProcura";
+            this.dataProcura.ReadOnly = true;
+            this.dataProcura.Width = 140;
+            // 
+            // loginProcura
+            // 
+            this.loginProcura.DataPropertyName = "LOGIN_USUARIO";
+            this.loginProcura.HeaderText = "Login";
+            this.loginProcura.MinimumWidth = 6;
+            this.loginProcura.Name = "loginProcura";
+            this.loginProcura.ReadOnly = true;
+            this.loginProcura.Width = 190;
+            // 
+            // senhaProcura
+            // 
+            this.senhaProcura.DataPropertyName = "SENHA_USUARIO";
+            this.senhaProcura.HeaderText = "Senha";
+            this.senhaProcura.MinimumWidth = 6;
+            this.senhaProcura.Name = "senhaProcura";
+            this.senhaProcura.ReadOnly = true;
+            this.senhaProcura.Visible = false;
+            this.senhaProcura.Width = 125;
+            // 
+            // statusProcura
+            // 
+            this.statusProcura.DataPropertyName = "STATUS_USUARIO";
+            this.statusProcura.HeaderText = "Status";
+            this.statusProcura.MinimumWidth = 6;
+            this.statusProcura.Name = "statusProcura";
+            this.statusProcura.ReadOnly = true;
+            this.statusProcura.Width = 120;
+            // 
+            // codnivelProcura
+            // 
+            this.codnivelProcura.DataPropertyName = "ID_NIVEL";
+            this.codnivelProcura.HeaderText = "Código Nivel";
+            this.codnivelProcura.MinimumWidth = 6;
+            this.codnivelProcura.Name = "codnivelProcura";
+            this.codnivelProcura.ReadOnly = true;
+            this.codnivelProcura.Visible = false;
+            this.codnivelProcura.Width = 125;
+            // 
+            // nomenivelProcura
+            // 
+            this.nomenivelProcura.DataPropertyName = "NOME_NIVEL";
+            this.nomenivelProcura.HeaderText = "Nível";
+            this.nomenivelProcura.MinimumWidth = 6;
+            this.nomenivelProcura.Name = "nomenivelProcura";
+            this.nomenivelProcura.ReadOnly = true;
+            this.nomenivelProcura.Width = 150;
+            // 
+            // codNivelUsuario
+            // 
+            this.codNivelUsuario.DataPropertyName = "ID_NIVEL";
+            this.codNivelUsuario.HeaderText = "Código";
+            this.codNivelUsuario.MinimumWidth = 6;
+            this.codNivelUsuario.Name = "codNivelUsuario";
+            this.codNivelUsuario.ReadOnly = true;
+            this.codNivelUsuario.Width = 160;
+            // 
+            // nomeNivelUsuario
+            // 
+            this.nomeNivelUsuario.DataPropertyName = "NOME_NIVEL";
+            this.nomeNivelUsuario.HeaderText = "Nome";
+            this.nomeNivelUsuario.MinimumWidth = 6;
+            this.nomeNivelUsuario.Name = "nomeNivelUsuario";
+            this.nomeNivelUsuario.ReadOnly = true;
+            this.nomeNivelUsuario.Width = 550;
+            // 
+            // gpbNiveis
+            // 
+            this.gpbNiveis.Controls.Add(this.btnFormNiveis);
+            this.gpbNiveis.Location = new System.Drawing.Point(867, 176);
+            this.gpbNiveis.Name = "gpbNiveis";
+            this.gpbNiveis.Size = new System.Drawing.Size(261, 136);
+            this.gpbNiveis.TabIndex = 214;
+            this.gpbNiveis.TabStop = false;
+            this.gpbNiveis.Text = "Gerenciador de Níveis";
+            // 
+            // btnFormNiveis
+            // 
+            this.btnFormNiveis.Image = global::Interface.Properties.Resources.niveis_img;
+            this.btnFormNiveis.Location = new System.Drawing.Point(21, 33);
+            this.btnFormNiveis.Name = "btnFormNiveis";
+            this.btnFormNiveis.Size = new System.Drawing.Size(162, 81);
+            this.btnFormNiveis.TabIndex = 0;
+            this.btnFormNiveis.Text = "Abir Gerenciador";
+            this.btnFormNiveis.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnFormNiveis.UseVisualStyleBackColor = true;
+            this.btnFormNiveis.Click += new System.EventHandler(this.btnFormNiveis_Click);
+            // 
             // frmUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -755,6 +911,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtgUsuarios)).EndInit();
             this.tbpCadastro.ResumeLayout(false);
             this.tbpCadastro.PerformLayout();
+            this.tbpNiveis.ResumeLayout(false);
+            this.tbpNiveis.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgNivelUsuario)).EndInit();
+            this.gpbNiveis.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -776,14 +936,6 @@
         private System.Windows.Forms.TabPage tbpProcura;
         private System.Windows.Forms.TabPage tbpCadastro;
         private System.Windows.Forms.DataGridView dtgUsuarios;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID_USUARIO;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NOME;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DATA;
-        private System.Windows.Forms.DataGridViewTextBoxColumn LOGIN;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SENHA;
-        private System.Windows.Forms.DataGridViewTextBoxColumn STATUS;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID_NIVEL;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NOME_NIVEL;
         private System.Windows.Forms.ComboBox cboOrdenar;
         private System.Windows.Forms.TextBox txtCodUsuario;
         private System.Windows.Forms.TextBox txtNomeUsuario;
@@ -812,5 +964,25 @@
         private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnSalvar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codProcura;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nomeProcura;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataProcura;
+        private System.Windows.Forms.DataGridViewTextBoxColumn loginProcura;
+        private System.Windows.Forms.DataGridViewTextBoxColumn senhaProcura;
+        private System.Windows.Forms.DataGridViewTextBoxColumn statusProcura;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codnivelProcura;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nomenivelProcura;
+        private System.Windows.Forms.TabPage tbpNiveis;
+        private System.Windows.Forms.GroupBox gpbNiveis;
+        private System.Windows.Forms.Button btnFormNiveis;
+        private System.Windows.Forms.DataGridView dtgNivelUsuario;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codNivelUsuario;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nomeNivelUsuario;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox txtCodNivel;
+        private System.Windows.Forms.TextBox txtNomeNivel;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label8;
     }
 }

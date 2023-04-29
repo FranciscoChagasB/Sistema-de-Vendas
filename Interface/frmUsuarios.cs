@@ -25,7 +25,8 @@ namespace Interface
         //Evento load do formulário, que inicia o formulário com o método Listar.
         {
             ListarUsuarios();
-            ListarNiveis();
+            ListarNiveisComboBox();
+            ListarNiveisDataGrid();
         }
 
         private void ListarUsuarios()
@@ -42,7 +43,21 @@ namespace Interface
             }
         }
 
-        private void ListarNiveis()
+        private void ListarNiveisDataGrid()
+        //Método para listar todos os níveis do banco de dados no formulário na aba de Nivel de Usuarios.
+        {
+            try
+            {
+                novoNivel = new RegraNegocio.NiveisRegraNegocio();
+                dtgNivelUsuario.DataSource = novoNivel.Listar();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void ListarNiveisComboBox()
         //Método que retorna os níveis dos usuários através do método Listar da classe NiveisRegraNegocio.
         {
             try
@@ -169,6 +184,12 @@ namespace Interface
                     MessageBox.Show(ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+        }
+
+        private void btnFormNiveis_Click(object sender, EventArgs e)
+        {
+            frmNiveis formNiveis = new frmNiveis();
+            formNiveis.ShowDialog();
         }
     }
 }

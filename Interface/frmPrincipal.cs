@@ -51,5 +51,33 @@ namespace Interface
             frmUsuarios formUsuarios = new frmUsuarios();
             formUsuarios.ShowDialog();
         }
+
+        private void btnNiveis_Click(object sender, EventArgs e)
+        //Ação do botão btnNiveis que inicializa o formulário frmNiveis.
+        {
+            frmNiveis formNiveis = new frmNiveis();
+            formNiveis.ShowDialog();
+        }
+
+        private void mstripNíveis_Click(object sender, EventArgs e)
+        //Ação do botão de menu mstripNiveis que inicializa o formulário frmNiveis.
+        {
+            frmNiveis formNiveis = new frmNiveis();
+            formNiveis.ShowDialog();
+        }
+
+        private void btnFuncionarios_Click(object sender, EventArgs e)
+        //Ação do botão btnFuncionarios que inicializa o formulário frmNiveis.
+        {
+            frmFuncionarios formFuncionarios = new frmFuncionarios();
+            formFuncionarios.ShowDialog();
+        }
+
+        private void mstripFuncionarios_Click(object sender, EventArgs e)
+        //Ação do botão de menu mstripFuncionarios que inicializa o formulário frmFuncionarios.
+        {
+            frmFuncionarios formFuncionarios = new frmFuncionarios();
+            formFuncionarios.ShowDialog();
+        }
     }
 }

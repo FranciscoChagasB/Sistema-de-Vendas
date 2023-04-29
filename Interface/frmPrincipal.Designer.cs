@@ -34,26 +34,35 @@
             this.mstripClientes = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiUsuarios = new System.Windows.Forms.ToolStripMenuItem();
             this.mstripUsuarios = new System.Windows.Forms.ToolStripMenuItem();
+            this.mstripNíveis = new System.Windows.Forms.ToolStripMenuItem();
             this.tbcPrincipal = new System.Windows.Forms.TabControl();
             this.tbpageClientes = new System.Windows.Forms.TabPage();
             this.tstripClientes = new System.Windows.Forms.ToolStrip();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.btnClientes = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.tbpageUsuarios = new System.Windows.Forms.TabPage();
             this.tstripUsuarios = new System.Windows.Forms.ToolStrip();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.btnUsuarios = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
-            this.btnNiveis = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
-            this.mstripNíveis = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiFuncionarios = new System.Windows.Forms.ToolStripMenuItem();
+            this.mstripFuncionarios = new System.Windows.Forms.ToolStripMenuItem();
+            this.tbpageFuncionarios = new System.Windows.Forms.TabPage();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
+            this.btnClientes = new System.Windows.Forms.ToolStripButton();
+            this.btnUsuarios = new System.Windows.Forms.ToolStripButton();
+            this.btnNiveis = new System.Windows.Forms.ToolStripButton();
+            this.btnFuncionarios = new System.Windows.Forms.ToolStripButton();
             this.mstripPrincipal.SuspendLayout();
             this.tbcPrincipal.SuspendLayout();
             this.tbpageClientes.SuspendLayout();
             this.tstripClientes.SuspendLayout();
             this.tbpageUsuarios.SuspendLayout();
             this.tstripUsuarios.SuspendLayout();
+            this.tbpageFuncionarios.SuspendLayout();
+            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // mstripPrincipal
@@ -62,10 +71,11 @@
             this.mstripPrincipal.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.mstripPrincipal.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiClientes,
-            this.tsmiUsuarios});
+            this.tsmiUsuarios,
+            this.tsmiFuncionarios});
             this.mstripPrincipal.Location = new System.Drawing.Point(0, 0);
             this.mstripPrincipal.Name = "mstripPrincipal";
-            this.mstripPrincipal.Size = new System.Drawing.Size(1685, 28);
+            this.mstripPrincipal.Size = new System.Drawing.Size(1685, 30);
             this.mstripPrincipal.TabIndex = 0;
             // 
             // tsmiClientes
@@ -73,13 +83,13 @@
             this.tsmiClientes.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mstripClientes});
             this.tsmiClientes.Name = "tsmiClientes";
-            this.tsmiClientes.Size = new System.Drawing.Size(75, 24);
+            this.tsmiClientes.Size = new System.Drawing.Size(75, 26);
             this.tsmiClientes.Text = "Clientes";
             // 
             // mstripClientes
             // 
             this.mstripClientes.Name = "mstripClientes";
-            this.mstripClientes.Size = new System.Drawing.Size(224, 26);
+            this.mstripClientes.Size = new System.Drawing.Size(144, 26);
             this.mstripClientes.Text = "Clientes";
             this.mstripClientes.Click += new System.EventHandler(this.mstripClientes_Click);
             // 
@@ -89,20 +99,28 @@
             this.mstripUsuarios,
             this.mstripNíveis});
             this.tsmiUsuarios.Name = "tsmiUsuarios";
-            this.tsmiUsuarios.Size = new System.Drawing.Size(79, 24);
+            this.tsmiUsuarios.Size = new System.Drawing.Size(79, 26);
             this.tsmiUsuarios.Text = "Usuários";
             // 
             // mstripUsuarios
             // 
             this.mstripUsuarios.Name = "mstripUsuarios";
-            this.mstripUsuarios.Size = new System.Drawing.Size(224, 26);
+            this.mstripUsuarios.Size = new System.Drawing.Size(213, 26);
             this.mstripUsuarios.Text = "Usuários";
             this.mstripUsuarios.Click += new System.EventHandler(this.mstripUsuarios_Click);
+            // 
+            // mstripNíveis
+            // 
+            this.mstripNíveis.Name = "mstripNíveis";
+            this.mstripNíveis.Size = new System.Drawing.Size(213, 26);
+            this.mstripNíveis.Text = "Níveis de Usuários";
+            this.mstripNíveis.Click += new System.EventHandler(this.mstripNíveis_Click);
             // 
             // tbcPrincipal
             // 
             this.tbcPrincipal.Controls.Add(this.tbpageClientes);
             this.tbcPrincipal.Controls.Add(this.tbpageUsuarios);
+            this.tbcPrincipal.Controls.Add(this.tbpageFuncionarios);
             this.tbcPrincipal.Location = new System.Drawing.Point(3, 33);
             this.tbcPrincipal.Margin = new System.Windows.Forms.Padding(4);
             this.tbcPrincipal.Name = "tbcPrincipal";
@@ -139,16 +157,6 @@
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(6, 84);
-            // 
-            // btnClientes
-            // 
-            this.btnClientes.Image = global::Interface.Properties.Resources.clientes;
-            this.btnClientes.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.btnClientes.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnClientes.Name = "btnClientes";
-            this.btnClientes.Size = new System.Drawing.Size(113, 81);
-            this.btnClientes.Text = "Clientes";
-            this.btnClientes.Click += new System.EventHandler(this.btnClientes_Click);
             // 
             // toolStripSeparator2
             // 
@@ -187,6 +195,74 @@
             this.toolStripSeparator3.Name = "toolStripSeparator3";
             this.toolStripSeparator3.Size = new System.Drawing.Size(6, 84);
             // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 84);
+            // 
+            // toolStripSeparator5
+            // 
+            this.toolStripSeparator5.Name = "toolStripSeparator5";
+            this.toolStripSeparator5.Size = new System.Drawing.Size(6, 84);
+            // 
+            // tsmiFuncionarios
+            // 
+            this.tsmiFuncionarios.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mstripFuncionarios});
+            this.tsmiFuncionarios.Name = "tsmiFuncionarios";
+            this.tsmiFuncionarios.Size = new System.Drawing.Size(106, 26);
+            this.tsmiFuncionarios.Text = "Funcionários";
+            // 
+            // mstripFuncionarios
+            // 
+            this.mstripFuncionarios.Name = "mstripFuncionarios";
+            this.mstripFuncionarios.Size = new System.Drawing.Size(175, 26);
+            this.mstripFuncionarios.Text = "Funcionários";
+            this.mstripFuncionarios.Click += new System.EventHandler(this.mstripFuncionarios_Click);
+            // 
+            // tbpageFuncionarios
+            // 
+            this.tbpageFuncionarios.Controls.Add(this.toolStrip1);
+            this.tbpageFuncionarios.Location = new System.Drawing.Point(4, 25);
+            this.tbpageFuncionarios.Name = "tbpageFuncionarios";
+            this.tbpageFuncionarios.Size = new System.Drawing.Size(1675, 94);
+            this.tbpageFuncionarios.TabIndex = 2;
+            this.tbpageFuncionarios.Text = "Funcionários";
+            this.tbpageFuncionarios.UseVisualStyleBackColor = true;
+            // 
+            // toolStrip1
+            // 
+            this.toolStrip1.AutoSize = false;
+            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripSeparator6,
+            this.btnFuncionarios,
+            this.toolStripSeparator7});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(1675, 84);
+            this.toolStrip1.TabIndex = 1;
+            // 
+            // toolStripSeparator6
+            // 
+            this.toolStripSeparator6.Name = "toolStripSeparator6";
+            this.toolStripSeparator6.Size = new System.Drawing.Size(6, 84);
+            // 
+            // toolStripSeparator7
+            // 
+            this.toolStripSeparator7.Name = "toolStripSeparator7";
+            this.toolStripSeparator7.Size = new System.Drawing.Size(6, 84);
+            // 
+            // btnClientes
+            // 
+            this.btnClientes.Image = global::Interface.Properties.Resources.clientes;
+            this.btnClientes.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btnClientes.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnClientes.Name = "btnClientes";
+            this.btnClientes.Size = new System.Drawing.Size(113, 81);
+            this.btnClientes.Text = "Clientes";
+            this.btnClientes.Click += new System.EventHandler(this.btnClientes_Click);
+            // 
             // btnUsuarios
             // 
             this.btnUsuarios.Image = global::Interface.Properties.Resources.user_img;
@@ -197,11 +273,6 @@
             this.btnUsuarios.Text = "Usuários";
             this.btnUsuarios.Click += new System.EventHandler(this.btnUsuarios_Click);
             // 
-            // toolStripSeparator4
-            // 
-            this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 84);
-            // 
             // btnNiveis
             // 
             this.btnNiveis.Image = global::Interface.Properties.Resources.niveis_img;
@@ -210,17 +281,17 @@
             this.btnNiveis.Name = "btnNiveis";
             this.btnNiveis.Size = new System.Drawing.Size(101, 81);
             this.btnNiveis.Text = "Níveis";
+            this.btnNiveis.Click += new System.EventHandler(this.btnNiveis_Click);
             // 
-            // toolStripSeparator5
+            // btnFuncionarios
             // 
-            this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(6, 84);
-            // 
-            // mstripNíveis
-            // 
-            this.mstripNíveis.Name = "mstripNíveis";
-            this.mstripNíveis.Size = new System.Drawing.Size(224, 26);
-            this.mstripNíveis.Text = "Níveis";
+            this.btnFuncionarios.Image = global::Interface.Properties.Resources.funcionarios;
+            this.btnFuncionarios.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btnFuncionarios.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnFuncionarios.Name = "btnFuncionarios";
+            this.btnFuncionarios.Size = new System.Drawing.Size(144, 81);
+            this.btnFuncionarios.Text = "Funcionários";
+            this.btnFuncionarios.Click += new System.EventHandler(this.btnFuncionarios_Click);
             // 
             // frmPrincipal
             // 
@@ -248,6 +319,9 @@
             this.tbpageUsuarios.ResumeLayout(false);
             this.tstripUsuarios.ResumeLayout(false);
             this.tstripUsuarios.PerformLayout();
+            this.tbpageFuncionarios.ResumeLayout(false);
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -274,6 +348,13 @@
         private System.Windows.Forms.ToolStripButton btnNiveis;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
         private System.Windows.Forms.ToolStripMenuItem mstripNíveis;
+        private System.Windows.Forms.ToolStripMenuItem tsmiFuncionarios;
+        private System.Windows.Forms.ToolStripMenuItem mstripFuncionarios;
+        private System.Windows.Forms.TabPage tbpageFuncionarios;
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
+        private System.Windows.Forms.ToolStripButton btnFuncionarios;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;
     }
 }
 
