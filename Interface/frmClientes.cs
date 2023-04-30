@@ -19,6 +19,7 @@ namespace Interface
         }
 
         private void rbPessoaFisica_CheckedChanged(object sender, EventArgs e)
+        //RadioButton para cadastrar um cliente do tipo pessoa física.
         {
             //Se verificado que o RadionButton rbPessoaFisica está selecionado,
             if (rbPessoaFisica.Checked == true)
@@ -30,6 +31,7 @@ namespace Interface
         }
 
         private void rbPessoaJuridica_CheckedChanged(object sender, EventArgs e)
+        //RadioButton para cadastrar um cliente do tipo pessoa jurídica.
         {
             //Se verificado que o RadionButton rbPessoaJuridica está selecionado,
             if (rbPessoaJuridica.Checked == true)
@@ -78,11 +80,15 @@ namespace Interface
         private void Listar()
         //Método para listar todos os clientes do banco de dados no formulário na aba de procura.
         {
+            tbcClientes.SelectedTab = tbpProcura;
             novoCliente = new RegraNegocio.ClientesRegraNegocio();
-            dtgClientes.DataSource = novoCliente.Listar();
+            bdsClientes.DataSource = novoCliente.Listar();
+            bdnClientes.BindingSource = bdsClientes;
+            dtgClientes.DataSource = bdsClientes;
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)
+        //Ação do btnSalvar, que salva um cliente no banco de dados.
         {
             try
             {
@@ -163,6 +169,7 @@ namespace Interface
         }
 
         private void btnAlterar_Click(object sender, EventArgs e)
+        //Ação do btnAlterar, que carrega os dados do cliente cadastrado no banco para fazer alterações.
         {
             tbcClientes.SelectedTab = tbpCadastro;
 
@@ -226,6 +233,7 @@ namespace Interface
         }
 
         private void btnExcluir_Click(object sender, EventArgs e)
+        //Ação do botão btnExcluir, que exclui um cliente selecionado pelo usuário.
         {
             //Verifica se o resultado foi Yes para a pergunta se deseja excluir o cadastro.
             if (MessageBox.Show("Deseja realmente excluir?", "Deseja excluir?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
@@ -248,6 +256,108 @@ namespace Interface
                 {
                     MessageBox.Show(ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+            }
+        }
+
+        private void txtNomeCliente_TextChanged(object sender, EventArgs e)
+        {
+            novoCliente = new RegraNegocio.ClientesRegraNegocio();
+
+            try
+            {
+                //Verificações de quais filtros e ordens foram selecionados pelo usuário.
+                switch (cboFiltro.Text)
+                {
+                    case "Cadastrados com CPF":
+                        novoCliente = new RegraNegocio.ClientesRegraNegocio();
+                        bdsClientes.DataSource = novoCliente.PesquisaCpf(Convert.ToInt32(txtCodCliente.Text), txtNomeCliente.Text, cboOrdenar.Text);
+                        bdnClientes.BindingSource = bdsClientes;
+                        dtgClientes.DataSource = bdsClientes;
+                        break;
+
+                    case "Cadastrados com CNPJ":
+                        novoCliente = new RegraNegocio.ClientesRegraNegocio();
+                        bdsClientes.DataSource = novoCliente.PesquisaCnpj(Convert.ToInt32(txtCodCliente.Text), txtNomeCliente.Text, cboOrdenar.Text);
+                        bdnClientes.BindingSource = bdsClientes;
+                        dtgClientes.DataSource = bdsClientes;
+                        break;
+
+                    case "Ativos":
+                        novoCliente = new RegraNegocio.ClientesRegraNegocio();
+                        bdsClientes.DataSource = novoCliente.PesquisaAtivos(Convert.ToInt32(txtCodCliente.Text), txtNomeCliente.Text, cboOrdenar.Text);
+                        bdnClientes.BindingSource = bdsClientes;
+                        dtgClientes.DataSource = bdsClientes;
+                        break;
+
+                    case "Inativos":
+                        novoCliente = new RegraNegocio.ClientesRegraNegocio();
+                        bdsClientes.DataSource = novoCliente.PesquisaInativos(Convert.ToInt32(txtCodCliente.Text), txtNomeCliente.Text, cboOrdenar.Text);
+                        bdnClientes.BindingSource = bdsClientes;
+                        dtgClientes.DataSource = bdsClientes;
+                        break;
+
+                    default:
+                        novoCliente = new RegraNegocio.ClientesRegraNegocio();
+                        bdsClientes.DataSource = novoCliente.Pesquisa(Convert.ToInt32(txtCodCliente.Text), txtNomeCliente.Text, cboOrdenar.Text);
+                        bdnClientes.BindingSource = bdsClientes;
+                        dtgClientes.DataSource = bdsClientes;
+                        break;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnPesquisar_Click(object sender, EventArgs e)
+        {
+            novoCliente = new RegraNegocio.ClientesRegraNegocio();
+
+            try
+            {
+                //Verificações de quais filtros e ordens foram selecionados pelo usuário.
+                switch (cboFiltro.Text)
+                {
+                    case "Cadastrados com CPF":
+                        novoCliente = new RegraNegocio.ClientesRegraNegocio();
+                        bdsClientes.DataSource = novoCliente.PesquisaCpf(Convert.ToInt32(txtCodCliente.Text), txtNomeCliente.Text, cboOrdenar.Text);
+                        bdnClientes.BindingSource = bdsClientes;
+                        dtgClientes.DataSource = bdsClientes;
+                        break;
+
+                    case "Cadastrados com CNPJ":
+                        novoCliente = new RegraNegocio.ClientesRegraNegocio();
+                        bdsClientes.DataSource = novoCliente.PesquisaCnpj(Convert.ToInt32(txtCodCliente.Text), txtNomeCliente.Text, cboOrdenar.Text);
+                        bdnClientes.BindingSource = bdsClientes;
+                        dtgClientes.DataSource = bdsClientes;
+                        break;
+
+                    case "Ativos":
+                        novoCliente = new RegraNegocio.ClientesRegraNegocio();
+                        bdsClientes.DataSource = novoCliente.PesquisaAtivos(Convert.ToInt32(txtCodCliente.Text), txtNomeCliente.Text, cboOrdenar.Text);
+                        bdnClientes.BindingSource = bdsClientes;
+                        dtgClientes.DataSource = bdsClientes;
+                        break;
+
+                    case "Inativos":
+                        novoCliente = new RegraNegocio.ClientesRegraNegocio();
+                        bdsClientes.DataSource = novoCliente.PesquisaInativos(Convert.ToInt32(txtCodCliente.Text), txtNomeCliente.Text, cboOrdenar.Text);
+                        bdnClientes.BindingSource = bdsClientes;
+                        dtgClientes.DataSource = bdsClientes;
+                        break;
+
+                    default:
+                        novoCliente = new RegraNegocio.ClientesRegraNegocio();
+                        bdsClientes.DataSource = novoCliente.Pesquisa(Convert.ToInt32(txtCodCliente.Text), txtNomeCliente.Text, cboOrdenar.Text);
+                        bdnClientes.BindingSource = bdsClientes;
+                        dtgClientes.DataSource = bdsClientes;
+                        break;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

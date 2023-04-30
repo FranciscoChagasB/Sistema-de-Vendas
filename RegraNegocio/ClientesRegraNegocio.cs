@@ -155,14 +155,14 @@ namespace RegraNegocio
             }
         }
 
-        public DataTable PesquisaNome(string nome) //Parâmetros a serem adicionados.
+        public DataTable Pesquisa(int codigo, string nome, string ordem) //Parâmetros a serem adicionados.
         {
             try
             {
                 novoCliente = new AcessoDados.ClientesAcessoDados();
                 DataTable dadosTabela = new DataTable();
 
-                dadosTabela = novoCliente.PesquisaNome(nome); //Parâmetros indicados no método.
+                dadosTabela = novoCliente.Pesquisa(codigo, nome, ordem); //Parâmetros indicados no método.
                 return dadosTabela;
             }
             catch (Exception ex)
@@ -171,14 +171,14 @@ namespace RegraNegocio
             }
         }
 
-        public DataTable PesquisaCpf(string cpf) //Parâmetros a serem adicionados.
+        public DataTable PesquisaCpf(int codigo, string nome, string ordem) //Parâmetros a serem adicionados.
         {
             try
             {
                 novoCliente = new AcessoDados.ClientesAcessoDados();
                 DataTable dadosTabela = new DataTable();
 
-                dadosTabela = novoCliente.PesquisaCpf(cpf); //Parâmetros indicados no método.
+                dadosTabela = novoCliente.PesquisaCpf(codigo, nome, ordem); //Parâmetros indicados no método.
                 return dadosTabela;
             }
             catch (Exception ex)
@@ -187,14 +187,46 @@ namespace RegraNegocio
             }
         }
 
-        public DataTable PesquisaCnpj(string cnpj) //Parâmetros a serem adicionados.
+        public DataTable PesquisaCnpj(int codigo, string nome, string ordem) //Parâmetros a serem adicionados.
         {
             try
             {
                 novoCliente = new AcessoDados.ClientesAcessoDados();
                 DataTable dadosTabela = new DataTable();
 
-                dadosTabela = novoCliente.PesquisaCnpj(cnpj); //Parâmetros indicados no método.
+                dadosTabela = novoCliente.PesquisaCnpj(codigo, nome, ordem); //Parâmetros indicados no método.
+                return dadosTabela;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public DataTable PesquisaAtivos(int codigo, string nome, string ordem) //Parâmetros a serem adicionados.
+        {
+            try
+            {
+                novoCliente = new AcessoDados.ClientesAcessoDados();
+                DataTable dadosTabela = new DataTable();
+
+                dadosTabela = novoCliente.PesquisaAtivos(codigo, nome, ordem); //Parâmetros indicados no método.
+                return dadosTabela;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public DataTable PesquisaInativos(int codigo, string nome, string ordem) //Parâmetros a serem adicionados.
+        {
+            try
+            {
+                novoCliente = new AcessoDados.ClientesAcessoDados();
+                DataTable dadosTabela = new DataTable();
+
+                dadosTabela = novoCliente.PesquisaInativos(codigo, nome, ordem); //Parâmetros indicados no método.
                 return dadosTabela;
             }
             catch (Exception ex)

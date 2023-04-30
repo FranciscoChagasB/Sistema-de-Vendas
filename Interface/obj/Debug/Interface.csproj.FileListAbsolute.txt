@@ -61,3 +61,5 @@ D:\Download\Sistema de Vendas\Sistema-de-Vendas\Interface\obj\Debug\Interface.fr
 D:\Download\Sistema de Vendas\Sistema-de-Vendas\Interface\obj\Debug\Interface.csproj.CopyComplete
 D:\Download\Sistema de Vendas\Sistema-de-Vendas\Interface\obj\Debug\Interface.frmLogin.resources
 D:\Download\Sistema de Vendas\Sistema-de-Vendas\Interface\obj\Debug\Interface.frmNiveis.resources
+D:\Download\Sistema de Vendas\Sistema-de-Vendas\Interface\obj\Debug\Interface.frmCategoria.resources
+D:\Download\Sistema de Vendas\Sistema-de-Vendas\Interface\obj\Debug\Interface.frmFuncionarios.resources

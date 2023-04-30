@@ -307,7 +307,7 @@ namespace AcessoDados
             }
         }
 
-        public DataTable PesquisaNome(string nome) //parâmetros que serão inseridos.
+        public DataTable Pesquisa(int codigo, string nome, string ordem) //parâmetros que serão inseridos.
         {
             try
             {
@@ -315,11 +315,12 @@ namespace AcessoDados
                 {
                     conexao.Open();
 
-                    sql.Append("SELECT * FROM Clientes");
-                    sql.Append(" WHERE NOME_CLIENTE LIKE '%'+@nome+'%'");
-                    sql.Append(" ORDER BY NOME_CLIENTE ASC");
+                    sql.Append("SELECT * Clientes");
+                    sql.Append(" WHERE ID_CLIENTE LIKE '%'+@codigo+'%'");
+                    sql.Append(" ORDER BY ID_CLIENTE ASC");
 
                     //configuração dos parâmetros inseridos com parâmetros no script.
+                    comandoSql.Parameters.Add(new SqlParameter("@codigo", codigo));
                     comandoSql.Parameters.Add(new SqlParameter("@nome", nome));
 
                     comandoSql.CommandText = sql.ToString();
@@ -330,11 +331,11 @@ namespace AcessoDados
             }
             catch (Exception)
             {
-                throw new Exception("Ocorreu um erro no método PesquisaNome. Caso o problema persista, entre em contato com o Administrador do Sistema.");
+                throw new Exception("Ocorreu um erro no método Pesquisa. Caso o problema persista, entre em contato com o Administrador do Sistema.");
             }
         }
 
-        public DataTable PesquisaCpf(string cpf) //parâmetros que serão inseridos.
+        public DataTable PesquisaCpf(int codigo, string nome, string ordem)
         {
             try
             {
@@ -342,13 +343,31 @@ namespace AcessoDados
                 {
                     conexao.Open();
 
-                    sql.Append("SELECT Clientes.*, Pessoa_fisica.*  FROM Cliente INNER JOIN Pessoa_fisica");
+                    sql.Append("SELECT Cliente.*, Pessoa_fisica.*  FROM Cliente INNER JOIN Pessoa_fisica");
                     sql.Append(" ON Cliente.ID_CLIENTE = Pessoa_fisica.ID_CLIENTE");
-                    sql.Append(" WHERE CPF_CLIENTE LIKE '%'+@cpf+'%'");
-                    sql.Append(" ORDER BY NOME_CLIENTE ASC");
+                    sql.Append(" WHERE ID_CLIENTE LIKE '%'+@codigo+'%'");
 
-                    //configuração dos parâmetros inseridos com parâmetros no script.
-                    comandoSql.Parameters.Add(new SqlParameter("@cpf", cpf));
+                    switch (ordem)
+                    {
+                        case "Código":
+                            sql.Append(" ORDER BY ID_CLIENTE ASC");
+                            break;
+
+                        case "Nome":
+                            sql.Append(" ORDER BY NOME_CLIENTE ASC");
+                            break;
+
+                        case "Situação":
+                            sql.Append(" ORDER BY STATUS_CLIENTE ASC");
+                            break;
+
+                        default:
+                            sql.Append(" ORDER BY ID_CLIENTE ASC");
+                            break;
+                    }
+
+                    comandoSql.Parameters.Add(new SqlParameter("@codigo", codigo));
+                    comandoSql.Parameters.Add(new SqlParameter("@nome", nome));
 
                     comandoSql.CommandText = sql.ToString();
                     comandoSql.Connection = conexao;
@@ -358,11 +377,11 @@ namespace AcessoDados
             }
             catch (Exception)
             {
-                throw new Exception("Ocorreu um erro no método PesquisaCpf. Caso o problema persista, entre em contato com o Administrador do Sistema.");
+                throw new Exception("Ocorreu um erro no método PesquisaCPF. Caso o problema persista, entre em contato com o Administrador do Sistema.");
             }
         }
 
-        public DataTable PesquisaCnpj(string cnpj) //parâmetros que serão inseridos.
+        public DataTable PesquisaCnpj(int codigo, string nome, string ordem)
         {
             try
             {
@@ -370,13 +389,31 @@ namespace AcessoDados
                 {
                     conexao.Open();
 
-                    sql.Append("SELECT Clientes.*, Pessoa_juridica.*  FROM Cliente INNER JOIN Pessoa_juridica");
+                    sql.Append("SELECT Cliente.*, Pessoa_juridica.*  FROM Cliente INNER JOIN Pessoa_juridica");
                     sql.Append(" ON Cliente.ID_CLIENTE = Pessoa_juridica.ID_CLIENTE");
-                    sql.Append(" WHERE CNPJ_CLIENTE LIKE '%'+@cnpj+'%'");
-                    sql.Append(" ORDER BY NOME_CLIENTE ASC");
+                    sql.Append(" WHERE ID_CLIENTE LIKE '%'+@codigo+'%'");
 
-                    //configuração dos parâmetros inseridos com parâmetros no script.
-                    comandoSql.Parameters.Add(new SqlParameter("@cnpj", cnpj));
+                    switch (ordem)
+                    {
+                        case "Código":
+                            sql.Append(" ORDER BY ID_CLIENTE ASC");
+                            break;
+
+                        case "Nome":
+                            sql.Append(" ORDER BY NOME_CLIENTE ASC");
+                            break;
+
+                        case "Situação":
+                            sql.Append(" ORDER BY STATUS_CLIENTE ASC");
+                            break;
+
+                        default:
+                            sql.Append(" ORDER BY ID_CLIENTE ASC");
+                            break;
+                    }
+
+                    comandoSql.Parameters.Add(new SqlParameter("@codigo", codigo));
+                    comandoSql.Parameters.Add(new SqlParameter("@nome", nome));
 
                     comandoSql.CommandText = sql.ToString();
                     comandoSql.Connection = conexao;
@@ -387,6 +424,96 @@ namespace AcessoDados
             catch (Exception)
             {
                 throw new Exception("Ocorreu um erro no método PesquisaCnpj. Caso o problema persista, entre em contato com o Administrador do Sistema.");
+            }
+        }
+
+        public DataTable PesquisaAtivos(int codigo, string nome, string ordem)
+        {
+            try
+            {
+                using (SqlConnection conexao = new SqlConnection(Conexao.stringConexao))
+                {
+                    conexao.Open();
+
+                    sql.Append("SELECT * Clientes");
+                    sql.Append(" WHERE ID_CLIENTE LIKE '%'+@codigo+'%'");
+
+                    switch (ordem)
+                    {
+                        case "Código":
+                            sql.Append(" ORDER BY ID_CLIENTE ASC");
+                            break;
+
+                        case "Nome":
+                            sql.Append(" ORDER BY NOME_CLIENTE ASC");
+                            break;
+
+                        case "Situação":
+                            sql.Append(" ORDER BY STATUS_CLIENTE ASC");
+                            break;
+
+                        default:
+                            sql.Append(" ORDER BY ID_CLIENTE ASC");
+                            break;
+                    }
+
+                    comandoSql.Parameters.Add(new SqlParameter("@codigo", codigo));
+                    comandoSql.Parameters.Add(new SqlParameter("@nome", nome));
+
+                    comandoSql.CommandText = sql.ToString();
+                    comandoSql.Connection = conexao;
+                    dadosTabela.Load(comandoSql.ExecuteReader());
+                    return dadosTabela;
+                }
+            }
+            catch (Exception)
+            {
+                throw new Exception("Ocorreu um erro no método PesquisaAtivos. Caso o problema persista, entre em contato com o Administrador do Sistema.");
+            }
+        }
+
+        public DataTable PesquisaInativos(int codigo, string nome, string ordem)
+        {
+            try
+            {
+                using (SqlConnection conexao = new SqlConnection(Conexao.stringConexao))
+                {
+                    conexao.Open();
+
+                    sql.Append("SELECT * Clientes");
+                    sql.Append(" WHERE ID_CLIENTE LIKE '%'+@codigo+'%'");
+
+                    switch (ordem)
+                    {
+                        case "Código":
+                            sql.Append(" ORDER BY ID_CLIENTE ASC");
+                            break;
+
+                        case "Nome":
+                            sql.Append(" ORDER BY NOME_CLIENTE ASC");
+                            break;
+
+                        case "Situação":
+                            sql.Append(" ORDER BY STATUS_CLIENTE ASC");
+                            break;
+
+                        default:
+                            sql.Append(" ORDER BY ID_CLIENTE ASC");
+                            break;
+                    }
+
+                    comandoSql.Parameters.Add(new SqlParameter("@codigo", codigo));
+                    comandoSql.Parameters.Add(new SqlParameter("@nome", nome));
+
+                    comandoSql.CommandText = sql.ToString();
+                    comandoSql.Connection = conexao;
+                    dadosTabela.Load(comandoSql.ExecuteReader());
+                    return dadosTabela;
+                }
+            }
+            catch (Exception)
+            {
+                throw new Exception("Ocorreu um erro no método PesquisaInativos. Caso o problema persista, entre em contato com o Administrador do Sistema.");
             }
         }
     }

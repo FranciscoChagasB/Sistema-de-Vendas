@@ -43,6 +43,8 @@
             this.btnNovo = new System.Windows.Forms.Button();
             this.tbcClientes = new System.Windows.Forms.TabControl();
             this.tbpProcura = new System.Windows.Forms.TabPage();
+            this.label21 = new System.Windows.Forms.Label();
+            this.cboFiltro = new System.Windows.Forms.ComboBox();
             this.cboOrdenar = new System.Windows.Forms.ComboBox();
             this.txtCodCliente = new System.Windows.Forms.TextBox();
             this.txtNomeCliente = new System.Windows.Forms.TextBox();
@@ -52,6 +54,19 @@
             this.label16 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.dtgClientes = new System.Windows.Forms.DataGridView();
+            this.ID_CLIENTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NOME_CLIENTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ENDERECO_CLIENTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BAIRRO_CLIENTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CEP_CLIENTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CIDADE_CLIENTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ESTADO_CLIENTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TELEFONE_CLIENTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EMAIL_CLIENTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DATA_CADASTRO_CLIENTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NASCIMENTO_CLIENTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.OBSERVACOES_CLIENTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.STATUS_CLIENTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tbpCadastro = new System.Windows.Forms.TabPage();
             this.btnSalvar = new System.Windows.Forms.Button();
             this.btnLimpar = new System.Windows.Forms.Button();
@@ -95,19 +110,7 @@
             this.txtObservacao = new System.Windows.Forms.TextBox();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.ID_CLIENTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NOME_CLIENTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ENDERECO_CLIENTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BAIRRO_CLIENTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CEP_CLIENTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CIDADE_CLIENTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ESTADO_CLIENTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TELEFONE_CLIENTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EMAIL_CLIENTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DATA_CADASTRO_CLIENTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NASCIMENTO_CLIENTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.OBSERVACOES_CLIENTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.STATUS_CLIENTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bdsClientes = new System.Windows.Forms.BindingSource(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bdnClientes)).BeginInit();
             this.bdnClientes.SuspendLayout();
@@ -119,6 +122,7 @@
             this.gbDocumentosPessoaJuridica.SuspendLayout();
             this.gbTipoPessoa.SuspendLayout();
             this.gbContato.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsClientes)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -141,6 +145,7 @@
             // bdnClientes
             // 
             this.bdnClientes.AddNewItem = null;
+            this.bdnClientes.BindingSource = this.bdsClientes;
             this.bdnClientes.CountItem = null;
             this.bdnClientes.DeleteItem = null;
             this.bdnClientes.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -159,6 +164,7 @@
             this.bdnClientes.PositionItem = null;
             this.bdnClientes.Size = new System.Drawing.Size(197, 27);
             this.bdnClientes.TabIndex = 5;
+            this.bdnClientes.Tag = "";
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -278,6 +284,8 @@
             // 
             // tbpProcura
             // 
+            this.tbpProcura.Controls.Add(this.label21);
+            this.tbpProcura.Controls.Add(this.cboFiltro);
             this.tbpProcura.Controls.Add(this.cboOrdenar);
             this.tbpProcura.Controls.Add(this.txtCodCliente);
             this.tbpProcura.Controls.Add(this.txtNomeCliente);
@@ -296,15 +304,42 @@
             this.tbpProcura.Text = "Procura";
             this.tbpProcura.UseVisualStyleBackColor = true;
             // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(9, 85);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(66, 16);
+            this.label21.TabIndex = 200;
+            this.label21.Text = "Filtrar por:";
+            // 
+            // cboFiltro
+            // 
+            this.cboFiltro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboFiltro.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboFiltro.FormattingEnabled = true;
+            this.cboFiltro.Items.AddRange(new object[] {
+            "",
+            "Cadastrados com CPF",
+            "Cadastrados com CNPJ",
+            "Ativos",
+            "Inativos"});
+            this.cboFiltro.Location = new System.Drawing.Point(13, 105);
+            this.cboFiltro.Margin = new System.Windows.Forms.Padding(4);
+            this.cboFiltro.Name = "cboFiltro";
+            this.cboFiltro.Size = new System.Drawing.Size(143, 28);
+            this.cboFiltro.TabIndex = 199;
+            // 
             // cboOrdenar
             // 
             this.cboOrdenar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboOrdenar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboOrdenar.FormattingEnabled = true;
             this.cboOrdenar.Items.AddRange(new object[] {
+            "",
             "Código",
             "Nome",
-            "Situacao"});
+            "Situação"});
             this.cboOrdenar.Location = new System.Drawing.Point(855, 52);
             this.cboOrdenar.Margin = new System.Windows.Forms.Padding(4);
             this.cboOrdenar.Name = "cboOrdenar";
@@ -334,16 +369,18 @@
             this.txtNomeCliente.Name = "txtNomeCliente";
             this.txtNomeCliente.Size = new System.Drawing.Size(510, 29);
             this.txtNomeCliente.TabIndex = 196;
+            this.txtNomeCliente.TextChanged += new System.EventHandler(this.txtNomeCliente_TextChanged);
             // 
             // btnPesquisar
             // 
-            this.btnPesquisar.Location = new System.Drawing.Point(685, 54);
+            this.btnPesquisar.Location = new System.Drawing.Point(685, 52);
             this.btnPesquisar.Margin = new System.Windows.Forms.Padding(4);
             this.btnPesquisar.Name = "btnPesquisar";
-            this.btnPesquisar.Size = new System.Drawing.Size(100, 28);
+            this.btnPesquisar.Size = new System.Drawing.Size(100, 30);
             this.btnPesquisar.TabIndex = 195;
             this.btnPesquisar.Text = "Pesquisar";
             this.btnPesquisar.UseVisualStyleBackColor = true;
+            this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
             // 
             // label19
             // 
@@ -418,6 +455,131 @@
             this.dtgClientes.Size = new System.Drawing.Size(1253, 470);
             this.dtgClientes.TabIndex = 125;
             this.dtgClientes.TabStop = false;
+            this.dtgClientes.Tag = "";
+            // 
+            // ID_CLIENTE
+            // 
+            this.ID_CLIENTE.DataPropertyName = "ID_CLIENTE";
+            this.ID_CLIENTE.HeaderText = "Código";
+            this.ID_CLIENTE.MinimumWidth = 6;
+            this.ID_CLIENTE.Name = "ID_CLIENTE";
+            this.ID_CLIENTE.ReadOnly = true;
+            this.ID_CLIENTE.Width = 70;
+            // 
+            // NOME_CLIENTE
+            // 
+            this.NOME_CLIENTE.DataPropertyName = "NOME_CLIENTE";
+            this.NOME_CLIENTE.HeaderText = "Nome";
+            this.NOME_CLIENTE.MinimumWidth = 6;
+            this.NOME_CLIENTE.Name = "NOME_CLIENTE";
+            this.NOME_CLIENTE.ReadOnly = true;
+            this.NOME_CLIENTE.Width = 250;
+            // 
+            // ENDERECO_CLIENTE
+            // 
+            this.ENDERECO_CLIENTE.DataPropertyName = "ENDERECO_CLIENTE";
+            this.ENDERECO_CLIENTE.HeaderText = "Endereço";
+            this.ENDERECO_CLIENTE.MinimumWidth = 6;
+            this.ENDERECO_CLIENTE.Name = "ENDERECO_CLIENTE";
+            this.ENDERECO_CLIENTE.ReadOnly = true;
+            this.ENDERECO_CLIENTE.Width = 230;
+            // 
+            // BAIRRO_CLIENTE
+            // 
+            this.BAIRRO_CLIENTE.DataPropertyName = "BAIRRO_CLIENTE";
+            this.BAIRRO_CLIENTE.HeaderText = "Bairro";
+            this.BAIRRO_CLIENTE.MinimumWidth = 6;
+            this.BAIRRO_CLIENTE.Name = "BAIRRO_CLIENTE";
+            this.BAIRRO_CLIENTE.ReadOnly = true;
+            this.BAIRRO_CLIENTE.Visible = false;
+            this.BAIRRO_CLIENTE.Width = 125;
+            // 
+            // CEP_CLIENTE
+            // 
+            this.CEP_CLIENTE.DataPropertyName = "CEP_CLIENTE";
+            this.CEP_CLIENTE.HeaderText = "CEP";
+            this.CEP_CLIENTE.MinimumWidth = 6;
+            this.CEP_CLIENTE.Name = "CEP_CLIENTE";
+            this.CEP_CLIENTE.ReadOnly = true;
+            this.CEP_CLIENTE.Visible = false;
+            this.CEP_CLIENTE.Width = 125;
+            // 
+            // CIDADE_CLIENTE
+            // 
+            this.CIDADE_CLIENTE.DataPropertyName = "CIDADE_CLIENTE";
+            this.CIDADE_CLIENTE.HeaderText = "Cidade";
+            this.CIDADE_CLIENTE.MinimumWidth = 6;
+            this.CIDADE_CLIENTE.Name = "CIDADE_CLIENTE";
+            this.CIDADE_CLIENTE.ReadOnly = true;
+            this.CIDADE_CLIENTE.Width = 180;
+            // 
+            // ESTADO_CLIENTE
+            // 
+            this.ESTADO_CLIENTE.DataPropertyName = "ESTADO_CLIENTE";
+            this.ESTADO_CLIENTE.HeaderText = "Estado";
+            this.ESTADO_CLIENTE.MinimumWidth = 6;
+            this.ESTADO_CLIENTE.Name = "ESTADO_CLIENTE";
+            this.ESTADO_CLIENTE.ReadOnly = true;
+            this.ESTADO_CLIENTE.Visible = false;
+            this.ESTADO_CLIENTE.Width = 125;
+            // 
+            // TELEFONE_CLIENTE
+            // 
+            this.TELEFONE_CLIENTE.DataPropertyName = "TELEFONE_CLIENTE";
+            this.TELEFONE_CLIENTE.HeaderText = "Telefone";
+            this.TELEFONE_CLIENTE.MinimumWidth = 6;
+            this.TELEFONE_CLIENTE.Name = "TELEFONE_CLIENTE";
+            this.TELEFONE_CLIENTE.ReadOnly = true;
+            this.TELEFONE_CLIENTE.Width = 125;
+            // 
+            // EMAIL_CLIENTE
+            // 
+            this.EMAIL_CLIENTE.DataPropertyName = "EMAIL_CLIENTE";
+            this.EMAIL_CLIENTE.HeaderText = "Email";
+            this.EMAIL_CLIENTE.MinimumWidth = 6;
+            this.EMAIL_CLIENTE.Name = "EMAIL_CLIENTE";
+            this.EMAIL_CLIENTE.ReadOnly = true;
+            this.EMAIL_CLIENTE.Visible = false;
+            this.EMAIL_CLIENTE.Width = 125;
+            // 
+            // DATA_CADASTRO_CLIENTE
+            // 
+            this.DATA_CADASTRO_CLIENTE.DataPropertyName = "DATA_CADASTRO_CLIENTE";
+            this.DATA_CADASTRO_CLIENTE.HeaderText = "Data";
+            this.DATA_CADASTRO_CLIENTE.MinimumWidth = 6;
+            this.DATA_CADASTRO_CLIENTE.Name = "DATA_CADASTRO_CLIENTE";
+            this.DATA_CADASTRO_CLIENTE.ReadOnly = true;
+            this.DATA_CADASTRO_CLIENTE.Visible = false;
+            this.DATA_CADASTRO_CLIENTE.Width = 125;
+            // 
+            // NASCIMENTO_CLIENTE
+            // 
+            this.NASCIMENTO_CLIENTE.DataPropertyName = "NASCIMENTO_CLIENTE";
+            this.NASCIMENTO_CLIENTE.HeaderText = "Nascimento";
+            this.NASCIMENTO_CLIENTE.MinimumWidth = 6;
+            this.NASCIMENTO_CLIENTE.Name = "NASCIMENTO_CLIENTE";
+            this.NASCIMENTO_CLIENTE.ReadOnly = true;
+            this.NASCIMENTO_CLIENTE.Visible = false;
+            this.NASCIMENTO_CLIENTE.Width = 125;
+            // 
+            // OBSERVACOES_CLIENTE
+            // 
+            this.OBSERVACOES_CLIENTE.DataPropertyName = "OBSERVACOES_CLIENTE";
+            this.OBSERVACOES_CLIENTE.HeaderText = "Observações";
+            this.OBSERVACOES_CLIENTE.MinimumWidth = 6;
+            this.OBSERVACOES_CLIENTE.Name = "OBSERVACOES_CLIENTE";
+            this.OBSERVACOES_CLIENTE.ReadOnly = true;
+            this.OBSERVACOES_CLIENTE.Visible = false;
+            this.OBSERVACOES_CLIENTE.Width = 125;
+            // 
+            // STATUS_CLIENTE
+            // 
+            this.STATUS_CLIENTE.DataPropertyName = "STATUS_CLIENTE";
+            this.STATUS_CLIENTE.HeaderText = "Situação";
+            this.STATUS_CLIENTE.MinimumWidth = 6;
+            this.STATUS_CLIENTE.Name = "STATUS_CLIENTE";
+            this.STATUS_CLIENTE.ReadOnly = true;
+            this.STATUS_CLIENTE.Width = 125;
             // 
             // tbpCadastro
             // 
@@ -979,130 +1141,6 @@
             this.label2.TabIndex = 174;
             this.label2.Text = "Nome:";
             // 
-            // ID_CLIENTE
-            // 
-            this.ID_CLIENTE.DataPropertyName = "ID_CLIENTE";
-            this.ID_CLIENTE.HeaderText = "Código";
-            this.ID_CLIENTE.MinimumWidth = 6;
-            this.ID_CLIENTE.Name = "ID_CLIENTE";
-            this.ID_CLIENTE.ReadOnly = true;
-            this.ID_CLIENTE.Width = 70;
-            // 
-            // NOME_CLIENTE
-            // 
-            this.NOME_CLIENTE.DataPropertyName = "NOME_CLIENTE";
-            this.NOME_CLIENTE.HeaderText = "Nome";
-            this.NOME_CLIENTE.MinimumWidth = 6;
-            this.NOME_CLIENTE.Name = "NOME_CLIENTE";
-            this.NOME_CLIENTE.ReadOnly = true;
-            this.NOME_CLIENTE.Width = 250;
-            // 
-            // ENDERECO_CLIENTE
-            // 
-            this.ENDERECO_CLIENTE.DataPropertyName = "ENDERECO_CLIENTE";
-            this.ENDERECO_CLIENTE.HeaderText = "Endereço";
-            this.ENDERECO_CLIENTE.MinimumWidth = 6;
-            this.ENDERECO_CLIENTE.Name = "ENDERECO_CLIENTE";
-            this.ENDERECO_CLIENTE.ReadOnly = true;
-            this.ENDERECO_CLIENTE.Width = 230;
-            // 
-            // BAIRRO_CLIENTE
-            // 
-            this.BAIRRO_CLIENTE.DataPropertyName = "BAIRRO_CLIENTE";
-            this.BAIRRO_CLIENTE.HeaderText = "Bairro";
-            this.BAIRRO_CLIENTE.MinimumWidth = 6;
-            this.BAIRRO_CLIENTE.Name = "BAIRRO_CLIENTE";
-            this.BAIRRO_CLIENTE.ReadOnly = true;
-            this.BAIRRO_CLIENTE.Visible = false;
-            this.BAIRRO_CLIENTE.Width = 125;
-            // 
-            // CEP_CLIENTE
-            // 
-            this.CEP_CLIENTE.DataPropertyName = "CEP_CLIENTE";
-            this.CEP_CLIENTE.HeaderText = "CEP";
-            this.CEP_CLIENTE.MinimumWidth = 6;
-            this.CEP_CLIENTE.Name = "CEP_CLIENTE";
-            this.CEP_CLIENTE.ReadOnly = true;
-            this.CEP_CLIENTE.Visible = false;
-            this.CEP_CLIENTE.Width = 125;
-            // 
-            // CIDADE_CLIENTE
-            // 
-            this.CIDADE_CLIENTE.DataPropertyName = "CIDADE_CLIENTE";
-            this.CIDADE_CLIENTE.HeaderText = "Cidade";
-            this.CIDADE_CLIENTE.MinimumWidth = 6;
-            this.CIDADE_CLIENTE.Name = "CIDADE_CLIENTE";
-            this.CIDADE_CLIENTE.ReadOnly = true;
-            this.CIDADE_CLIENTE.Width = 180;
-            // 
-            // ESTADO_CLIENTE
-            // 
-            this.ESTADO_CLIENTE.DataPropertyName = "ESTADO_CLIENTE";
-            this.ESTADO_CLIENTE.HeaderText = "Estado";
-            this.ESTADO_CLIENTE.MinimumWidth = 6;
-            this.ESTADO_CLIENTE.Name = "ESTADO_CLIENTE";
-            this.ESTADO_CLIENTE.ReadOnly = true;
-            this.ESTADO_CLIENTE.Visible = false;
-            this.ESTADO_CLIENTE.Width = 125;
-            // 
-            // TELEFONE_CLIENTE
-            // 
-            this.TELEFONE_CLIENTE.DataPropertyName = "TELEFONE_CLIENTE";
-            this.TELEFONE_CLIENTE.HeaderText = "Telefone";
-            this.TELEFONE_CLIENTE.MinimumWidth = 6;
-            this.TELEFONE_CLIENTE.Name = "TELEFONE_CLIENTE";
-            this.TELEFONE_CLIENTE.ReadOnly = true;
-            this.TELEFONE_CLIENTE.Width = 125;
-            // 
-            // EMAIL_CLIENTE
-            // 
-            this.EMAIL_CLIENTE.DataPropertyName = "EMAIL_CLIENTE";
-            this.EMAIL_CLIENTE.HeaderText = "Email";
-            this.EMAIL_CLIENTE.MinimumWidth = 6;
-            this.EMAIL_CLIENTE.Name = "EMAIL_CLIENTE";
-            this.EMAIL_CLIENTE.ReadOnly = true;
-            this.EMAIL_CLIENTE.Visible = false;
-            this.EMAIL_CLIENTE.Width = 125;
-            // 
-            // DATA_CADASTRO_CLIENTE
-            // 
-            this.DATA_CADASTRO_CLIENTE.DataPropertyName = "DATA_CADASTRO_CLIENTE";
-            this.DATA_CADASTRO_CLIENTE.HeaderText = "Data";
-            this.DATA_CADASTRO_CLIENTE.MinimumWidth = 6;
-            this.DATA_CADASTRO_CLIENTE.Name = "DATA_CADASTRO_CLIENTE";
-            this.DATA_CADASTRO_CLIENTE.ReadOnly = true;
-            this.DATA_CADASTRO_CLIENTE.Visible = false;
-            this.DATA_CADASTRO_CLIENTE.Width = 125;
-            // 
-            // NASCIMENTO_CLIENTE
-            // 
-            this.NASCIMENTO_CLIENTE.DataPropertyName = "NASCIMENTO_CLIENTE";
-            this.NASCIMENTO_CLIENTE.HeaderText = "Nascimento";
-            this.NASCIMENTO_CLIENTE.MinimumWidth = 6;
-            this.NASCIMENTO_CLIENTE.Name = "NASCIMENTO_CLIENTE";
-            this.NASCIMENTO_CLIENTE.ReadOnly = true;
-            this.NASCIMENTO_CLIENTE.Visible = false;
-            this.NASCIMENTO_CLIENTE.Width = 125;
-            // 
-            // OBSERVACOES_CLIENTE
-            // 
-            this.OBSERVACOES_CLIENTE.DataPropertyName = "OBSERVACOES_CLIENTE";
-            this.OBSERVACOES_CLIENTE.HeaderText = "Observações";
-            this.OBSERVACOES_CLIENTE.MinimumWidth = 6;
-            this.OBSERVACOES_CLIENTE.Name = "OBSERVACOES_CLIENTE";
-            this.OBSERVACOES_CLIENTE.ReadOnly = true;
-            this.OBSERVACOES_CLIENTE.Visible = false;
-            this.OBSERVACOES_CLIENTE.Width = 125;
-            // 
-            // STATUS_CLIENTE
-            // 
-            this.STATUS_CLIENTE.DataPropertyName = "STATUS_CLIENTE";
-            this.STATUS_CLIENTE.HeaderText = "Situação";
-            this.STATUS_CLIENTE.MinimumWidth = 6;
-            this.STATUS_CLIENTE.Name = "STATUS_CLIENTE";
-            this.STATUS_CLIENTE.ReadOnly = true;
-            this.STATUS_CLIENTE.Width = 125;
-            // 
             // frmClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1139,6 +1177,7 @@
             this.gbTipoPessoa.PerformLayout();
             this.gbContato.ResumeLayout(false);
             this.gbContato.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsClientes)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1223,5 +1262,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn NASCIMENTO_CLIENTE;
         private System.Windows.Forms.DataGridViewTextBoxColumn OBSERVACOES_CLIENTE;
         private System.Windows.Forms.DataGridViewTextBoxColumn STATUS_CLIENTE;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.ComboBox cboFiltro;
+        private System.Windows.Forms.BindingSource bdsClientes;
     }
 }
