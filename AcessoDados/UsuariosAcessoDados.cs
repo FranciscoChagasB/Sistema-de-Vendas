@@ -21,14 +21,14 @@ namespace AcessoDados
             {
                 using (SqlConnection conexao = new SqlConnection(Conexao.stringConexao))
                 {
-                    //inicia a conexao com o banco de dados.
+                    //Inicia a conexao com o banco de dados.
                     conexao.Open();
 
-                    //cria um texto com os comandos a serem inseridos no script.
+                    //Cria um texto com os comandos a serem inseridos no script.
                     sql.Append("INSERT INTO Usuarios (NOME_USUARIO, DATA_CADASTRO, LOGIN_USUARIO, SENHA_USUARIO, STATUS_USUARIO, ID_NIVEL)");
                     sql.Append(" VALUES (@nome, @data, @login, @senha, @status, @idNivel)");
 
-                    //configura os parâmetros que serão os dados inseridos na camada RegraNegocio.
+                    //Configura os parâmetros que serão os dados inseridos na camada RegraNegocio.
                     comandoSql.Parameters.Add(new SqlParameter("@nome", nome));
                     comandoSql.Parameters.Add(new SqlParameter("@data", data));
                     comandoSql.Parameters.Add(new SqlParameter("@login", login));
@@ -36,10 +36,10 @@ namespace AcessoDados
                     comandoSql.Parameters.Add(new SqlParameter("@status", status));
                     comandoSql.Parameters.Add(new SqlParameter("@idNivel", idNivel));
 
-                    //cria o script com o os comandos inseridos no texto "sql.Append" e o executa.
-                    comandoSql.CommandText = sql.ToString();
-                    comandoSql.Connection = conexao;
-                    comandoSql.ExecuteNonQuery();
+                    //Cria o script com o os comandos inseridos no texto "sql.Append" e o executa.
+                    comandoSql.CommandText = sql.ToString(); //converter texto para script sql server.
+                    comandoSql.Connection = conexao; //iniciar a conexao com o banco.
+                    comandoSql.ExecuteNonQuery(); //executar o script.
                 }
             }
             catch (Exception)
@@ -55,15 +55,15 @@ namespace AcessoDados
             {
                 using (SqlConnection conexao = new SqlConnection(Conexao.stringConexao))
                 {
-                    //inicia a conexao com o banco de dados.
+                    //Inicia a conexao com o banco de dados.
                     conexao.Open();
 
-                    //cria um texto com os comandos a serem inseridos no script.
+                    //Cria um texto com os comandos a serem inseridos no script.
                     sql.Append("UPDATE Usuarios");
                     sql.Append(" SET NOME_USUARIO = @nome, DATA_CADASTRO = @data, LOGIN_USUARIO = @login, SENHA_USUARIO = @senha, STATUS_USUARIO = @status, ID_NIVEL = @idNivel");
                     sql.Append(" WHERE (ID_USUARIO = @idUsuario)");
 
-                    //configura os parâmetros que serão os dados inseridos na camada RegraNegocio.
+                    //Configura os parâmetros que serão os dados inseridos na camada RegraNegocio.
                     comandoSql.Parameters.Add(new SqlParameter("@idUsuario", idUsuario));
                     comandoSql.Parameters.Add(new SqlParameter("@nome", nome));
                     comandoSql.Parameters.Add(new SqlParameter("@data", data));
@@ -72,7 +72,7 @@ namespace AcessoDados
                     comandoSql.Parameters.Add(new SqlParameter("@status", status));
                     comandoSql.Parameters.Add(new SqlParameter("@idNivel", idNivel));
 
-                    //cria o script com o os comandos inseridos no texto "sql.Append" e o executa.
+                    //Cria o script com o os comandos inseridos no texto "sql.Append" e o executa.
                     comandoSql.CommandText = sql.ToString();
                     comandoSql.Connection = conexao;
                     comandoSql.ExecuteNonQuery();
@@ -91,17 +91,17 @@ namespace AcessoDados
             {
                 using (SqlConnection conexao = new SqlConnection(Conexao.stringConexao))
                 {
-                    //inicia a conexao com o banco de dados.
+                    //Inicia a conexao com o banco de dados.
                     conexao.Open();
 
-                    //cria um texto com os comandos a serem inseridos no script.
+                    //Cria um texto com os comandos a serem inseridos no script.
                     sql.Append("DELETE FROM Usuarios");
                     sql.Append(" WHERE (ID_USUARIO = @idUsuario)");
 
-                    //configura os parâmetros que serão os dados inseridos na camada RegraNegocio.
+                    //Configura os parâmetros que serão os dados inseridos na camada RegraNegocio.
                     comandoSql.Parameters.Add(new SqlParameter("@idUsuario", idUsuario));
 
-                    //cria o script com o os comandos inseridos no texto "sql.Append" e o executa.
+                    //Cria o script com o os comandos inseridos no texto "sql.Append" e o executa.
                     comandoSql.CommandText = sql.ToString();
                     comandoSql.Connection = conexao;
                     comandoSql.ExecuteNonQuery();
@@ -120,15 +120,15 @@ namespace AcessoDados
             {
                 using (SqlConnection conexao = new SqlConnection(Conexao.stringConexao))
                 {
-                    //inicia a conexao com o banco de dados.
+                    //Inicia a conexao com o banco de dados.
                     conexao.Open();
 
-                    //cria um texto com os comandos a serem inseridos no script.
+                    //Cria um texto com os comandos a serem inseridos no script.
                     sql.Append("SELECT Usuarios.*, NOME_NIVEL FROM Usuarios INNER JOIN Nivel_Usuarios");
                     sql.Append(" ON Usuarios.ID_NIVEL = Nivel_Usuarios.ID_NIVEL");
                     sql.Append(" ORDER BY NOME_USUARIO ASC");
 
-                    //cria o script com o os comandos inseridos no texto "sql.Append" e o executa.
+                    //Cria o script com o os comandos inseridos no texto "sql.Append" e o executa.
                     comandoSql.CommandText = sql.ToString();
                     comandoSql.Connection = conexao;
                     dadosTabela.Load(comandoSql.ExecuteReader());
@@ -148,18 +148,18 @@ namespace AcessoDados
             {
                 using (SqlConnection conexao = new SqlConnection(Conexao.stringConexao))
                 {
-                    //inicia a conexao com o banco de dados.
+                    //Inicia a conexao com o banco de dados.
                     conexao.Open();
 
-                    //cria um texto com os comandos a serem inseridos no script.
+                    //Cria um texto com os comandos a serem inseridos no script.
                     sql.Append("SELECT * FROM Usuarios");
                     sql.Append(" WHERE LOGIN_USUARIO = @login AND SENHA_USUARIO = @senha");
 
-                    //configura os parâmetros que serão os dados inseridos na camada RegraNegocio.
+                    //Configura os parâmetros que serão os dados inseridos na camada RegraNegocio.
                     comandoSql.Parameters.Add(new SqlParameter("@login", login));
                     comandoSql.Parameters.Add(new SqlParameter("@senha", senha));
 
-                    //cria o script com o os comandos inseridos no texto "sql.Append" e o executa.
+                    //Cria o script com o os comandos inseridos no texto "sql.Append" e o executa.
                     comandoSql.CommandText = sql.ToString();
                     comandoSql.Connection = conexao;
                     dadosTabela.Load(comandoSql.ExecuteReader());
@@ -179,17 +179,17 @@ namespace AcessoDados
             {
                 using (SqlConnection conexao = new SqlConnection(Conexao.stringConexao))
                 {
-                    //inicia a conexao com o banco de dados.
+                    //Inicia a conexao com o banco de dados.
                     conexao.Open();
 
-                    //cria um texto com os comandos a serem inseridos no script.
+                    //Cria um texto com os comandos a serem inseridos no script.
                     sql.Append("SELECT * FROM Usuarios");
                     sql.Append(" WHERE LOGIN_USUARIO = @login");
 
-                    //configura os parâmetros que serão os dados inseridos na camada RegraNegocio.
+                    //Configura os parâmetros que serão os dados inseridos na camada RegraNegocio.
                     comandoSql.Parameters.Add(new SqlParameter("@login", login));
 
-                    //cria o script com o os comandos inseridos no texto "sql.Append" e o executa.
+                    //Cria o script com o os comandos inseridos no texto "sql.Append" e o executa.
                     comandoSql.CommandText = sql.ToString();
                     comandoSql.Connection = conexao;
                     dadosTabela.Load(comandoSql.ExecuteReader());
@@ -211,18 +211,18 @@ namespace AcessoDados
             {
                 using (SqlConnection conexao = new SqlConnection(Conexao.stringConexao))
                 {
-                    //inicia a conexao com o banco de dados.
+                    //Inicia a conexao com o banco de dados.
                     conexao.Open();
 
-                    //cria um texto com os comandos a serem inseridos no script.
+                    //Cria um texto com os comandos a serem inseridos no script.
                     sql.Append("SELECT Usuarios.*, NOME_NIVEL FROM Usuarios INNER JOIN Nivel_Usuarios");
                     sql.Append(" ON Usuarios.ID_NIVEL = Nivel_Usuarios.ID_NIVEL");
                     sql.Append(" WHERE ID_USUARIO = @idUsuario");
 
-                    //configura os parâmetros que serão os dados inseridos na camada RegraNegocio.
+                    //Configura os parâmetros que serão os dados inseridos na camada RegraNegocio.
                     comandoSql.Parameters.Add(new SqlParameter("@idUsuario", idUsuario));
 
-                    //cria o script com o os comandos inseridos no texto "sql.Append" e o executa.
+                    //Cria o script com o os comandos inseridos no texto "sql.Append" e o executa.
                     comandoSql.CommandText = sql.ToString();
                     comandoSql.Connection = conexao;
                     dadosTabela.Load(comandoSql.ExecuteReader());
@@ -232,6 +232,138 @@ namespace AcessoDados
             catch (Exception)
             {
                 throw new Exception("Ocorreu um erro no método RetornarUsuario. Caso o problema persista, entre em contato com o Administrador do Sistema.");
+            }
+        }
+
+        public DataTable PesquisaNome(string nome, string ordem)
+        //Método com o comando sql que irá selecionar e retornar os dados dos usuários que informamos o nome.
+        {
+            using (SqlConnection conexao = new SqlConnection(Conexao.stringConexao))
+            {
+                //Inicia a conexao com o banco de dados.
+                conexao.Open();
+
+                //Cria um texto com os comandos a serem inseridos no script.
+                sql.Append("SELECT Usuarios.*, NOME_NIVEL FROM Usuarios INNER JOIN Nivel_Usuarios");
+                sql.Append(" ON Usuarios.ID_NIVEL = Nivel_Usuarios.ID_NIVEL");
+                sql.Append(" WHERE NOME_USUARIO LIKE '%'+@nome+'%'");
+
+                //Verifica a ordem que informamos para retornar a ordem do SELECT.
+                switch (ordem)
+                {
+                    case "Código":
+                        sql.Append(" ORDER BY ID_USUARIO");
+                        break;
+                    case "Nome":
+                        sql.Append(" ORDER BY NOME_USUARIO");
+                        break;
+                    case "Situação":
+                        sql.Append(" ORDER BY STATUS_USUARIO");
+                        break;
+                    case "Nível":
+                        sql.Append(" ORDER BY NOME_NIVEL");
+                        break;
+                    default:
+                        sql.Append(" ORDER BY NOME_USUARIO");
+                        break;
+                }
+
+                //Configura os parâmetros que serão os dados inseridos na camada RegraNegocio.
+                comandoSql.Parameters.Add(new SqlParameter("@nome", nome));
+
+                //Cria o script com o os comandos inseridos no texto "sql.Append" e o executa.
+                comandoSql.CommandText = sql.ToString();
+                comandoSql.Connection = conexao;
+                dadosTabela.Load(comandoSql.ExecuteReader());
+                return dadosTabela;
+            }
+        }
+
+        public DataTable PesquisaAtivos(string nome, string ordem)
+        //Método com o comando sql que irá selecionar e retornar os dados dos usuários ATIVOS que informamos o nome.
+        {
+            using (SqlConnection conexao = new SqlConnection(Conexao.stringConexao))
+            {
+                //Inicia a conexao com o banco de dados.
+                conexao.Open();
+
+                //Cria um texto com os comandos a serem inseridos no script.
+                sql.Append("SELECT Usuarios.*, NOME_NIVEL FROM Usuarios INNER JOIN Nivel_Usuarios");
+                sql.Append(" ON Usuarios.ID_NIVEL = Nivel_Usuarios.ID_NIVEL");
+                sql.Append(" WHERE NOME_USUARIO LIKE '%'+@nome+'%' AND STATUS_USUARIO = 'Ativo'");
+
+                //Verifica a ordem que informamos para retornar a ordem do SELECT.
+                switch (ordem)
+                {
+                    case "Código":
+                        sql.Append(" ORDER BY ID_USUARIO");
+                        break;
+                    case "Nome":
+                        sql.Append(" ORDER BY NOME_USUARIO");
+                        break;
+                    case "Situação":
+                        sql.Append(" ORDER BY STATUS_USUARIO");
+                        break;
+                    case "Nível":
+                        sql.Append(" ORDER BY NOME_NIVEL");
+                        break;
+                    default:
+                        sql.Append(" ORDER BY NOME_USUARIO");
+                        break;
+                }
+
+                //Configura os parâmetros que serão os dados inseridos na camada RegraNegocio.
+                comandoSql.Parameters.Add(new SqlParameter("@nome", nome));
+
+                //Cria o script com o os comandos inseridos no texto "sql.Append" e o executa.
+                comandoSql.CommandText = sql.ToString();
+                comandoSql.Connection = conexao;
+                dadosTabela.Load(comandoSql.ExecuteReader());
+                return dadosTabela;
+            }
+        }
+
+        public DataTable PesquisaInativos(string nome, string ordem)
+        //Método com o comando sql que irá selecionar e retornar os dados dos usuários INATIVOS que informamos o nome.
+        {
+            using (SqlConnection conexao = new SqlConnection(Conexao.stringConexao))
+            {
+                //Inicia a conexao com o banco de dados.
+                conexao.Open();
+
+                //Cria um texto com os comandos a serem inseridos no script.
+                sql.Append("SELECT Usuarios.*, NOME_NIVEL FROM Usuarios INNER JOIN Nivel_Usuarios");
+                sql.Append(" ON Usuarios.ID_NIVEL = Nivel_Usuarios.ID_NIVEL");
+                sql.Append(" WHERE NOME_USUARIO LIKE '%'+@nome+'%' AND STATUS_USUARIO = 'Inativo'");
+
+                //Verifica a ordem que informamos para retornar a ordem do SELECT.
+                switch (ordem)
+                {
+                    case "Código":
+                        sql.Append(" ORDER BY ID_USUARIO");
+                        break;
+                    case "Nome":
+                        sql.Append(" ORDER BY NOME_USUARIO");
+                        break;
+                    case "Situação":
+                        sql.Append(" ORDER BY STATUS_USUARIO");
+                        break;
+                    case "Nível":
+                        sql.Append(" ORDER BY NOME_NIVEL");
+                        break;
+                    default:
+                        sql.Append(" ORDER BY NOME_USUARIO");
+                        break;
+                }
+
+                //Configura os parâmetros que serão os dados inseridos na camada RegraNegocio.
+                comandoSql.Parameters.Add(new SqlParameter("@nome", nome));
+
+                //Cria o script com o os comandos inseridos no texto "sql.Append" e o executa.
+                comandoSql.CommandText = sql.ToString();
+                comandoSql.Connection = conexao;
+                dadosTabela.Load(comandoSql.ExecuteReader());
+                return dadosTabela;
             }
         }
     }

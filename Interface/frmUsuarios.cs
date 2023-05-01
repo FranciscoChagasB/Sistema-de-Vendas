@@ -34,8 +34,11 @@ namespace Interface
         {
             try
             {
+                tbcUsuarios.SelectedTab = tbpProcura;
                 novoUsuario = new RegraNegocio.UsuariosRegraNegocio();
-                dtgUsuarios.DataSource = novoUsuario.Listar();
+                bdsUsuarios.DataSource = novoUsuario.Listar();
+                bdnUsuarios.BindingSource = bdsUsuarios;
+                dtgUsuarios.DataSource = bdsUsuarios;
             }
             catch (Exception ex)
             {
@@ -49,7 +52,8 @@ namespace Interface
             try
             {
                 novoNivel = new RegraNegocio.NiveisRegraNegocio();
-                dtgNivelUsuario.DataSource = novoNivel.Listar();
+                bdsNiveis.DataSource = novoNivel.Listar();
+                dtgNivelUsuario.DataSource = bdsNiveis;
             }
             catch (Exception ex)
             {
@@ -190,6 +194,86 @@ namespace Interface
         {
             frmNiveis formNiveis = new frmNiveis();
             formNiveis.ShowDialog();
+        }
+
+        private void txtNomeUsuario_TextChanged(object sender, EventArgs e)
+        //Ação de alteração de texto que pesquisa um usuário no banco com base nos dados fornecidos.
+        {
+            try
+            {
+                //Verifica qual filtro foi selecionado para filtrar os dados.
+                switch (cboFiltro.Text)
+                {
+                    //Mostra apenas os dados de usuários ativos.
+                    case "Ativos":
+                        tbcUsuarios.SelectedTab = tbpProcura;
+                        novoUsuario = new RegraNegocio.UsuariosRegraNegocio();
+                        bdsUsuarios.DataSource = novoUsuario.PesquisaAtivos(txtNomeUsuario.Text, cboOrdenar.Text);
+                        bdnUsuarios.BindingSource = bdsUsuarios;
+                        dtgUsuarios.DataSource = bdsUsuarios;
+                        break;
+                    //Mostra apenas os dados de usuários inativos.
+                    case "Inativos":
+                        tbcUsuarios.SelectedTab = tbpProcura;
+                        novoUsuario = new RegraNegocio.UsuariosRegraNegocio();
+                        bdsUsuarios.DataSource = novoUsuario.PesquisaInativos(txtNomeUsuario.Text, cboOrdenar.Text);
+                        bdnUsuarios.BindingSource = bdsUsuarios;
+                        dtgUsuarios.DataSource = bdsUsuarios;
+                        break;
+                    //Mostra todos os usuários cadastrados.
+                    default:
+                        tbcUsuarios.SelectedTab = tbpProcura;
+                        novoUsuario = new RegraNegocio.UsuariosRegraNegocio();
+                        bdsUsuarios.DataSource = novoUsuario.PesquisaNome(txtNomeUsuario.Text, cboOrdenar.Text);
+                        bdnUsuarios.BindingSource = bdsUsuarios;
+                        dtgUsuarios.DataSource = bdsUsuarios;
+                        break;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnPesquisar_Click(object sender, EventArgs e)
+        //Ação do botão btnPesquisar que pesquisa um usuário no banco com base nos dados fornecidos.
+        {
+            try
+            {
+                //Verifica qual filtro foi selecionado para filtrar os dados.
+                switch (cboFiltro.Text)
+                {
+                    //Mostra apenas os dados de usuários ativos.
+                    case "Ativos":
+                        tbcUsuarios.SelectedTab = tbpProcura;
+                        novoUsuario = new RegraNegocio.UsuariosRegraNegocio();
+                        bdsUsuarios.DataSource = novoUsuario.PesquisaAtivos(txtNomeUsuario.Text, cboOrdenar.Text);
+                        bdnUsuarios.BindingSource = bdsUsuarios;
+                        dtgUsuarios.DataSource = bdsUsuarios;
+                        break;
+                    //Mostra apenas os dados de usuários inativos.
+                    case "Inativos":
+                        tbcUsuarios.SelectedTab = tbpProcura;
+                        novoUsuario = new RegraNegocio.UsuariosRegraNegocio();
+                        bdsUsuarios.DataSource = novoUsuario.PesquisaInativos(txtNomeUsuario.Text, cboOrdenar.Text);
+                        bdnUsuarios.BindingSource = bdsUsuarios;
+                        dtgUsuarios.DataSource = bdsUsuarios;
+                        break;
+                    //Mostra todos os usuários cadastrados.
+                    default:
+                        tbcUsuarios.SelectedTab = tbpProcura;
+                        novoUsuario = new RegraNegocio.UsuariosRegraNegocio();
+                        bdsUsuarios.DataSource = novoUsuario.PesquisaNome(txtNomeUsuario.Text, cboOrdenar.Text);
+                        bdnUsuarios.BindingSource = bdsUsuarios;
+                        dtgUsuarios.DataSource = bdsUsuarios;
+                        break;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

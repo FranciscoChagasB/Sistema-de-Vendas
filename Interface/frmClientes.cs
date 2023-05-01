@@ -260,45 +260,50 @@ namespace Interface
         }
 
         private void txtNomeCliente_TextChanged(object sender, EventArgs e)
+        //Ação de alteração de texto que pesquisa um cliente no banco com base nos dados fornecidos.
         {
-            novoCliente = new RegraNegocio.ClientesRegraNegocio();
-
             try
             {
-                //Verificações de quais filtros e ordens foram selecionados pelo usuário.
+                //Verifica qual filtro foi selecionado para filtrar os dados.
                 switch (cboFiltro.Text)
                 {
+                    //Mostra apenas os dados de clientes cadastrados com cpf.
                     case "Cadastrados com CPF":
+                        tbcClientes.SelectedTab = tbpProcura;
                         novoCliente = new RegraNegocio.ClientesRegraNegocio();
-                        bdsClientes.DataSource = novoCliente.PesquisaCpf(Convert.ToInt32(txtCodCliente.Text), txtNomeCliente.Text, cboOrdenar.Text);
+                        bdsClientes.DataSource = novoCliente.PesquisaCpf(txtNomeCliente.Text, cboOrdenar.Text);
                         bdnClientes.BindingSource = bdsClientes;
                         dtgClientes.DataSource = bdsClientes;
                         break;
-
+                    //Mostra apenas os dados de clientes cadastrados com cnpj.
                     case "Cadastrados com CNPJ":
+                        tbcClientes.SelectedTab = tbpProcura;
                         novoCliente = new RegraNegocio.ClientesRegraNegocio();
-                        bdsClientes.DataSource = novoCliente.PesquisaCnpj(Convert.ToInt32(txtCodCliente.Text), txtNomeCliente.Text, cboOrdenar.Text);
+                        bdsClientes.DataSource = novoCliente.PesquisaCnpj(txtNomeCliente.Text, cboOrdenar.Text);
                         bdnClientes.BindingSource = bdsClientes;
                         dtgClientes.DataSource = bdsClientes;
                         break;
-
+                    //Mostra apenas os dados de clientes ativos.
                     case "Ativos":
+                        tbcClientes.SelectedTab = tbpProcura;
                         novoCliente = new RegraNegocio.ClientesRegraNegocio();
-                        bdsClientes.DataSource = novoCliente.PesquisaAtivos(Convert.ToInt32(txtCodCliente.Text), txtNomeCliente.Text, cboOrdenar.Text);
+                        bdsClientes.DataSource = novoCliente.PesquisaAtivos(txtNomeCliente.Text, cboOrdenar.Text);
                         bdnClientes.BindingSource = bdsClientes;
                         dtgClientes.DataSource = bdsClientes;
                         break;
-
+                    //Mostra apenas os dados de clientes inativos.
                     case "Inativos":
+                        tbcClientes.SelectedTab = tbpProcura;
                         novoCliente = new RegraNegocio.ClientesRegraNegocio();
-                        bdsClientes.DataSource = novoCliente.PesquisaInativos(Convert.ToInt32(txtCodCliente.Text), txtNomeCliente.Text, cboOrdenar.Text);
+                        bdsClientes.DataSource = novoCliente.PesquisaInativos(txtNomeCliente.Text, cboOrdenar.Text);
                         bdnClientes.BindingSource = bdsClientes;
                         dtgClientes.DataSource = bdsClientes;
                         break;
-
+                    //Mostra todos os clientes cadastrados.
                     default:
+                        tbcClientes.SelectedTab = tbpProcura;
                         novoCliente = new RegraNegocio.ClientesRegraNegocio();
-                        bdsClientes.DataSource = novoCliente.Pesquisa(Convert.ToInt32(txtCodCliente.Text), txtNomeCliente.Text, cboOrdenar.Text);
+                        bdsClientes.DataSource = novoCliente.PesquisaNome(txtNomeCliente.Text, cboOrdenar.Text);
                         bdnClientes.BindingSource = bdsClientes;
                         dtgClientes.DataSource = bdsClientes;
                         break;
@@ -311,45 +316,52 @@ namespace Interface
         }
 
         private void btnPesquisar_Click(object sender, EventArgs e)
+        //Ação do botão btnPesquisar que pesquisa um cliente no banco com base nos dados fornecidos.
         {
-            novoCliente = new RegraNegocio.ClientesRegraNegocio();
-
             try
             {
-                //Verificações de quais filtros e ordens foram selecionados pelo usuário.
+                novoCliente = new RegraNegocio.ClientesRegraNegocio();
+
+                //Verifica qual filtro foi selecionado para filtrar os dados.
                 switch (cboFiltro.Text)
                 {
+                    //Mostra apenas os dados de clientes cadastrados com cpf.
                     case "Cadastrados com CPF":
+                        tbcClientes.SelectedTab = tbpProcura;
                         novoCliente = new RegraNegocio.ClientesRegraNegocio();
-                        bdsClientes.DataSource = novoCliente.PesquisaCpf(Convert.ToInt32(txtCodCliente.Text), txtNomeCliente.Text, cboOrdenar.Text);
+                        bdsClientes.DataSource = novoCliente.PesquisaCpf(txtNomeCliente.Text, cboOrdenar.Text);
                         bdnClientes.BindingSource = bdsClientes;
                         dtgClientes.DataSource = bdsClientes;
                         break;
-
+                    //Mostra apenas os dados de clientes cadastrados com cnpj.
                     case "Cadastrados com CNPJ":
+                        tbcClientes.SelectedTab = tbpProcura;
                         novoCliente = new RegraNegocio.ClientesRegraNegocio();
-                        bdsClientes.DataSource = novoCliente.PesquisaCnpj(Convert.ToInt32(txtCodCliente.Text), txtNomeCliente.Text, cboOrdenar.Text);
+                        bdsClientes.DataSource = novoCliente.PesquisaCnpj(txtNomeCliente.Text, cboOrdenar.Text);
                         bdnClientes.BindingSource = bdsClientes;
                         dtgClientes.DataSource = bdsClientes;
                         break;
-
+                    //Mostra apenas os dados de clientes ativos.
                     case "Ativos":
+                        tbcClientes.SelectedTab = tbpProcura;
                         novoCliente = new RegraNegocio.ClientesRegraNegocio();
-                        bdsClientes.DataSource = novoCliente.PesquisaAtivos(Convert.ToInt32(txtCodCliente.Text), txtNomeCliente.Text, cboOrdenar.Text);
+                        bdsClientes.DataSource = novoCliente.PesquisaAtivos(txtNomeCliente.Text, cboOrdenar.Text);
                         bdnClientes.BindingSource = bdsClientes;
                         dtgClientes.DataSource = bdsClientes;
                         break;
-
+                    //Mostra apenas os dados de clientes inativos.
                     case "Inativos":
+                        tbcClientes.SelectedTab = tbpProcura;
                         novoCliente = new RegraNegocio.ClientesRegraNegocio();
-                        bdsClientes.DataSource = novoCliente.PesquisaInativos(Convert.ToInt32(txtCodCliente.Text), txtNomeCliente.Text, cboOrdenar.Text);
+                        bdsClientes.DataSource = novoCliente.PesquisaInativos(txtNomeCliente.Text, cboOrdenar.Text);
                         bdnClientes.BindingSource = bdsClientes;
                         dtgClientes.DataSource = bdsClientes;
                         break;
-
+                    //Mostra todos os clientes cadastrados.
                     default:
+                        tbcClientes.SelectedTab = tbpProcura;
                         novoCliente = new RegraNegocio.ClientesRegraNegocio();
-                        bdsClientes.DataSource = novoCliente.Pesquisa(Convert.ToInt32(txtCodCliente.Text), txtNomeCliente.Text, cboOrdenar.Text);
+                        bdsClientes.DataSource = novoCliente.PesquisaNome(txtNomeCliente.Text, cboOrdenar.Text);
                         bdnClientes.BindingSource = bdsClientes;
                         dtgClientes.DataSource = bdsClientes;
                         break;

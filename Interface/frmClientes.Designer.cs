@@ -31,11 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmClientes));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.bdnClientes = new System.Windows.Forms.BindingNavigator(this.components);
-            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.btnAjuda = new System.Windows.Forms.Button();
             this.btnSair = new System.Windows.Forms.Button();
             this.btnExcluir = new System.Windows.Forms.Button();
@@ -46,12 +41,10 @@
             this.label21 = new System.Windows.Forms.Label();
             this.cboFiltro = new System.Windows.Forms.ComboBox();
             this.cboOrdenar = new System.Windows.Forms.ComboBox();
-            this.txtCodCliente = new System.Windows.Forms.TextBox();
             this.txtNomeCliente = new System.Windows.Forms.TextBox();
             this.btnPesquisar = new System.Windows.Forms.Button();
             this.label19 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.dtgClientes = new System.Windows.Forms.DataGridView();
             this.ID_CLIENTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -110,10 +103,16 @@
             this.txtObservacao = new System.Windows.Forms.TextBox();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.bdnClientes = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
+            this.separator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
+            this.separator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.separator2 = new System.Windows.Forms.ToolStripSeparator();
             this.bdsClientes = new System.Windows.Forms.BindingSource(this.components);
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bdnClientes)).BeginInit();
-            this.bdnClientes.SuspendLayout();
             this.tbcClientes.SuspendLayout();
             this.tbpProcura.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgClientes)).BeginInit();
@@ -122,6 +121,8 @@
             this.gbDocumentosPessoaJuridica.SuspendLayout();
             this.gbTipoPessoa.SuspendLayout();
             this.gbContato.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bdnClientes)).BeginInit();
+            this.bdnClientes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bdsClientes)).BeginInit();
             this.SuspendLayout();
             // 
@@ -141,66 +142,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(199, 732);
             this.panel1.TabIndex = 0;
-            // 
-            // bdnClientes
-            // 
-            this.bdnClientes.AddNewItem = null;
-            this.bdnClientes.BindingSource = this.bdsClientes;
-            this.bdnClientes.CountItem = null;
-            this.bdnClientes.DeleteItem = null;
-            this.bdnClientes.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.bdnClientes.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.bdnClientes.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.bindingNavigatorMoveFirstItem,
-            this.bindingNavigatorMovePreviousItem,
-            this.bindingNavigatorMoveNextItem,
-            this.bindingNavigatorMoveLastItem});
-            this.bdnClientes.Location = new System.Drawing.Point(0, 555);
-            this.bdnClientes.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
-            this.bdnClientes.MoveLastItem = this.bindingNavigatorMoveLastItem;
-            this.bdnClientes.MoveNextItem = this.bindingNavigatorMoveNextItem;
-            this.bdnClientes.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
-            this.bdnClientes.Name = "bdnClientes";
-            this.bdnClientes.PositionItem = null;
-            this.bdnClientes.Size = new System.Drawing.Size(197, 27);
-            this.bdnClientes.TabIndex = 5;
-            this.bdnClientes.Tag = "";
-            // 
-            // bindingNavigatorMoveFirstItem
-            // 
-            this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
-            this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
-            this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(29, 24);
-            this.bindingNavigatorMoveFirstItem.Text = "Mover primeiro";
-            // 
-            // bindingNavigatorMovePreviousItem
-            // 
-            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
-            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
-            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(29, 24);
-            this.bindingNavigatorMovePreviousItem.Text = "Mover anterior";
-            // 
-            // bindingNavigatorMoveNextItem
-            // 
-            this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
-            this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
-            this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(29, 24);
-            this.bindingNavigatorMoveNextItem.Text = "Mover próximo";
-            // 
-            // bindingNavigatorMoveLastItem
-            // 
-            this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
-            this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
-            this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(29, 24);
-            this.bindingNavigatorMoveLastItem.Text = "Mover último";
             // 
             // btnAjuda
             // 
@@ -287,12 +228,10 @@
             this.tbpProcura.Controls.Add(this.label21);
             this.tbpProcura.Controls.Add(this.cboFiltro);
             this.tbpProcura.Controls.Add(this.cboOrdenar);
-            this.tbpProcura.Controls.Add(this.txtCodCliente);
             this.tbpProcura.Controls.Add(this.txtNomeCliente);
             this.tbpProcura.Controls.Add(this.btnPesquisar);
             this.tbpProcura.Controls.Add(this.label19);
             this.tbpProcura.Controls.Add(this.label18);
-            this.tbpProcura.Controls.Add(this.label16);
             this.tbpProcura.Controls.Add(this.label7);
             this.tbpProcura.Controls.Add(this.dtgClientes);
             this.tbpProcura.Location = new System.Drawing.Point(4, 25);
@@ -327,7 +266,7 @@
             this.cboFiltro.Location = new System.Drawing.Point(13, 105);
             this.cboFiltro.Margin = new System.Windows.Forms.Padding(4);
             this.cboFiltro.Name = "cboFiltro";
-            this.cboFiltro.Size = new System.Drawing.Size(143, 28);
+            this.cboFiltro.Size = new System.Drawing.Size(223, 28);
             this.cboFiltro.TabIndex = 199;
             // 
             // cboOrdenar
@@ -340,40 +279,28 @@
             "Código",
             "Nome",
             "Situação"});
-            this.cboOrdenar.Location = new System.Drawing.Point(855, 52);
+            this.cboOrdenar.Location = new System.Drawing.Point(814, 52);
             this.cboOrdenar.Margin = new System.Windows.Forms.Padding(4);
             this.cboOrdenar.Name = "cboOrdenar";
-            this.cboOrdenar.Size = new System.Drawing.Size(143, 28);
+            this.cboOrdenar.Size = new System.Drawing.Size(184, 28);
             this.cboOrdenar.TabIndex = 198;
-            // 
-            // txtCodCliente
-            // 
-            this.txtCodCliente.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtCodCliente.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtCodCliente.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCodCliente.Location = new System.Drawing.Point(13, 52);
-            this.txtCodCliente.Margin = new System.Windows.Forms.Padding(4);
-            this.txtCodCliente.MaxLength = 50;
-            this.txtCodCliente.Name = "txtCodCliente";
-            this.txtCodCliente.Size = new System.Drawing.Size(119, 29);
-            this.txtCodCliente.TabIndex = 197;
             // 
             // txtNomeCliente
             // 
             this.txtNomeCliente.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNomeCliente.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtNomeCliente.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNomeCliente.Location = new System.Drawing.Point(167, 52);
+            this.txtNomeCliente.Location = new System.Drawing.Point(13, 52);
             this.txtNomeCliente.Margin = new System.Windows.Forms.Padding(4);
             this.txtNomeCliente.MaxLength = 50;
             this.txtNomeCliente.Name = "txtNomeCliente";
-            this.txtNomeCliente.Size = new System.Drawing.Size(510, 29);
+            this.txtNomeCliente.Size = new System.Drawing.Size(611, 29);
             this.txtNomeCliente.TabIndex = 196;
             this.txtNomeCliente.TextChanged += new System.EventHandler(this.txtNomeCliente_TextChanged);
             // 
             // btnPesquisar
             // 
-            this.btnPesquisar.Location = new System.Drawing.Point(685, 52);
+            this.btnPesquisar.Location = new System.Drawing.Point(632, 52);
             this.btnPesquisar.Margin = new System.Windows.Forms.Padding(4);
             this.btnPesquisar.Name = "btnPesquisar";
             this.btnPesquisar.Size = new System.Drawing.Size(100, 30);
@@ -385,7 +312,7 @@
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(851, 32);
+            this.label19.Location = new System.Drawing.Point(811, 32);
             this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(82, 16);
@@ -395,22 +322,12 @@
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(163, 32);
+            this.label18.Location = new System.Drawing.Point(9, 32);
             this.label18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(110, 16);
             this.label18.TabIndex = 193;
             this.label18.Text = "Nome do Cliente:";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(9, 32);
-            this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(117, 16);
-            this.label16.TabIndex = 192;
-            this.label16.Text = "Código do Cliente:";
             // 
             // label7
             // 
@@ -1141,6 +1058,83 @@
             this.label2.TabIndex = 174;
             this.label2.Text = "Nome:";
             // 
+            // bdnClientes
+            // 
+            this.bdnClientes.AddNewItem = null;
+            this.bdnClientes.CountItem = null;
+            this.bdnClientes.DeleteItem = null;
+            this.bdnClientes.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.bdnClientes.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.bdnClientes.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.bindingNavigatorMoveFirstItem,
+            this.separator1,
+            this.bindingNavigatorMovePreviousItem,
+            this.separator2,
+            this.bindingNavigatorMoveNextItem,
+            this.separator3,
+            this.bindingNavigatorMoveLastItem});
+            this.bdnClientes.Location = new System.Drawing.Point(0, 555);
+            this.bdnClientes.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
+            this.bdnClientes.MoveLastItem = this.bindingNavigatorMoveLastItem;
+            this.bdnClientes.MoveNextItem = this.bindingNavigatorMoveNextItem;
+            this.bdnClientes.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
+            this.bdnClientes.Name = "bdnClientes";
+            this.bdnClientes.PositionItem = null;
+            this.bdnClientes.Size = new System.Drawing.Size(197, 27);
+            this.bdnClientes.TabIndex = 5;
+            this.bdnClientes.Text = "bindingNavigator1";
+            // 
+            // bindingNavigatorMoveFirstItem
+            // 
+            this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
+            this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
+            this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(29, 24);
+            this.bindingNavigatorMoveFirstItem.Text = "Mover primeiro";
+            // 
+            // bindingNavigatorMovePreviousItem
+            // 
+            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
+            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
+            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(29, 24);
+            this.bindingNavigatorMovePreviousItem.Text = "Mover anterior";
+            // 
+            // separator1
+            // 
+            this.separator1.Name = "bindingNavigatorSeparator";
+            this.separator1.Size = new System.Drawing.Size(6, 27);
+            // 
+            // bindingNavigatorMoveNextItem
+            // 
+            this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
+            this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
+            this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(29, 24);
+            this.bindingNavigatorMoveNextItem.Text = "Mover próximo";
+            // 
+            // bindingNavigatorMoveLastItem
+            // 
+            this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
+            this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
+            this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(29, 24);
+            this.bindingNavigatorMoveLastItem.Text = "Mover último";
+            // 
+            // separator3
+            // 
+            this.separator3.Name = "bindingNavigatorSeparator";
+            this.separator3.Size = new System.Drawing.Size(6, 27);
+            // 
+            // separator2
+            // 
+            this.separator2.Name = "separator2";
+            this.separator2.Size = new System.Drawing.Size(6, 27);
+            // 
             // frmClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1160,9 +1154,6 @@
             this.Load += new System.EventHandler(this.frmClientes_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bdnClientes)).EndInit();
-            this.bdnClientes.ResumeLayout(false);
-            this.bdnClientes.PerformLayout();
             this.tbcClientes.ResumeLayout(false);
             this.tbpProcura.ResumeLayout(false);
             this.tbpProcura.PerformLayout();
@@ -1177,6 +1168,9 @@
             this.gbTipoPessoa.PerformLayout();
             this.gbContato.ResumeLayout(false);
             this.gbContato.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bdnClientes)).EndInit();
+            this.bdnClientes.ResumeLayout(false);
+            this.bdnClientes.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bdsClientes)).EndInit();
             this.ResumeLayout(false);
 
@@ -1190,11 +1184,6 @@
         private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.Button btnAlterar;
         private System.Windows.Forms.Button btnNovo;
-        private System.Windows.Forms.BindingNavigator bdnClientes;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.TabControl tbcClientes;
         private System.Windows.Forms.TabPage tbpProcura;
         private System.Windows.Forms.TabPage tbpCadastro;
@@ -1241,12 +1230,10 @@
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Button btnLimpar;
         private System.Windows.Forms.ComboBox cboOrdenar;
-        private System.Windows.Forms.TextBox txtCodCliente;
         private System.Windows.Forms.TextBox txtNomeCliente;
         private System.Windows.Forms.Button btnPesquisar;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID_CLIENTE;
@@ -1264,6 +1251,14 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn STATUS_CLIENTE;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.ComboBox cboFiltro;
+        private System.Windows.Forms.BindingNavigator bdnClientes;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
+        private System.Windows.Forms.ToolStripSeparator separator1;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
+        private System.Windows.Forms.ToolStripSeparator separator2;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
+        private System.Windows.Forms.ToolStripSeparator separator3;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.BindingSource bdsClientes;
     }
 }

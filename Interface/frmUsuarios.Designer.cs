@@ -45,12 +45,10 @@
             this.tbpProcura = new System.Windows.Forms.TabPage();
             this.dtgUsuarios = new System.Windows.Forms.DataGridView();
             this.cboOrdenar = new System.Windows.Forms.ComboBox();
-            this.txtCodUsuario = new System.Windows.Forms.TextBox();
             this.txtNomeUsuario = new System.Windows.Forms.TextBox();
             this.btnPesquisar = new System.Windows.Forms.Button();
             this.label19 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.tbpCadastro = new System.Windows.Forms.TabPage();
             this.btnSalvar = new System.Windows.Forms.Button();
@@ -74,13 +72,19 @@
             this.txtNome = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.tbpNiveis = new System.Windows.Forms.TabPage();
+            this.gpbNiveis = new System.Windows.Forms.GroupBox();
+            this.btnFormNiveis = new System.Windows.Forms.Button();
+            this.dtgNivelUsuario = new System.Windows.Forms.DataGridView();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
             this.txtCodNivel = new System.Windows.Forms.TextBox();
             this.txtNomeNivel = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.dtgNivelUsuario = new System.Windows.Forms.DataGridView();
+            this.label21 = new System.Windows.Forms.Label();
+            this.cboFiltro = new System.Windows.Forms.ComboBox();
+            this.bdsUsuarios = new System.Windows.Forms.BindingSource(this.components);
+            this.bdsNiveis = new System.Windows.Forms.BindingSource(this.components);
             this.codProcura = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nomeProcura = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataProcura = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -91,8 +95,7 @@
             this.nomenivelProcura = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codNivelUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nomeNivelUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gpbNiveis = new System.Windows.Forms.GroupBox();
-            this.btnFormNiveis = new System.Windows.Forms.Button();
+            this.Descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bdnUsuarios)).BeginInit();
             this.bdnUsuarios.SuspendLayout();
@@ -101,8 +104,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtgUsuarios)).BeginInit();
             this.tbpCadastro.SuspendLayout();
             this.tbpNiveis.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgNivelUsuario)).BeginInit();
             this.gpbNiveis.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgNivelUsuario)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsUsuarios)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsNiveis)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -263,14 +268,14 @@
             // 
             // tbpProcura
             // 
+            this.tbpProcura.Controls.Add(this.label21);
+            this.tbpProcura.Controls.Add(this.cboFiltro);
             this.tbpProcura.Controls.Add(this.dtgUsuarios);
             this.tbpProcura.Controls.Add(this.cboOrdenar);
-            this.tbpProcura.Controls.Add(this.txtCodUsuario);
             this.tbpProcura.Controls.Add(this.txtNomeUsuario);
             this.tbpProcura.Controls.Add(this.btnPesquisar);
             this.tbpProcura.Controls.Add(this.label19);
             this.tbpProcura.Controls.Add(this.label18);
-            this.tbpProcura.Controls.Add(this.label16);
             this.tbpProcura.Controls.Add(this.label7);
             this.tbpProcura.Location = new System.Drawing.Point(4, 25);
             this.tbpProcura.Margin = new System.Windows.Forms.Padding(4);
@@ -313,54 +318,45 @@
             this.cboOrdenar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboOrdenar.FormattingEnabled = true;
             this.cboOrdenar.Items.AddRange(new object[] {
+            "",
             "Código",
             "Nome",
             "Situação",
             "Nível"});
-            this.cboOrdenar.Location = new System.Drawing.Point(861, 52);
+            this.cboOrdenar.Location = new System.Drawing.Point(814, 53);
             this.cboOrdenar.Margin = new System.Windows.Forms.Padding(4);
             this.cboOrdenar.Name = "cboOrdenar";
-            this.cboOrdenar.Size = new System.Drawing.Size(143, 28);
+            this.cboOrdenar.Size = new System.Drawing.Size(184, 28);
             this.cboOrdenar.TabIndex = 207;
-            // 
-            // txtCodUsuario
-            // 
-            this.txtCodUsuario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtCodUsuario.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtCodUsuario.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCodUsuario.Location = new System.Drawing.Point(19, 52);
-            this.txtCodUsuario.Margin = new System.Windows.Forms.Padding(4);
-            this.txtCodUsuario.MaxLength = 50;
-            this.txtCodUsuario.Name = "txtCodUsuario";
-            this.txtCodUsuario.Size = new System.Drawing.Size(119, 29);
-            this.txtCodUsuario.TabIndex = 206;
             // 
             // txtNomeUsuario
             // 
             this.txtNomeUsuario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNomeUsuario.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtNomeUsuario.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNomeUsuario.Location = new System.Drawing.Point(173, 52);
+            this.txtNomeUsuario.Location = new System.Drawing.Point(18, 52);
             this.txtNomeUsuario.Margin = new System.Windows.Forms.Padding(4);
             this.txtNomeUsuario.MaxLength = 50;
             this.txtNomeUsuario.Name = "txtNomeUsuario";
-            this.txtNomeUsuario.Size = new System.Drawing.Size(510, 29);
+            this.txtNomeUsuario.Size = new System.Drawing.Size(611, 29);
             this.txtNomeUsuario.TabIndex = 205;
+            this.txtNomeUsuario.TextChanged += new System.EventHandler(this.txtNomeUsuario_TextChanged);
             // 
             // btnPesquisar
             // 
-            this.btnPesquisar.Location = new System.Drawing.Point(691, 52);
+            this.btnPesquisar.Location = new System.Drawing.Point(637, 52);
             this.btnPesquisar.Margin = new System.Windows.Forms.Padding(4);
             this.btnPesquisar.Name = "btnPesquisar";
             this.btnPesquisar.Size = new System.Drawing.Size(100, 29);
             this.btnPesquisar.TabIndex = 204;
             this.btnPesquisar.Text = "Pesquisar";
             this.btnPesquisar.UseVisualStyleBackColor = true;
+            this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
             // 
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(857, 32);
+            this.label19.Location = new System.Drawing.Point(811, 32);
             this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(82, 16);
@@ -370,22 +366,12 @@
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(169, 32);
+            this.label18.Location = new System.Drawing.Point(15, 32);
             this.label18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(116, 16);
             this.label18.TabIndex = 202;
             this.label18.Text = "Nome do Usuário:";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(15, 32);
-            this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(123, 16);
-            this.label16.TabIndex = 201;
-            this.label16.Text = "Código do Usuário:";
             // 
             // label7
             // 
@@ -688,6 +674,69 @@
             this.tbpNiveis.Text = "Niveis de Usuários";
             this.tbpNiveis.UseVisualStyleBackColor = true;
             // 
+            // gpbNiveis
+            // 
+            this.gpbNiveis.Controls.Add(this.btnFormNiveis);
+            this.gpbNiveis.Location = new System.Drawing.Point(858, 54);
+            this.gpbNiveis.Name = "gpbNiveis";
+            this.gpbNiveis.Size = new System.Drawing.Size(261, 136);
+            this.gpbNiveis.TabIndex = 214;
+            this.gpbNiveis.TabStop = false;
+            this.gpbNiveis.Text = "Gerenciador de Níveis";
+            // 
+            // btnFormNiveis
+            // 
+            this.btnFormNiveis.Image = global::Interface.Properties.Resources.niveis_img;
+            this.btnFormNiveis.Location = new System.Drawing.Point(21, 33);
+            this.btnFormNiveis.Name = "btnFormNiveis";
+            this.btnFormNiveis.Size = new System.Drawing.Size(162, 81);
+            this.btnFormNiveis.TabIndex = 0;
+            this.btnFormNiveis.Text = "Abir Gerenciador";
+            this.btnFormNiveis.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnFormNiveis.UseVisualStyleBackColor = true;
+            this.btnFormNiveis.Click += new System.EventHandler(this.btnFormNiveis_Click);
+            // 
+            // dtgNivelUsuario
+            // 
+            this.dtgNivelUsuario.AllowUserToAddRows = false;
+            this.dtgNivelUsuario.AllowUserToDeleteRows = false;
+            this.dtgNivelUsuario.AllowUserToResizeColumns = false;
+            this.dtgNivelUsuario.AllowUserToResizeRows = false;
+            this.dtgNivelUsuario.BackgroundColor = System.Drawing.Color.White;
+            this.dtgNivelUsuario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgNivelUsuario.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.codNivelUsuario,
+            this.nomeNivelUsuario,
+            this.Descricao});
+            this.dtgNivelUsuario.Location = new System.Drawing.Point(18, 114);
+            this.dtgNivelUsuario.Margin = new System.Windows.Forms.Padding(4);
+            this.dtgNivelUsuario.Name = "dtgNivelUsuario";
+            this.dtgNivelUsuario.ReadOnly = true;
+            this.dtgNivelUsuario.RowHeadersWidth = 51;
+            this.dtgNivelUsuario.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dtgNivelUsuario.Size = new System.Drawing.Size(804, 294);
+            this.dtgNivelUsuario.TabIndex = 213;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(695, 54);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(100, 29);
+            this.button1.TabIndex = 212;
+            this.button1.Text = "Pesquisar";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(15, 9);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(57, 16);
+            this.label9.TabIndex = 211;
+            this.label9.Text = "Procura:";
+            // 
             // txtCodNivel
             // 
             this.txtCodNivel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -732,45 +781,29 @@
             this.label8.TabIndex = 207;
             this.label8.Text = "Código do Nível:";
             // 
-            // label9
+            // label21
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(15, 9);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(57, 16);
-            this.label9.TabIndex = 211;
-            this.label9.Text = "Procura:";
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(15, 85);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(66, 16);
+            this.label21.TabIndex = 210;
+            this.label21.Text = "Filtrar por:";
             // 
-            // button1
+            // cboFiltro
             // 
-            this.button1.Location = new System.Drawing.Point(695, 54);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 29);
-            this.button1.TabIndex = 212;
-            this.button1.Text = "Pesquisar";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // dtgNivelUsuario
-            // 
-            this.dtgNivelUsuario.AllowUserToAddRows = false;
-            this.dtgNivelUsuario.AllowUserToDeleteRows = false;
-            this.dtgNivelUsuario.AllowUserToResizeColumns = false;
-            this.dtgNivelUsuario.AllowUserToResizeRows = false;
-            this.dtgNivelUsuario.BackgroundColor = System.Drawing.Color.White;
-            this.dtgNivelUsuario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgNivelUsuario.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.codNivelUsuario,
-            this.nomeNivelUsuario});
-            this.dtgNivelUsuario.Location = new System.Drawing.Point(14, 116);
-            this.dtgNivelUsuario.Margin = new System.Windows.Forms.Padding(4);
-            this.dtgNivelUsuario.Name = "dtgNivelUsuario";
-            this.dtgNivelUsuario.ReadOnly = true;
-            this.dtgNivelUsuario.RowHeadersWidth = 51;
-            this.dtgNivelUsuario.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgNivelUsuario.Size = new System.Drawing.Size(781, 277);
-            this.dtgNivelUsuario.TabIndex = 213;
+            this.cboFiltro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboFiltro.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboFiltro.FormattingEnabled = true;
+            this.cboFiltro.Items.AddRange(new object[] {
+            "",
+            "Ativos",
+            "Inativos"});
+            this.cboFiltro.Location = new System.Drawing.Point(19, 105);
+            this.cboFiltro.Margin = new System.Windows.Forms.Padding(4);
+            this.cboFiltro.Name = "cboFiltro";
+            this.cboFiltro.Size = new System.Drawing.Size(223, 28);
+            this.cboFiltro.TabIndex = 209;
             // 
             // codProcura
             // 
@@ -788,7 +821,7 @@
             this.nomeProcura.MinimumWidth = 6;
             this.nomeProcura.Name = "nomeProcura";
             this.nomeProcura.ReadOnly = true;
-            this.nomeProcura.Width = 260;
+            this.nomeProcura.Width = 240;
             // 
             // dataProcura
             // 
@@ -853,7 +886,7 @@
             this.codNivelUsuario.MinimumWidth = 6;
             this.codNivelUsuario.Name = "codNivelUsuario";
             this.codNivelUsuario.ReadOnly = true;
-            this.codNivelUsuario.Width = 160;
+            this.codNivelUsuario.Width = 80;
             // 
             // nomeNivelUsuario
             // 
@@ -862,29 +895,16 @@
             this.nomeNivelUsuario.MinimumWidth = 6;
             this.nomeNivelUsuario.Name = "nomeNivelUsuario";
             this.nomeNivelUsuario.ReadOnly = true;
-            this.nomeNivelUsuario.Width = 550;
+            this.nomeNivelUsuario.Width = 225;
             // 
-            // gpbNiveis
+            // Descricao
             // 
-            this.gpbNiveis.Controls.Add(this.btnFormNiveis);
-            this.gpbNiveis.Location = new System.Drawing.Point(867, 176);
-            this.gpbNiveis.Name = "gpbNiveis";
-            this.gpbNiveis.Size = new System.Drawing.Size(261, 136);
-            this.gpbNiveis.TabIndex = 214;
-            this.gpbNiveis.TabStop = false;
-            this.gpbNiveis.Text = "Gerenciador de Níveis";
-            // 
-            // btnFormNiveis
-            // 
-            this.btnFormNiveis.Image = global::Interface.Properties.Resources.niveis_img;
-            this.btnFormNiveis.Location = new System.Drawing.Point(21, 33);
-            this.btnFormNiveis.Name = "btnFormNiveis";
-            this.btnFormNiveis.Size = new System.Drawing.Size(162, 81);
-            this.btnFormNiveis.TabIndex = 0;
-            this.btnFormNiveis.Text = "Abir Gerenciador";
-            this.btnFormNiveis.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnFormNiveis.UseVisualStyleBackColor = true;
-            this.btnFormNiveis.Click += new System.EventHandler(this.btnFormNiveis_Click);
+            this.Descricao.DataPropertyName = "DESCRICAO_NIVEL";
+            this.Descricao.HeaderText = "Descrição";
+            this.Descricao.MinimumWidth = 6;
+            this.Descricao.Name = "Descricao";
+            this.Descricao.ReadOnly = true;
+            this.Descricao.Width = 475;
             // 
             // frmUsuarios
             // 
@@ -913,8 +933,10 @@
             this.tbpCadastro.PerformLayout();
             this.tbpNiveis.ResumeLayout(false);
             this.tbpNiveis.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgNivelUsuario)).EndInit();
             this.gpbNiveis.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dtgNivelUsuario)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsUsuarios)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsNiveis)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -937,12 +959,10 @@
         private System.Windows.Forms.TabPage tbpCadastro;
         private System.Windows.Forms.DataGridView dtgUsuarios;
         private System.Windows.Forms.ComboBox cboOrdenar;
-        private System.Windows.Forms.TextBox txtCodUsuario;
         private System.Windows.Forms.TextBox txtNomeUsuario;
         private System.Windows.Forms.Button btnPesquisar;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txtObservacao;
@@ -964,6 +984,20 @@
         private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnSalvar;
+        private System.Windows.Forms.TabPage tbpNiveis;
+        private System.Windows.Forms.GroupBox gpbNiveis;
+        private System.Windows.Forms.Button btnFormNiveis;
+        private System.Windows.Forms.DataGridView dtgNivelUsuario;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox txtCodNivel;
+        private System.Windows.Forms.TextBox txtNomeNivel;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.ComboBox cboFiltro;
+        private System.Windows.Forms.BindingSource bdsUsuarios;
+        private System.Windows.Forms.BindingSource bdsNiveis;
         private System.Windows.Forms.DataGridViewTextBoxColumn codProcura;
         private System.Windows.Forms.DataGridViewTextBoxColumn nomeProcura;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataProcura;
@@ -972,17 +1006,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn statusProcura;
         private System.Windows.Forms.DataGridViewTextBoxColumn codnivelProcura;
         private System.Windows.Forms.DataGridViewTextBoxColumn nomenivelProcura;
-        private System.Windows.Forms.TabPage tbpNiveis;
-        private System.Windows.Forms.GroupBox gpbNiveis;
-        private System.Windows.Forms.Button btnFormNiveis;
-        private System.Windows.Forms.DataGridView dtgNivelUsuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn codNivelUsuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn nomeNivelUsuario;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox txtCodNivel;
-        private System.Windows.Forms.TextBox txtNomeNivel;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Descricao;
     }
 }

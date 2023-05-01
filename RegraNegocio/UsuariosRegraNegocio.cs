@@ -146,7 +146,7 @@ namespace RegraNegocio
         {
             try
             {
-                //Exclui um usuário existene no banco de dados acessando o método Excluir na camada AcessoDados.
+                //Exclui um usuário existente no banco de dados acessando o método Excluir na camada AcessoDados.
                 novoUsuario = new AcessoDados.UsuariosAcessoDados();
                 novoUsuario.Excluir(idUsuario);
             }
@@ -205,6 +205,63 @@ namespace RegraNegocio
 
                 //Retorna o usuário com o mesmo ID informado acessando o método RetornarUsuario na camada AcessoDados.
                 dadosTabela = novoUsuario.RetornarUsuario(idUsuario);
+                return dadosTabela;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public DataTable PesquisaNome(string nome, string ordem) //Parâmetros a serem adicionados.
+        //Método que irá retornar os usuários que informamos o nome, em ordem x que informamos.
+        {
+            try
+            {
+                //Cria o DataTable que irá armazenar os usuários existentes no banco de dados acessando a camada AcessoDados.
+                novoUsuario = new AcessoDados.UsuariosAcessoDados();
+                DataTable dadosTabela = new DataTable();
+
+                //Retorna os usuários com o nome similar ao informado acessando o método PesquisaNome na camada AcessoDados.
+                dadosTabela = novoUsuario.PesquisaNome(nome, ordem); //Parâmetros indicados no método.
+                return dadosTabela;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public DataTable PesquisaAtivos(string nome, string ordem) //Parâmetros a serem adicionados.
+        //Método que irá retornar os usuários ATIVOS que informamos o nome, em ordem x que informamos.
+        {
+            try
+            {
+                //Cria o DataTable que irá armazenar os usuários existentes no banco de dados acessando a camada AcessoDados.
+                novoUsuario = new AcessoDados.UsuariosAcessoDados();
+                DataTable dadosTabela = new DataTable();
+
+                //Retorna os usuários ATIVOS com o nome similar ao informado acessando o método PesquisaAtivos na camada AcessoDados.
+                dadosTabela = novoUsuario.PesquisaAtivos(nome, ordem); //Parâmetros indicados no método.
+                return dadosTabela;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public DataTable PesquisaInativos(string nome, string ordem) //Parâmetros a serem adicionados.
+        //Método que irá retornar os usuários INATIVOS que informamos o nome, em ordem x que informamos.
+        {
+            try
+            {
+                //Cria o DataTable que irá armazenar os usuários existentes no banco de dados acessando a camada AcessoDados.
+                novoUsuario = new AcessoDados.UsuariosAcessoDados();
+                DataTable dadosTabela = new DataTable();
+
+                //Retorna os usuários INATIVOS com o nome similar ao informado acessando o método PesquisaInativos na camada AcessoDados.
+                dadosTabela = novoUsuario.PesquisaInativos(nome, ordem); //Parâmetros indicados no método.
                 return dadosTabela;
             }
             catch (Exception ex)
