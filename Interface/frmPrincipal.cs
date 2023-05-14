@@ -15,6 +15,7 @@ namespace Interface
     public partial class frmPrincipal : Form
     {
         RegraNegocio.UsuariosRegraNegocio novoUsuario;
+        frmUsuarios formUsuarios;
         string nomeUsuario, nivelUsuario;
         int idUsuario;
 
@@ -55,14 +56,14 @@ namespace Interface
         private void btnNiveis_Click(object sender, EventArgs e)
         //Ação do botão btnNiveis que inicializa o formulário frmNiveis.
         {
-            frmNiveis formNiveis = new frmNiveis();
+            frmNiveis formNiveis = new frmNiveis(formUsuarios);
             formNiveis.ShowDialog();
         }
 
         private void mstripNíveis_Click(object sender, EventArgs e)
         //Ação do botão de menu mstripNiveis que inicializa o formulário frmNiveis.
         {
-            frmNiveis formNiveis = new frmNiveis();
+            frmNiveis formNiveis = new frmNiveis(formUsuarios);
             formNiveis.ShowDialog();
         }
 

@@ -43,6 +43,8 @@
             this.btnNovo = new System.Windows.Forms.Button();
             this.tbcUsuarios = new System.Windows.Forms.TabControl();
             this.tbpProcura = new System.Windows.Forms.TabPage();
+            this.label21 = new System.Windows.Forms.Label();
+            this.cboFiltro = new System.Windows.Forms.ComboBox();
             this.dtgUsuarios = new System.Windows.Forms.DataGridView();
             this.cboOrdenar = new System.Windows.Forms.ComboBox();
             this.txtNomeUsuario = new System.Windows.Forms.TextBox();
@@ -75,27 +77,25 @@
             this.gpbNiveis = new System.Windows.Forms.GroupBox();
             this.btnFormNiveis = new System.Windows.Forms.Button();
             this.dtgNivelUsuario = new System.Windows.Forms.DataGridView();
+            this.codNivelUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nomeNivelUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button1 = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.txtCodNivel = new System.Windows.Forms.TextBox();
             this.txtNomeNivel = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
-            this.cboFiltro = new System.Windows.Forms.ComboBox();
             this.bdsUsuarios = new System.Windows.Forms.BindingSource(this.components);
             this.bdsNiveis = new System.Windows.Forms.BindingSource(this.components);
-            this.codProcura = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nomeProcura = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataProcura = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.loginProcura = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.senhaProcura = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.statusProcura = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.codnivelProcura = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nomenivelProcura = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.codNivelUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nomeNivelUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ID_USUARIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NOME_USUARIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DATA_CADASTRO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LOGIN_USUARIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SENHA_USUARIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.STATUS_USUARIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ID_NIVEL = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NOME_NIVEL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bdnUsuarios)).BeginInit();
             this.bdnUsuarios.SuspendLayout();
@@ -286,6 +286,30 @@
             this.tbpProcura.Text = "Procura";
             this.tbpProcura.UseVisualStyleBackColor = true;
             // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(15, 85);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(66, 16);
+            this.label21.TabIndex = 210;
+            this.label21.Text = "Filtrar por:";
+            // 
+            // cboFiltro
+            // 
+            this.cboFiltro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboFiltro.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboFiltro.FormattingEnabled = true;
+            this.cboFiltro.Items.AddRange(new object[] {
+            "",
+            "Ativos",
+            "Inativos"});
+            this.cboFiltro.Location = new System.Drawing.Point(19, 105);
+            this.cboFiltro.Margin = new System.Windows.Forms.Padding(4);
+            this.cboFiltro.Name = "cboFiltro";
+            this.cboFiltro.Size = new System.Drawing.Size(223, 28);
+            this.cboFiltro.TabIndex = 209;
+            // 
             // dtgUsuarios
             // 
             this.dtgUsuarios.AllowUserToAddRows = false;
@@ -295,14 +319,14 @@
             this.dtgUsuarios.BackgroundColor = System.Drawing.Color.White;
             this.dtgUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgUsuarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.codProcura,
-            this.nomeProcura,
-            this.dataProcura,
-            this.loginProcura,
-            this.senhaProcura,
-            this.statusProcura,
-            this.codnivelProcura,
-            this.nomenivelProcura});
+            this.ID_USUARIO,
+            this.NOME_USUARIO,
+            this.DATA_CADASTRO,
+            this.LOGIN_USUARIO,
+            this.SENHA_USUARIO,
+            this.STATUS_USUARIO,
+            this.ID_NIVEL,
+            this.NOME_NIVEL});
             this.dtgUsuarios.Location = new System.Drawing.Point(14, 223);
             this.dtgUsuarios.Margin = new System.Windows.Forms.Padding(4);
             this.dtgUsuarios.Name = "dtgUsuarios";
@@ -717,6 +741,33 @@
             this.dtgNivelUsuario.Size = new System.Drawing.Size(804, 294);
             this.dtgNivelUsuario.TabIndex = 213;
             // 
+            // codNivelUsuario
+            // 
+            this.codNivelUsuario.DataPropertyName = "ID_NIVEL";
+            this.codNivelUsuario.HeaderText = "Código";
+            this.codNivelUsuario.MinimumWidth = 6;
+            this.codNivelUsuario.Name = "codNivelUsuario";
+            this.codNivelUsuario.ReadOnly = true;
+            this.codNivelUsuario.Width = 80;
+            // 
+            // nomeNivelUsuario
+            // 
+            this.nomeNivelUsuario.DataPropertyName = "NOME_NIVEL";
+            this.nomeNivelUsuario.HeaderText = "Nome";
+            this.nomeNivelUsuario.MinimumWidth = 6;
+            this.nomeNivelUsuario.Name = "nomeNivelUsuario";
+            this.nomeNivelUsuario.ReadOnly = true;
+            this.nomeNivelUsuario.Width = 225;
+            // 
+            // Descricao
+            // 
+            this.Descricao.DataPropertyName = "DESCRICAO_NIVEL";
+            this.Descricao.HeaderText = "Descrição";
+            this.Descricao.MinimumWidth = 6;
+            this.Descricao.Name = "Descricao";
+            this.Descricao.ReadOnly = true;
+            this.Descricao.Width = 475;
+            // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(695, 54);
@@ -781,130 +832,79 @@
             this.label8.TabIndex = 207;
             this.label8.Text = "Código do Nível:";
             // 
-            // label21
+            // ID_USUARIO
             // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(15, 85);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(66, 16);
-            this.label21.TabIndex = 210;
-            this.label21.Text = "Filtrar por:";
+            this.ID_USUARIO.DataPropertyName = "ID_USUARIO";
+            this.ID_USUARIO.HeaderText = "Código";
+            this.ID_USUARIO.MinimumWidth = 6;
+            this.ID_USUARIO.Name = "ID_USUARIO";
+            this.ID_USUARIO.ReadOnly = true;
+            this.ID_USUARIO.Width = 70;
             // 
-            // cboFiltro
+            // NOME_USUARIO
             // 
-            this.cboFiltro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboFiltro.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboFiltro.FormattingEnabled = true;
-            this.cboFiltro.Items.AddRange(new object[] {
-            "",
-            "Ativos",
-            "Inativos"});
-            this.cboFiltro.Location = new System.Drawing.Point(19, 105);
-            this.cboFiltro.Margin = new System.Windows.Forms.Padding(4);
-            this.cboFiltro.Name = "cboFiltro";
-            this.cboFiltro.Size = new System.Drawing.Size(223, 28);
-            this.cboFiltro.TabIndex = 209;
+            this.NOME_USUARIO.DataPropertyName = "NOME_USUARIO";
+            this.NOME_USUARIO.HeaderText = "Nome";
+            this.NOME_USUARIO.MinimumWidth = 6;
+            this.NOME_USUARIO.Name = "NOME_USUARIO";
+            this.NOME_USUARIO.ReadOnly = true;
+            this.NOME_USUARIO.Width = 240;
             // 
-            // codProcura
+            // DATA_CADASTRO
             // 
-            this.codProcura.DataPropertyName = "ID_USUARIO";
-            this.codProcura.HeaderText = "Código";
-            this.codProcura.MinimumWidth = 6;
-            this.codProcura.Name = "codProcura";
-            this.codProcura.ReadOnly = true;
-            this.codProcura.Width = 70;
+            this.DATA_CADASTRO.DataPropertyName = "DATA_CADASTRO";
+            this.DATA_CADASTRO.HeaderText = "Data de Cadastro";
+            this.DATA_CADASTRO.MinimumWidth = 6;
+            this.DATA_CADASTRO.Name = "DATA_CADASTRO";
+            this.DATA_CADASTRO.ReadOnly = true;
+            this.DATA_CADASTRO.Width = 140;
             // 
-            // nomeProcura
+            // LOGIN_USUARIO
             // 
-            this.nomeProcura.DataPropertyName = "NOME_USUARIO";
-            this.nomeProcura.HeaderText = "Nome";
-            this.nomeProcura.MinimumWidth = 6;
-            this.nomeProcura.Name = "nomeProcura";
-            this.nomeProcura.ReadOnly = true;
-            this.nomeProcura.Width = 240;
+            this.LOGIN_USUARIO.DataPropertyName = "LOGIN_USUARIO";
+            this.LOGIN_USUARIO.HeaderText = "Login";
+            this.LOGIN_USUARIO.MinimumWidth = 6;
+            this.LOGIN_USUARIO.Name = "LOGIN_USUARIO";
+            this.LOGIN_USUARIO.ReadOnly = true;
+            this.LOGIN_USUARIO.Width = 190;
             // 
-            // dataProcura
+            // SENHA_USUARIO
             // 
-            this.dataProcura.DataPropertyName = "DATA_CADASTRO";
-            this.dataProcura.HeaderText = "Data de Cadastro";
-            this.dataProcura.MinimumWidth = 6;
-            this.dataProcura.Name = "dataProcura";
-            this.dataProcura.ReadOnly = true;
-            this.dataProcura.Width = 140;
+            this.SENHA_USUARIO.DataPropertyName = "SENHA_USUARIO";
+            this.SENHA_USUARIO.HeaderText = "Senha";
+            this.SENHA_USUARIO.MinimumWidth = 6;
+            this.SENHA_USUARIO.Name = "SENHA_USUARIO";
+            this.SENHA_USUARIO.ReadOnly = true;
+            this.SENHA_USUARIO.Visible = false;
+            this.SENHA_USUARIO.Width = 125;
             // 
-            // loginProcura
+            // STATUS_USUARIO
             // 
-            this.loginProcura.DataPropertyName = "LOGIN_USUARIO";
-            this.loginProcura.HeaderText = "Login";
-            this.loginProcura.MinimumWidth = 6;
-            this.loginProcura.Name = "loginProcura";
-            this.loginProcura.ReadOnly = true;
-            this.loginProcura.Width = 190;
+            this.STATUS_USUARIO.DataPropertyName = "STATUS_USUARIO";
+            this.STATUS_USUARIO.HeaderText = "Status";
+            this.STATUS_USUARIO.MinimumWidth = 6;
+            this.STATUS_USUARIO.Name = "STATUS_USUARIO";
+            this.STATUS_USUARIO.ReadOnly = true;
+            this.STATUS_USUARIO.Width = 120;
             // 
-            // senhaProcura
+            // ID_NIVEL
             // 
-            this.senhaProcura.DataPropertyName = "SENHA_USUARIO";
-            this.senhaProcura.HeaderText = "Senha";
-            this.senhaProcura.MinimumWidth = 6;
-            this.senhaProcura.Name = "senhaProcura";
-            this.senhaProcura.ReadOnly = true;
-            this.senhaProcura.Visible = false;
-            this.senhaProcura.Width = 125;
+            this.ID_NIVEL.DataPropertyName = "ID_NIVEL";
+            this.ID_NIVEL.HeaderText = "Código Nivel";
+            this.ID_NIVEL.MinimumWidth = 6;
+            this.ID_NIVEL.Name = "ID_NIVEL";
+            this.ID_NIVEL.ReadOnly = true;
+            this.ID_NIVEL.Visible = false;
+            this.ID_NIVEL.Width = 125;
             // 
-            // statusProcura
+            // NOME_NIVEL
             // 
-            this.statusProcura.DataPropertyName = "STATUS_USUARIO";
-            this.statusProcura.HeaderText = "Status";
-            this.statusProcura.MinimumWidth = 6;
-            this.statusProcura.Name = "statusProcura";
-            this.statusProcura.ReadOnly = true;
-            this.statusProcura.Width = 120;
-            // 
-            // codnivelProcura
-            // 
-            this.codnivelProcura.DataPropertyName = "ID_NIVEL";
-            this.codnivelProcura.HeaderText = "Código Nivel";
-            this.codnivelProcura.MinimumWidth = 6;
-            this.codnivelProcura.Name = "codnivelProcura";
-            this.codnivelProcura.ReadOnly = true;
-            this.codnivelProcura.Visible = false;
-            this.codnivelProcura.Width = 125;
-            // 
-            // nomenivelProcura
-            // 
-            this.nomenivelProcura.DataPropertyName = "NOME_NIVEL";
-            this.nomenivelProcura.HeaderText = "Nível";
-            this.nomenivelProcura.MinimumWidth = 6;
-            this.nomenivelProcura.Name = "nomenivelProcura";
-            this.nomenivelProcura.ReadOnly = true;
-            this.nomenivelProcura.Width = 150;
-            // 
-            // codNivelUsuario
-            // 
-            this.codNivelUsuario.DataPropertyName = "ID_NIVEL";
-            this.codNivelUsuario.HeaderText = "Código";
-            this.codNivelUsuario.MinimumWidth = 6;
-            this.codNivelUsuario.Name = "codNivelUsuario";
-            this.codNivelUsuario.ReadOnly = true;
-            this.codNivelUsuario.Width = 80;
-            // 
-            // nomeNivelUsuario
-            // 
-            this.nomeNivelUsuario.DataPropertyName = "NOME_NIVEL";
-            this.nomeNivelUsuario.HeaderText = "Nome";
-            this.nomeNivelUsuario.MinimumWidth = 6;
-            this.nomeNivelUsuario.Name = "nomeNivelUsuario";
-            this.nomeNivelUsuario.ReadOnly = true;
-            this.nomeNivelUsuario.Width = 225;
-            // 
-            // Descricao
-            // 
-            this.Descricao.DataPropertyName = "DESCRICAO_NIVEL";
-            this.Descricao.HeaderText = "Descrição";
-            this.Descricao.MinimumWidth = 6;
-            this.Descricao.Name = "Descricao";
-            this.Descricao.ReadOnly = true;
-            this.Descricao.Width = 475;
+            this.NOME_NIVEL.DataPropertyName = "NOME_NIVEL";
+            this.NOME_NIVEL.HeaderText = "Nível";
+            this.NOME_NIVEL.MinimumWidth = 6;
+            this.NOME_NIVEL.Name = "NOME_NIVEL";
+            this.NOME_NIVEL.ReadOnly = true;
+            this.NOME_NIVEL.Width = 150;
             // 
             // frmUsuarios
             // 
@@ -998,16 +998,16 @@
         private System.Windows.Forms.ComboBox cboFiltro;
         private System.Windows.Forms.BindingSource bdsUsuarios;
         private System.Windows.Forms.BindingSource bdsNiveis;
-        private System.Windows.Forms.DataGridViewTextBoxColumn codProcura;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nomeProcura;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataProcura;
-        private System.Windows.Forms.DataGridViewTextBoxColumn loginProcura;
-        private System.Windows.Forms.DataGridViewTextBoxColumn senhaProcura;
-        private System.Windows.Forms.DataGridViewTextBoxColumn statusProcura;
-        private System.Windows.Forms.DataGridViewTextBoxColumn codnivelProcura;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nomenivelProcura;
         private System.Windows.Forms.DataGridViewTextBoxColumn codNivelUsuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn nomeNivelUsuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn Descricao;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID_USUARIO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NOME_USUARIO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DATA_CADASTRO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LOGIN_USUARIO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SENHA_USUARIO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn STATUS_USUARIO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID_NIVEL;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NOME_NIVEL;
     }
 }

@@ -101,6 +101,7 @@ namespace Interface
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)
+        //Ação do botão btnSalvar, que salva um usuário no banco de dados.
         {
             try
             {
@@ -133,6 +134,7 @@ namespace Interface
         }
 
         private void btnAlterar_Click(object sender, EventArgs e)
+        //Ação do btnAlterar, que carrega os dados do usuário cadastrado no banco para fazer alterações.
         {
             tbcUsuarios.SelectedTab = tbpCadastro;
 
@@ -140,17 +142,17 @@ namespace Interface
             {
                 //Preenche cada componente do formulário com as informações do DataGrid correspondentes.
                 txtRegistro.Text = dtgUsuarios.CurrentRow.Cells["ID_USUARIO"].Value.ToString();
-                txtNome.Text = dtgUsuarios.CurrentRow.Cells["NOME"].Value.ToString();
-                txtLogin.Text = dtgUsuarios.CurrentRow.Cells["LOGIN"].Value.ToString();
+                txtNome.Text = dtgUsuarios.CurrentRow.Cells["NOME_USUARIO"].Value.ToString();
+                txtLogin.Text = dtgUsuarios.CurrentRow.Cells["LOGIN_USUARIO"].Value.ToString();
 
-                if (dtgUsuarios.CurrentRow.Cells["SENHA"].Value.ToString().Trim().Length == 32)
+                if (dtgUsuarios.CurrentRow.Cells["SENHA_USUARIO"].Value.ToString().Trim().Length == 32)
                 {
-                    string novaSenha = dtgUsuarios.CurrentRow.Cells["SENHA"].Value.ToString().Substring(0, 8);
+                    string novaSenha = dtgUsuarios.CurrentRow.Cells["SENHA_USUARIO"].Value.ToString().Substring(0, 8);
                     txtSenha.Text = novaSenha;
                     txtReeSenha.Text = novaSenha;
                 }
                 cboNivel.SelectedValue = dtgUsuarios.CurrentRow.Cells["ID_NIVEL"].Value.ToString();
-                cboStatus.Text = dtgUsuarios.CurrentRow.Cells["STATUS"].Value.ToString();
+                cboStatus.Text = dtgUsuarios.CurrentRow.Cells["STATUS_USUARIO"].Value.ToString();
             }
             catch (Exception ex)
             {
@@ -192,7 +194,7 @@ namespace Interface
 
         private void btnFormNiveis_Click(object sender, EventArgs e)
         {
-            frmNiveis formNiveis = new frmNiveis();
+            frmNiveis formNiveis = new frmNiveis(this);
             formNiveis.ShowDialog();
         }
 

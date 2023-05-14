@@ -28,8 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmNiveis));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.bdnNiveis = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.btnAjuda = new System.Windows.Forms.Button();
             this.btnSair = new System.Windows.Forms.Button();
             this.btnExcluir = new System.Windows.Forms.Button();
@@ -47,14 +53,19 @@
             this.ID_NIVEL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NOME_NIVEL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DESCRICAO_NIVEL = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bdsNiveis = new System.Windows.Forms.BindingSource(this.components);
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bdnNiveis)).BeginInit();
+            this.bdnNiveis.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgNiveis)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsNiveis)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.bdnNiveis);
             this.panel1.Controls.Add(this.btnAjuda);
             this.panel1.Controls.Add(this.btnSair);
             this.panel1.Controls.Add(this.btnExcluir);
@@ -66,6 +77,63 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(197, 444);
             this.panel1.TabIndex = 4;
+            // 
+            // bdnNiveis
+            // 
+            this.bdnNiveis.AddNewItem = null;
+            this.bdnNiveis.CountItem = null;
+            this.bdnNiveis.DeleteItem = null;
+            this.bdnNiveis.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.bdnNiveis.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.bindingNavigatorMoveFirstItem,
+            this.bindingNavigatorMovePreviousItem,
+            this.bindingNavigatorMoveNextItem,
+            this.bindingNavigatorMoveLastItem});
+            this.bdnNiveis.Location = new System.Drawing.Point(0, 222);
+            this.bdnNiveis.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
+            this.bdnNiveis.MoveLastItem = this.bindingNavigatorMoveLastItem;
+            this.bdnNiveis.MoveNextItem = this.bindingNavigatorMoveNextItem;
+            this.bdnNiveis.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
+            this.bdnNiveis.Name = "bdnNiveis";
+            this.bdnNiveis.PositionItem = null;
+            this.bdnNiveis.Size = new System.Drawing.Size(195, 27);
+            this.bdnNiveis.TabIndex = 5;
+            // 
+            // bindingNavigatorMoveFirstItem
+            // 
+            this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
+            this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
+            this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(29, 24);
+            this.bindingNavigatorMoveFirstItem.Text = "Mover primeiro";
+            // 
+            // bindingNavigatorMovePreviousItem
+            // 
+            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
+            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
+            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(29, 24);
+            this.bindingNavigatorMovePreviousItem.Text = "Mover anterior";
+            // 
+            // bindingNavigatorMoveNextItem
+            // 
+            this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
+            this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
+            this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(29, 24);
+            this.bindingNavigatorMoveNextItem.Text = "Mover próximo";
+            // 
+            // bindingNavigatorMoveLastItem
+            // 
+            this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
+            this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
+            this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(29, 24);
+            this.bindingNavigatorMoveLastItem.Text = "Mover último";
             // 
             // btnAjuda
             // 
@@ -105,6 +173,7 @@
             this.btnExcluir.Text = "Excluir Nível";
             this.btnExcluir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // btnAlterar
             // 
@@ -118,6 +187,7 @@
             this.btnAlterar.Text = "Alterar Nível";
             this.btnAlterar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAlterar.UseVisualStyleBackColor = true;
+            this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
             // 
             // btnNovo
             // 
@@ -131,6 +201,7 @@
             this.btnNovo.Text = "Novo Nível";
             this.btnNovo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnNovo.UseVisualStyleBackColor = true;
+            this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
             // 
             // btnLimpar
             // 
@@ -143,6 +214,7 @@
             this.btnLimpar.TabIndex = 217;
             this.btnLimpar.Text = "Limpar Campos";
             this.btnLimpar.UseVisualStyleBackColor = true;
+            this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
             // 
             // btnSalvar
             // 
@@ -155,6 +227,7 @@
             this.btnSalvar.TabIndex = 218;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseVisualStyleBackColor = true;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // txtDescricao
             // 
@@ -292,8 +365,14 @@
             this.Name = "frmNiveis";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gerenciador de Níveis";
+            this.Load += new System.EventHandler(this.frmNiveis_Load);
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bdnNiveis)).EndInit();
+            this.bdnNiveis.ResumeLayout(false);
+            this.bdnNiveis.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgNiveis)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsNiveis)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -319,5 +398,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ID_NIVEL;
         private System.Windows.Forms.DataGridViewTextBoxColumn NOME_NIVEL;
         private System.Windows.Forms.DataGridViewTextBoxColumn DESCRICAO_NIVEL;
+        private System.Windows.Forms.BindingNavigator bdnNiveis;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
+        private System.Windows.Forms.BindingSource bdsNiveis;
     }
 }
