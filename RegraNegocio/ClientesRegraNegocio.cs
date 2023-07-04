@@ -17,7 +17,7 @@ namespace RegraNegocio
         {
             try
             {
-                //Salva um novo nível no banco de dados acessando o método Salvar na camada AcessoDados.
+                //Salva um novo cliente no banco de dados acessando o método Salvar na camada AcessoDados.
                 novoCliente = new AcessoDados.ClientesAcessoDados();
                 novoCliente.Salvar(nome, endereco, bairro, cep, cidade, estado, telefone,
                                    email, dataCadastro, nascimento, observacoes, status); //Parâmetros indicados no método.

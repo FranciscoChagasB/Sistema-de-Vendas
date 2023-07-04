@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="ClientesAcessoDados.cs" />
     <Compile Include="Conexao.cs" />
+    <Compile Include="FuncionariosAcessoDados.cs" />
     <Compile Include="NiveisAcessoDados.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UsuariosAcessoDados.cs" />
