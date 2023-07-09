@@ -127,9 +127,10 @@ namespace AcessoDados
                     comandoSql.Parameters.Add(new SqlParameter("@dataCadastro", dataCadastro));
                     comandoSql.Parameters.Add(new SqlParameter("@idFuncionario", idFuncionario));
 
-                    comandoSql.CommandText = sql.ToString();
-                    comandoSql.Connection = conexao;
-                    comandoSql.ExecuteNonQuery();
+                    //Cria o script com o os comandos inseridos no texto "sql.Append" e o executa.
+                    comandoSql.CommandText = sql.ToString(); //Converter texto para script sql server.
+                    comandoSql.Connection = conexao; //Iniciar a conexão com o banco.
+                    comandoSql.ExecuteNonQuery(); //Executa o script.
                 }
             }
             catch (Exception)

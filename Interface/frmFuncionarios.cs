@@ -82,6 +82,7 @@ namespace Interface
         }
 
         private void btnLimpar_Click(object sender, EventArgs e)
+        //Ação do botão btnLimpar que limpa os campos do formulário.
         {
             Limpar();
         }
