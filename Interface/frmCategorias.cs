@@ -30,7 +30,9 @@ namespace Interface
         //Método que lista as categorias no DataGridView.
         {
             novoProduto = new RegraNegocio.ProdutoRegraNegocio();
-            novoProduto.ListarCategorias();
+            bdsCategorias.DataSource = novoProduto.ListarCategorias();
+            bdnCategorias.BindingSource = bdsCategorias;
+            dtgCategorias.DataSource = bdsCategorias;
         }
 
         private void btnNovo_Click(object sender, EventArgs e)
@@ -44,9 +46,9 @@ namespace Interface
         {
             try
             {
-                txtRegistro.Text = dtgUnidades.CurrentRow.Cells["ID_CATEGORIA_PRODUTOS"].Value.ToString();
-                txtNome.Text = dtgUnidades.CurrentRow.Cells["NOME_CATEGORIA_PRODUTOS"].Value.ToString();
-                txtDescricao.Text = dtgUnidades.CurrentRow.Cells["DESCRICAO_CATEGORIA_PRODUTOS"].Value.ToString();
+                txtRegistro.Text = dtgCategorias.CurrentRow.Cells["ID_CATEGORIA_PRODUTOS"].Value.ToString();
+                txtNome.Text = dtgCategorias.CurrentRow.Cells["NOME_CATEGORIA_PRODUTOS"].Value.ToString();
+                txtDescricao.Text = dtgCategorias.CurrentRow.Cells["DESCRICAO_CATEGORIA_PRODUTOS"].Value.ToString();
             }
             catch (Exception ex)
             {
@@ -64,7 +66,7 @@ namespace Interface
                 {
                     //Se sim, realiza o método ExcluirCategoria, mostra mensagem do sucesso dessa ação, lista as categorias no DataGrid e limpa todos os campos.
                     novoProduto = new RegraNegocio.ProdutoRegraNegocio();
-                    novoProduto.ExcluirCategoria(Convert.ToInt32(dtgUnidades.CurrentRow.Cells["ID_CATEGORIA_PRODUTOS"].Value));
+                    novoProduto.ExcluirCategoria(Convert.ToInt32(dtgCategorias.CurrentRow.Cells["ID_CATEGORIA_PRODUTOS"].Value));
                     MessageBox.Show("Categoria excluída com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     ListarCategorias();

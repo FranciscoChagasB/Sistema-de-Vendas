@@ -76,5 +76,68 @@ namespace RegraNegocio
             }
         }
 
+        public void SalvarUnidade(string nomeUnidade, string descricaoUnidade) //Parâmetros a serem adicionados.
+        //Método que irá salvar uma nova unidade de acordo com os dados recebidos da interface.
+        {
+            try
+            {
+                //Salva uma nova unidade no banco de dados acessando o método SalvarUnidade na camada AcessoDados.
+                novoProduto = new AcessoDados.ProdutoAcessoDados();
+                novoProduto.SalvarUnidade(nomeUnidade, descricaoUnidade); //Parâmetros indicados no método.
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public void AlterarUnidade(int idUnidade, string nomeUnidade, string descricaoUnidade) //Parâmetros a serem adicionados.
+        //Método que irá selecionar uma unidade e realizar alterações de acordo com os dados recebidos da interface.
+        {
+            try
+            {
+                //Altera uma unidade existente no banco de dados acessando o método AlterarUnidade na camada AcessoDados.
+                novoProduto = new AcessoDados.ProdutoAcessoDados();
+                novoProduto.AlterarUnidade(idUnidade, nomeUnidade, descricaoUnidade); //Parâmetros indicados no método.
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public void ExcluirUnidade(int idUnidade) //Parâmetros a serem adicionados.
+        //Método que irá selecionar uma unidade e excluí-la do banco de dados.
+        {
+            try
+            {
+                //Exclui uma unidade existente no banco de dados acessando o método ExcluirUnidade na camada AcessoDados.
+                novoProduto = new AcessoDados.ProdutoAcessoDados();
+                novoProduto.ExcluirUnidade(idUnidade); //Parâmetros indicados no método.
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public DataTable ListarUnidades()
+        //Método que irá listar as unidades existentes no banco de dados.
+        {
+            try
+            {
+                //Cria o DataTable que irá armazenar as unidades existentes no banco de dados acessando a camada AcessoDados.
+                novoProduto = new AcessoDados.ProdutoAcessoDados();
+                DataTable dadosTabela = new DataTable();
+
+                //Lista as unidades existentes no banco de dados acessando o método Listar na camada AcessoDados.
+                dadosTabela = novoProduto.ListarUnidades();
+                return dadosTabela;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
     }
 }

@@ -133,5 +133,122 @@ namespace AcessoDados
             }
         }
 
+        public void SalvarUnidade(string nomeUnidade, string descricaoUnidade) //parâmetros que serão inseridos.
+        //Método com o comando sql para salvar uma unidade no banco de dados.
+        {
+            try
+            {
+                using (SqlConnection conexao = new SqlConnection(Conexao.stringConexao))
+                {
+                    //Inicia a conexão com o banco de dados.
+                    conexao.Open();
+
+                    //Cria um texto com os comandos a serem inseridos no script.
+                    sql.Append("INSERT INTO Unidade (NOME_UNIDADE_PRODUTOS, DESCRICAO_UNIDADE_PRODUTOS)");
+                    sql.Append(" VALUES (@nomeUnidade, @descricaoUnidade)");
+
+                    //Configuração dos parâmetros inseridos com parâmetros no script.
+                    comandoSql.Parameters.Add(new SqlParameter("@nomeUnidade", nomeUnidade));
+                    comandoSql.Parameters.Add(new SqlParameter("@descricaoUnidade", descricaoUnidade));
+
+                    //Cria o script com o os comandos inseridos no texto "sql.Append" e o executa.
+                    comandoSql.CommandText = sql.ToString(); //Converter texto para script sql server.
+                    comandoSql.Connection = conexao; //Iniciar a conexão com o banco.
+                    comandoSql.ExecuteNonQuery(); //Executa o script.
+                }
+            }
+            catch (Exception)
+            {
+                throw new Exception("Ocorreu um erro no método SalvarUnidade. Caso o problema persista, entre em contato com o Administrador do Sistema.");
+            }
+        }
+
+        public void AlterarUnidade(int idUnidade, string nomeUnidade, string descricaoUnidade) //parâmetros que serão inseridos.
+        //Método com o comando sql para alterar alguma unidade existente no banco de dados.
+        {
+            try
+            {
+                using (SqlConnection conexao = new SqlConnection(Conexao.stringConexao))
+                {
+                    //Inicia a conexão com o banco de dados.
+                    conexao.Open();
+
+                    //Cria um texto com os comandos a serem inseridos no script.
+                    sql.Append("UPDATE Unidade");
+                    sql.Append(" SET NOME_UNIDADE_PRODUTOS=@nomeUnidade, DESCRICAO_UNIDADE_PRODUTOS=@descricaoUnidade");
+                    sql.Append(" WHERE (ID_UNIDADE_PRODUTOS = @idUnidade)");
+
+                    //Configuração dos parâmetros inseridos com parâmetros no script.
+                    comandoSql.Parameters.Add(new SqlParameter("@nomeUnidade", nomeUnidade));
+                    comandoSql.Parameters.Add(new SqlParameter("@descricaoUnidade", descricaoUnidade));
+                    comandoSql.Parameters.Add(new SqlParameter("@idUnidade", idUnidade));
+
+                    //Cria o script com o os comandos inseridos no texto "sql.Append" e o executa.
+                    comandoSql.CommandText = sql.ToString(); //Converter texto para script sql server.
+                    comandoSql.Connection = conexao; //Iniciar a conexão com o banco.
+                    comandoSql.ExecuteNonQuery(); //Executa o script.
+                }
+            }
+            catch (Exception)
+            {
+                throw new Exception("Ocorreu um erro no método AlterarUnidade. Caso o problema persista, entre em contato com o Administrador do Sistema.");
+            }
+        }
+
+        public void ExcluirUnidade(int idUnidade) //parâmetros que serão inseridos.
+        //Método com o comando sql para excluir alguma unidade existente no banco de dados.
+        {
+            try
+            {
+                using (SqlConnection conexao = new SqlConnection(Conexao.stringConexao))
+                {
+                    //Inicia a conexão com o banco de dados.
+                    conexao.Open();
+
+                    //Cria um texto com os comandos a serem inseridos no script.
+                    sql.Append("DELETE FROM Unidade");
+                    sql.Append(" WHERE (ID_UNIDADE_PRODUTOS = @idUnidade)");
+
+                    //Configuração dos parâmetros inseridos com parâmetros no script.
+                    comandoSql.Parameters.Add(new SqlParameter("@idUnidade", idUnidade));
+
+                    //Cria o script com o os comandos inseridos no texto "sql.Append" e o executa.
+                    comandoSql.CommandText = sql.ToString(); //Converter texto para script sql server.
+                    comandoSql.Connection = conexao; //Iniciar a conexão com o banco.
+                    comandoSql.ExecuteNonQuery(); //Executa o script.
+                }
+            }
+            catch (Exception)
+            {
+                throw new Exception("Ocorreu um erro no método ExcluirUnidade. Caso o problema persista, entre em contato com o Administrador do Sistema.");
+            }
+        }
+
+        public DataTable ListarUnidades()
+        //Método com o comando sql para listar as unidades existentes no banco de dados.
+        {
+            try
+            {
+                using (SqlConnection conexao = new SqlConnection(Conexao.stringConexao))
+                {
+                    //Inicia a conexão com o banco de dados.
+                    conexao.Open();
+
+                    //Cria um texto com os comandos a serem inseridos no script.
+                    sql.Append("SELECT * FROM Unidade_produtos");
+                    sql.Append(" ORDER BY ID_UNIDADE_PRODUTOS");
+
+                    //Cria o script com o os comandos inseridos no texto "sql.Append" e o executa.
+                    comandoSql.CommandText = sql.ToString(); //Converter texto para script sql server.
+                    comandoSql.Connection = conexao; //Iniciar a conexão com o banco.
+                    dadosTabela.Load(comandoSql.ExecuteReader()); //Executa o script.
+                    return dadosTabela; //Retorna o DataTable com os dados.
+                }
+            }
+            catch (Exception)
+            {
+                throw new Exception("Ocorreu um erro no método ListarUnidades. Caso o problema persista, entre em contato com o Administrador do sistema.");
+            }
+        }
     }
 }

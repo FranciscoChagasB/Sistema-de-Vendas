@@ -28,13 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmUnidade));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.bdnUnidade = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
+            this.separator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
+            this.separator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
+            this.separator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.btnAjuda = new System.Windows.Forms.Button();
             this.btnSair = new System.Windows.Forms.Button();
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnAlterar = new System.Windows.Forms.Button();
             this.btnNovo = new System.Windows.Forms.Button();
-            this.dtgUnidades = new System.Windows.Forms.DataGridView();
+            this.dtgUnidade = new System.Windows.Forms.DataGridView();
+            this.ID_UNIDADE_PRODUTOS = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NOME_UNIDADE_PRODUTOS = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DESCRICAO_UNIDADE_PRODUTOS = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnLimpar = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
             this.txtDescricao = new System.Windows.Forms.TextBox();
@@ -43,17 +56,19 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtRegistro = new System.Windows.Forms.TextBox();
-            this.ID_CATEGORIA = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NOME_CATEGORIA = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DESCRICAO_CATEGORIA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bdsUnidade = new System.Windows.Forms.BindingSource(this.components);
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgUnidades)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdnUnidade)).BeginInit();
+            this.bdnUnidade.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgUnidade)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsUnidade)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.bdnUnidade);
             this.panel1.Controls.Add(this.btnAjuda);
             this.panel1.Controls.Add(this.btnSair);
             this.panel1.Controls.Add(this.btnExcluir);
@@ -65,6 +80,83 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(262, 546);
             this.panel1.TabIndex = 7;
+            // 
+            // bdnUnidade
+            // 
+            this.bdnUnidade.AddNewItem = null;
+            this.bdnUnidade.CountItem = null;
+            this.bdnUnidade.DeleteItem = null;
+            this.bdnUnidade.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.bdnUnidade.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.bdnUnidade.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.bindingNavigatorMoveFirstItem,
+            this.separator1,
+            this.bindingNavigatorMovePreviousItem,
+            this.separator2,
+            this.bindingNavigatorMoveNextItem,
+            this.separator3,
+            this.bindingNavigatorMoveLastItem});
+            this.bdnUnidade.Location = new System.Drawing.Point(0, 335);
+            this.bdnUnidade.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
+            this.bdnUnidade.MoveLastItem = this.bindingNavigatorMoveLastItem;
+            this.bdnUnidade.MoveNextItem = this.bindingNavigatorMoveNextItem;
+            this.bdnUnidade.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
+            this.bdnUnidade.Name = "bdnUnidade";
+            this.bdnUnidade.PositionItem = null;
+            this.bdnUnidade.Size = new System.Drawing.Size(260, 27);
+            this.bdnUnidade.TabIndex = 7;
+            this.bdnUnidade.Text = "bindingNavigator1";
+            // 
+            // bindingNavigatorMoveFirstItem
+            // 
+            this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
+            this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
+            this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(29, 24);
+            this.bindingNavigatorMoveFirstItem.Text = "Mover primeiro";
+            // 
+            // separator1
+            // 
+            this.separator1.Name = "separator1";
+            this.separator1.Size = new System.Drawing.Size(6, 27);
+            // 
+            // bindingNavigatorMovePreviousItem
+            // 
+            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
+            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
+            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(29, 24);
+            this.bindingNavigatorMovePreviousItem.Text = "Mover anterior";
+            // 
+            // separator2
+            // 
+            this.separator2.Name = "separator2";
+            this.separator2.Size = new System.Drawing.Size(6, 27);
+            // 
+            // bindingNavigatorMoveNextItem
+            // 
+            this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
+            this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
+            this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(29, 24);
+            this.bindingNavigatorMoveNextItem.Text = "Mover próximo";
+            // 
+            // separator3
+            // 
+            this.separator3.Name = "separator3";
+            this.separator3.Size = new System.Drawing.Size(6, 27);
+            // 
+            // bindingNavigatorMoveLastItem
+            // 
+            this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
+            this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
+            this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(29, 24);
+            this.bindingNavigatorMoveLastItem.Text = "Mover último";
             // 
             // btnAjuda
             // 
@@ -104,6 +196,7 @@
             this.btnExcluir.Text = "Excluir Unidade";
             this.btnExcluir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // btnAlterar
             // 
@@ -117,6 +210,7 @@
             this.btnAlterar.Text = "Alterar Unidade";
             this.btnAlterar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAlterar.UseVisualStyleBackColor = true;
+            this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
             // 
             // btnNovo
             // 
@@ -132,26 +226,53 @@
             this.btnNovo.UseVisualStyleBackColor = true;
             this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
             // 
-            // dtgUnidades
+            // dtgUnidade
             // 
-            this.dtgUnidades.AllowUserToAddRows = false;
-            this.dtgUnidades.AllowUserToDeleteRows = false;
-            this.dtgUnidades.AllowUserToResizeColumns = false;
-            this.dtgUnidades.AllowUserToResizeRows = false;
-            this.dtgUnidades.BackgroundColor = System.Drawing.Color.White;
-            this.dtgUnidades.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgUnidades.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ID_CATEGORIA,
-            this.NOME_CATEGORIA,
-            this.DESCRICAO_CATEGORIA});
-            this.dtgUnidades.Location = new System.Drawing.Point(278, 249);
-            this.dtgUnidades.Margin = new System.Windows.Forms.Padding(5);
-            this.dtgUnidades.Name = "dtgUnidades";
-            this.dtgUnidades.ReadOnly = true;
-            this.dtgUnidades.RowHeadersWidth = 51;
-            this.dtgUnidades.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgUnidades.Size = new System.Drawing.Size(812, 276);
-            this.dtgUnidades.TabIndex = 245;
+            this.dtgUnidade.AllowUserToAddRows = false;
+            this.dtgUnidade.AllowUserToDeleteRows = false;
+            this.dtgUnidade.AllowUserToResizeColumns = false;
+            this.dtgUnidade.AllowUserToResizeRows = false;
+            this.dtgUnidade.BackgroundColor = System.Drawing.Color.White;
+            this.dtgUnidade.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgUnidade.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ID_UNIDADE_PRODUTOS,
+            this.NOME_UNIDADE_PRODUTOS,
+            this.DESCRICAO_UNIDADE_PRODUTOS});
+            this.dtgUnidade.Location = new System.Drawing.Point(278, 249);
+            this.dtgUnidade.Margin = new System.Windows.Forms.Padding(5);
+            this.dtgUnidade.Name = "dtgUnidade";
+            this.dtgUnidade.ReadOnly = true;
+            this.dtgUnidade.RowHeadersWidth = 51;
+            this.dtgUnidade.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dtgUnidade.Size = new System.Drawing.Size(812, 276);
+            this.dtgUnidade.TabIndex = 245;
+            // 
+            // ID_UNIDADE_PRODUTOS
+            // 
+            this.ID_UNIDADE_PRODUTOS.DataPropertyName = "ID_UNIDADE_PRODUTOS";
+            this.ID_UNIDADE_PRODUTOS.HeaderText = "Código";
+            this.ID_UNIDADE_PRODUTOS.MinimumWidth = 6;
+            this.ID_UNIDADE_PRODUTOS.Name = "ID_UNIDADE_PRODUTOS";
+            this.ID_UNIDADE_PRODUTOS.ReadOnly = true;
+            this.ID_UNIDADE_PRODUTOS.Width = 65;
+            // 
+            // NOME_UNIDADE_PRODUTOS
+            // 
+            this.NOME_UNIDADE_PRODUTOS.DataPropertyName = "NOME_UNIDADE_PRODUTOS";
+            this.NOME_UNIDADE_PRODUTOS.HeaderText = "Nome";
+            this.NOME_UNIDADE_PRODUTOS.MinimumWidth = 6;
+            this.NOME_UNIDADE_PRODUTOS.Name = "NOME_UNIDADE_PRODUTOS";
+            this.NOME_UNIDADE_PRODUTOS.ReadOnly = true;
+            this.NOME_UNIDADE_PRODUTOS.Width = 250;
+            // 
+            // DESCRICAO_UNIDADE_PRODUTOS
+            // 
+            this.DESCRICAO_UNIDADE_PRODUTOS.DataPropertyName = "DESCRICAO_UNIDADE_PRODUTOS";
+            this.DESCRICAO_UNIDADE_PRODUTOS.HeaderText = "Descrição";
+            this.DESCRICAO_UNIDADE_PRODUTOS.MinimumWidth = 6;
+            this.DESCRICAO_UNIDADE_PRODUTOS.Name = "DESCRICAO_UNIDADE_PRODUTOS";
+            this.DESCRICAO_UNIDADE_PRODUTOS.ReadOnly = true;
+            this.DESCRICAO_UNIDADE_PRODUTOS.Width = 440;
             // 
             // btnLimpar
             // 
@@ -177,6 +298,7 @@
             this.btnSalvar.TabIndex = 244;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseVisualStyleBackColor = true;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // txtDescricao
             // 
@@ -245,39 +367,12 @@
             this.txtRegistro.TabStop = false;
             this.txtRegistro.Text = "0";
             // 
-            // ID_CATEGORIA
-            // 
-            this.ID_CATEGORIA.DataPropertyName = "ID_CATEGORIA";
-            this.ID_CATEGORIA.HeaderText = "Código";
-            this.ID_CATEGORIA.MinimumWidth = 6;
-            this.ID_CATEGORIA.Name = "ID_CATEGORIA";
-            this.ID_CATEGORIA.ReadOnly = true;
-            this.ID_CATEGORIA.Width = 65;
-            // 
-            // NOME_CATEGORIA
-            // 
-            this.NOME_CATEGORIA.DataPropertyName = "NOME_CATEGORIA";
-            this.NOME_CATEGORIA.HeaderText = "Nome";
-            this.NOME_CATEGORIA.MinimumWidth = 6;
-            this.NOME_CATEGORIA.Name = "NOME_CATEGORIA";
-            this.NOME_CATEGORIA.ReadOnly = true;
-            this.NOME_CATEGORIA.Width = 250;
-            // 
-            // DESCRICAO_CATEGORIA
-            // 
-            this.DESCRICAO_CATEGORIA.DataPropertyName = "DESCRICAO_CATEGORIA";
-            this.DESCRICAO_CATEGORIA.HeaderText = "Descrição";
-            this.DESCRICAO_CATEGORIA.MinimumWidth = 6;
-            this.DESCRICAO_CATEGORIA.Name = "DESCRICAO_CATEGORIA";
-            this.DESCRICAO_CATEGORIA.ReadOnly = true;
-            this.DESCRICAO_CATEGORIA.Width = 440;
-            // 
             // frmUnidade
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1393, 546);
-            this.Controls.Add(this.dtgUnidades);
+            this.Controls.Add(this.dtgUnidade);
             this.Controls.Add(this.btnLimpar);
             this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.txtDescricao);
@@ -295,7 +390,12 @@
             this.Text = "Gerenciador de Unidades";
             this.Load += new System.EventHandler(this.frmUnidade_Load);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dtgUnidades)).EndInit();
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bdnUnidade)).EndInit();
+            this.bdnUnidade.ResumeLayout(false);
+            this.bdnUnidade.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgUnidade)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsUnidade)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -309,7 +409,7 @@
         private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.Button btnAlterar;
         private System.Windows.Forms.Button btnNovo;
-        private System.Windows.Forms.DataGridView dtgUnidades;
+        private System.Windows.Forms.DataGridView dtgUnidade;
         private System.Windows.Forms.Button btnLimpar;
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.TextBox txtDescricao;
@@ -318,8 +418,17 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtRegistro;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID_CATEGORIA;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NOME_CATEGORIA;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DESCRICAO_CATEGORIA;
+        private System.Windows.Forms.BindingNavigator bdnUnidade;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
+        private System.Windows.Forms.ToolStripSeparator separator1;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
+        private System.Windows.Forms.ToolStripSeparator separator2;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
+        private System.Windows.Forms.ToolStripSeparator separator3;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
+        private System.Windows.Forms.BindingSource bdsUnidade;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID_UNIDADE_PRODUTOS;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NOME_UNIDADE_PRODUTOS;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DESCRICAO_UNIDADE_PRODUTOS;
     }
 }
