@@ -10,3 +10,9 @@ D:\Download\Sistema de Vendas\Sistema-de-Vendas\AcessoDados\obj\Debug\AcessoDado
 D:\Download\Sistema de Vendas\Sistema-de-Vendas\AcessoDados\obj\Debug\AcessoDados.csproj.CoreCompileInputs.cache
 D:\Download\Sistema de Vendas\Sistema-de-Vendas\AcessoDados\obj\Debug\AcessoDados.dll
 D:\Download\Sistema de Vendas\Sistema-de-Vendas\AcessoDados\obj\Debug\AcessoDados.pdb
+D:\Downloads\Sistema de Vendas\Sistema-de-Vendas\AcessoDados\bin\Debug\AcessoDados.dll
+D:\Downloads\Sistema de Vendas\Sistema-de-Vendas\AcessoDados\bin\Debug\AcessoDados.pdb
+D:\Downloads\Sistema de Vendas\Sistema-de-Vendas\AcessoDados\obj\Debug\AcessoDados.csproj.AssemblyReference.cache
+D:\Downloads\Sistema de Vendas\Sistema-de-Vendas\AcessoDados\obj\Debug\AcessoDados.csproj.CoreCompileInputs.cache
+D:\Downloads\Sistema de Vendas\Sistema-de-Vendas\AcessoDados\obj\Debug\AcessoDados.dll
+D:\Downloads\Sistema de Vendas\Sistema-de-Vendas\AcessoDados\obj\Debug\AcessoDados.pdb

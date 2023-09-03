@@ -16,3 +16,12 @@ D:\Download\Sistema de Vendas\Sistema-de-Vendas\RegraNegocio\bin\Debug\RegraNego
 D:\Download\Sistema de Vendas\Sistema-de-Vendas\RegraNegocio\bin\Debug\AcessoDados.dll
 D:\Download\Sistema de Vendas\Sistema-de-Vendas\RegraNegocio\bin\Debug\AcessoDados.pdb
 D:\Download\Sistema de Vendas\Sistema-de-Vendas\RegraNegocio\obj\Debug\RegraNegocio.csproj.CopyComplete
+D:\Downloads\Sistema de Vendas\Sistema-de-Vendas\RegraNegocio\bin\Debug\RegraNegocio.dll
+D:\Downloads\Sistema de Vendas\Sistema-de-Vendas\RegraNegocio\bin\Debug\RegraNegocio.pdb
+D:\Downloads\Sistema de Vendas\Sistema-de-Vendas\RegraNegocio\bin\Debug\AcessoDados.dll
+D:\Downloads\Sistema de Vendas\Sistema-de-Vendas\RegraNegocio\bin\Debug\AcessoDados.pdb
+D:\Downloads\Sistema de Vendas\Sistema-de-Vendas\RegraNegocio\obj\Debug\RegraNegocio.csproj.AssemblyReference.cache
+D:\Downloads\Sistema de Vendas\Sistema-de-Vendas\RegraNegocio\obj\Debug\RegraNegocio.csproj.CoreCompileInputs.cache
+D:\Downloads\Sistema de Vendas\Sistema-de-Vendas\RegraNegocio\obj\Debug\RegraNegocio.csproj.CopyComplete
+D:\Downloads\Sistema de Vendas\Sistema-de-Vendas\RegraNegocio\obj\Debug\RegraNegocio.dll
+D:\Downloads\Sistema de Vendas\Sistema-de-Vendas\RegraNegocio\obj\Debug\RegraNegocio.pdb

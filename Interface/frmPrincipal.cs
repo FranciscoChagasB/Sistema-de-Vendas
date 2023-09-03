@@ -80,5 +80,47 @@ namespace Interface
             frmFuncionarios formFuncionarios = new frmFuncionarios();
             formFuncionarios.ShowDialog();
         }
+
+        private void mstripProdutos_Click(object sender, EventArgs e)
+        //Ação do botão de menu mstripProdutos que inicializa o formulário frmProdutos.
+        {
+            frmProdutos formProdutos = new frmProdutos();
+            formProdutos.ShowDialog();
+        }
+
+        private void btnProdutos_Click(object sender, EventArgs e)
+        //Ação do botão btnProdutos que inicializa o formulário frmProdutos.
+        {
+            frmProdutos formProdutos = new frmProdutos();
+            formProdutos.ShowDialog();
+        }
+
+        private void mstripUnidades_Click(object sender, EventArgs e)
+        //Ação do botão de menu mstripUnidades que inicializa o formulário frmUnidade.
+        {
+            frmUnidade formUnidade = new frmUnidade();
+            formUnidade.ShowDialog();
+        }
+
+        private void btnUnidade_Click(object sender, EventArgs e)
+        //Ação do botão btnUnidade que inicializa o formulário frmUnidade.
+        {
+            frmUnidade formUnidade = new frmUnidade();
+            formUnidade.ShowDialog();
+        }
+
+        private void mstripCategorias_Click(object sender, EventArgs e)
+        //Ação do botão de menu mstripCategorias que inicializa o formulário frmCategorias.
+        {
+            frmCategorias formCategorias = new frmCategorias();
+            formCategorias.ShowDialog();
+        }
+
+        private void btnCategoria_Click(object sender, EventArgs e)
+        //Ação do botão btnCategoria que inicializa o formulário frmCategorias.
+        {
+            frmCategorias formCategorias = new frmCategorias();
+            formCategorias.ShowDialog();
+        }
     }
 }

@@ -171,7 +171,7 @@
     <None Include="Resources\ajuda.png" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="D:\Download\Sistema de Vendas\Sistema-de-Vendas\RegraNegocio\RegraNegocio.csproj">
+    <ProjectReference Include="..\RegraNegocio\RegraNegocio.csproj">
       <Project>{b18bcc52-b183-4871-b8f9-a3017967c306}</Project>
       <Name>RegraNegocio</Name>
     </ProjectReference>
@@ -193,6 +193,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\funcionarios.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\produtos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\unidade.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\categorias.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

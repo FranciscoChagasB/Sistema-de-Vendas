@@ -19,8 +19,14 @@ namespace Interface
 
         private void btnFormCategorias_Click(object sender, EventArgs e)
         {
-            frmCategoria formCategoria = new frmCategoria();
+            frmCategorias formCategoria = new frmCategorias();
             formCategoria.ShowDialog();
+        }
+
+        private void btnFormUnidades_Click(object sender, EventArgs e)
+        {
+            frmUnidade formUnidade = new frmUnidade();
+            formUnidade.ShowDialog();
         }
     }
 }
