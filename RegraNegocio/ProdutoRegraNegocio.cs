@@ -139,5 +139,50 @@ namespace RegraNegocio
                 throw new Exception(ex.Message);
             }
         }
+
+        public void Salvar(string codigoBarras, string nome, string descrição, int idUnidade, int idCategoria, int estoqueMinimo,
+                           int estoqueAtual, decimal valorCompra, decimal valorVenda, decimal margem, string anotacoesProduto,
+                           bool situacaoProdutos, DateTime dataCadastroProduto)
+        {
+            try
+            {
+                novoProduto = new AcessoDados.ProdutoAcessoDados();
+                novoProduto.Salvar(codigoBarras, nome, descrição, idUnidade, idCategoria, estoqueMinimo, estoqueAtual, valorCompra,
+                                   valorVenda, margem, anotacoesProduto, situacaoProdutos, dataCadastroProduto);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public void Alterar(int idproduto, string codigoBarras, string nome, string descricao, int idUnidade, int idCategoria, int estoqueMinimo, int estoqueAtual,
+                           decimal valorCompra, decimal valorVenda, decimal margem, string anotacoesProdutos, bool situacaoProdutos, DateTime dataCadastroProduto) //parâmetros que serão inseridos.
+
+        {
+            try
+            {
+                novoProduto = new AcessoDados.ProdutoAcessoDados();
+                novoProduto.Alterar(idproduto, codigoBarras, nome, descricao, idUnidade, idCategoria, estoqueMinimo, estoqueAtual,
+                                    valorCompra, valorVenda, margem, anotacoesProdutos, situacaoProdutos, dataCadastroProduto);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public void Excluir(int idproduto)
+        {
+            try
+            {
+                novoProduto = new AcessoDados.ProdutoAcessoDados();
+                novoProduto.Excluir(idproduto);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
     }
 }
