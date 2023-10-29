@@ -75,7 +75,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(197, 444);
+            this.panel1.Size = new System.Drawing.Size(197, 480);
             this.panel1.TabIndex = 4;
             // 
             // bdnNiveis
@@ -139,7 +139,7 @@
             // 
             this.btnAjuda.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btnAjuda.Image = global::Interface.Properties.Resources.ajuda;
-            this.btnAjuda.Location = new System.Drawing.Point(0, 294);
+            this.btnAjuda.Location = new System.Drawing.Point(0, 330);
             this.btnAjuda.Margin = new System.Windows.Forms.Padding(4);
             this.btnAjuda.Name = "btnAjuda";
             this.btnAjuda.Size = new System.Drawing.Size(195, 74);
@@ -152,7 +152,7 @@
             // 
             this.btnSair.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btnSair.Image = global::Interface.Properties.Resources.sair;
-            this.btnSair.Location = new System.Drawing.Point(0, 368);
+            this.btnSair.Location = new System.Drawing.Point(0, 404);
             this.btnSair.Margin = new System.Windows.Forms.Padding(4);
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(195, 74);
@@ -207,7 +207,7 @@
             // 
             this.btnLimpar.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.btnLimpar.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnLimpar.Location = new System.Drawing.Point(831, 140);
+            this.btnLimpar.Location = new System.Drawing.Point(924, 153);
             this.btnLimpar.Margin = new System.Windows.Forms.Padding(4);
             this.btnLimpar.Name = "btnLimpar";
             this.btnLimpar.Size = new System.Drawing.Size(199, 31);
@@ -220,7 +220,7 @@
             // 
             this.btnSalvar.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.btnSalvar.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnSalvar.Location = new System.Drawing.Point(831, 105);
+            this.btnSalvar.Location = new System.Drawing.Point(924, 101);
             this.btnSalvar.Margin = new System.Windows.Forms.Padding(4);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(199, 31);
@@ -239,7 +239,7 @@
             this.txtDescricao.Multiline = true;
             this.txtDescricao.Name = "txtDescricao";
             this.txtDescricao.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtDescricao.Size = new System.Drawing.Size(612, 104);
+            this.txtDescricao.Size = new System.Drawing.Size(668, 104);
             this.txtDescricao.TabIndex = 211;
             // 
             // label3
@@ -255,7 +255,7 @@
             // txtNome
             // 
             this.txtNome.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.txtNome.Location = new System.Drawing.Point(361, 29);
+            this.txtNome.Location = new System.Drawing.Point(417, 29);
             this.txtNome.Margin = new System.Windows.Forms.Padding(4);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(460, 29);
@@ -264,7 +264,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(357, 9);
+            this.label2.Location = new System.Drawing.Point(413, 9);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(47, 16);
@@ -314,7 +314,7 @@
             this.dtgNiveis.ReadOnly = true;
             this.dtgNiveis.RowHeadersWidth = 51;
             this.dtgNiveis.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgNiveis.Size = new System.Drawing.Size(609, 224);
+            this.dtgNiveis.Size = new System.Drawing.Size(664, 263);
             this.dtgNiveis.TabIndex = 210;
             // 
             // ID_NIVEL
@@ -348,7 +348,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1045, 444);
+            this.ClientSize = new System.Drawing.Size(1163, 480);
             this.Controls.Add(this.btnLimpar);
             this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.txtDescricao);
@@ -362,6 +362,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmNiveis";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gerenciador de Níveis";

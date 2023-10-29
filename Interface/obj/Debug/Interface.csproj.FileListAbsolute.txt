@@ -71,7 +71,6 @@ D:\Downloads\Sistema de Vendas\Sistema-de-Vendas\Interface\bin\Debug\AcessoDados
 D:\Downloads\Sistema de Vendas\Sistema-de-Vendas\Interface\bin\Debug\RegraNegocio.pdb
 D:\Downloads\Sistema de Vendas\Sistema-de-Vendas\Interface\bin\Debug\AcessoDados.pdb
 D:\Downloads\Sistema de Vendas\Sistema-de-Vendas\Interface\obj\Debug\Interface.csproj.AssemblyReference.cache
-D:\Downloads\Sistema de Vendas\Sistema-de-Vendas\Interface\obj\Debug\Interface.csproj.SuggestedBindingRedirects.cache
 D:\Downloads\Sistema de Vendas\Sistema-de-Vendas\Interface\obj\Debug\Interface.frmCategorias.resources
 D:\Downloads\Sistema de Vendas\Sistema-de-Vendas\Interface\obj\Debug\Interface.frmClientes.resources
 D:\Downloads\Sistema de Vendas\Sistema-de-Vendas\Interface\obj\Debug\Interface.frmFuncionarios.resources

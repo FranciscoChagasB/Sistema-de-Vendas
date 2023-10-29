@@ -9,7 +9,7 @@ namespace AcessoDados
     class Conexao
     {
         //Variável que armazena a String de Conexão.
-        private static string conexao = @"Data Source=localhost\SQLEXPRESS;Initial Catalog=Vendas;Integrated Security=True";
+        private static string conexao = @"Data Source=localhost\SQLEXPRESS;Initial Catalog=Vendas_FranciscodasChagas;Integrated Security=True";
 
         //Método para acessar a String de Conexão.
         public static string stringConexao

@@ -57,7 +57,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.dtgProdutos = new System.Windows.Forms.DataGridView();
             this.ID_PRODUTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CODIGO_BARRAS_PRODUTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CODIGOBARRAS_PRODUTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NOME_PRODUTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DESCRICAO_PRODUTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ID_UNIDADE = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -69,7 +69,7 @@
             this.VALOR_VENDA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MARGEM = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ANOTACOES_PRODUTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.STATUS_PRODUTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SITUACAO_PRODUTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DATA_CADASTRO_PRODUTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tbpCadastro = new System.Windows.Forms.TabPage();
             this.gbPrecos = new System.Windows.Forms.GroupBox();
@@ -276,6 +276,7 @@
             this.btnExcluir.Text = "Excluir Produto";
             this.btnExcluir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // btnAlterar
             // 
@@ -289,6 +290,7 @@
             this.btnAlterar.Text = "Alterar Produto";
             this.btnAlterar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAlterar.UseVisualStyleBackColor = true;
+            this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
             // 
             // btnNovo
             // 
@@ -440,7 +442,7 @@
             this.dtgProdutos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgProdutos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID_PRODUTO,
-            this.CODIGO_BARRAS_PRODUTO,
+            this.CODIGOBARRAS_PRODUTO,
             this.NOME_PRODUTO,
             this.DESCRICAO_PRODUTO,
             this.ID_UNIDADE,
@@ -452,7 +454,7 @@
             this.VALOR_VENDA,
             this.MARGEM,
             this.ANOTACOES_PRODUTO,
-            this.STATUS_PRODUTO,
+            this.SITUACAO_PRODUTO,
             this.DATA_CADASTRO_PRODUTO});
             this.dtgProdutos.GridColor = System.Drawing.SystemColors.ControlDarkDark;
             this.dtgProdutos.Location = new System.Drawing.Point(8, 223);
@@ -475,14 +477,14 @@
             this.ID_PRODUTO.ReadOnly = true;
             this.ID_PRODUTO.Width = 70;
             // 
-            // CODIGO_BARRAS_PRODUTO
+            // CODIGOBARRAS_PRODUTO
             // 
-            this.CODIGO_BARRAS_PRODUTO.DataPropertyName = "CODIGO_BARRAS_PRODUTO";
-            this.CODIGO_BARRAS_PRODUTO.HeaderText = "Código de Barras";
-            this.CODIGO_BARRAS_PRODUTO.MinimumWidth = 6;
-            this.CODIGO_BARRAS_PRODUTO.Name = "CODIGO_BARRAS_PRODUTO";
-            this.CODIGO_BARRAS_PRODUTO.ReadOnly = true;
-            this.CODIGO_BARRAS_PRODUTO.Width = 250;
+            this.CODIGOBARRAS_PRODUTO.DataPropertyName = "CODIGOBARRAS_PRODUTO";
+            this.CODIGOBARRAS_PRODUTO.HeaderText = "Código de Barras";
+            this.CODIGOBARRAS_PRODUTO.MinimumWidth = 6;
+            this.CODIGOBARRAS_PRODUTO.Name = "CODIGOBARRAS_PRODUTO";
+            this.CODIGOBARRAS_PRODUTO.ReadOnly = true;
+            this.CODIGOBARRAS_PRODUTO.Width = 250;
             // 
             // NOME_PRODUTO
             // 
@@ -590,14 +592,14 @@
             this.ANOTACOES_PRODUTO.Visible = false;
             this.ANOTACOES_PRODUTO.Width = 125;
             // 
-            // STATUS_PRODUTO
+            // SITUACAO_PRODUTO
             // 
-            this.STATUS_PRODUTO.DataPropertyName = "STATUS_PRODUTO";
-            this.STATUS_PRODUTO.HeaderText = "Situação";
-            this.STATUS_PRODUTO.MinimumWidth = 6;
-            this.STATUS_PRODUTO.Name = "STATUS_PRODUTO";
-            this.STATUS_PRODUTO.ReadOnly = true;
-            this.STATUS_PRODUTO.Width = 125;
+            this.SITUACAO_PRODUTO.DataPropertyName = "SITUACAO_PRODUTO";
+            this.SITUACAO_PRODUTO.HeaderText = "Situação";
+            this.SITUACAO_PRODUTO.MinimumWidth = 6;
+            this.SITUACAO_PRODUTO.Name = "SITUACAO_PRODUTO";
+            this.SITUACAO_PRODUTO.ReadOnly = true;
+            this.SITUACAO_PRODUTO.Width = 125;
             // 
             // DATA_CADASTRO_PRODUTO
             // 
@@ -741,6 +743,7 @@
             this.cboUnidadeProduto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboUnidadeProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboUnidadeProduto.FormattingEnabled = true;
+            this.cboUnidadeProduto.ItemHeight = 18;
             this.cboUnidadeProduto.Location = new System.Drawing.Point(568, 45);
             this.cboUnidadeProduto.Margin = new System.Windows.Forms.Padding(4);
             this.cboUnidadeProduto.Name = "cboUnidadeProduto";
@@ -1286,9 +1289,12 @@
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmProdutos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gerenciador de Produtos";
+            this.Load += new System.EventHandler(this.frmProdutos_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bdnProdutos)).EndInit();
@@ -1386,21 +1392,6 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox txtNomeCategoria;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID_PRODUTO;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CODIGO_BARRAS_PRODUTO;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NOME_PRODUTO;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DESCRICAO_PRODUTO;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID_UNIDADE;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NOME_UNIDADE_PRODUTOS;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID_CATEGORIA;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ESTOQUE_MINIMO;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ESTOQUE_ATUAL;
-        private System.Windows.Forms.DataGridViewTextBoxColumn VALOR_COMPRA;
-        private System.Windows.Forms.DataGridViewTextBoxColumn VALOR_VENDA;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MARGEM;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ANOTACOES_PRODUTO;
-        private System.Windows.Forms.DataGridViewTextBoxColumn STATUS_PRODUTO;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DATA_CADASTRO_PRODUTO;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID_CATEGORIA_PRODUTOS;
         private System.Windows.Forms.DataGridViewTextBoxColumn NOME_CATEGORIA_PRODUTOS;
         private System.Windows.Forms.DataGridViewTextBoxColumn DESCRICAO_CATEGORIA_PRODUTOS;
@@ -1415,5 +1406,20 @@
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.TextBox txtNomeUnidade;
         private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID_PRODUTO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CODIGOBARRAS_PRODUTO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NOME_PRODUTO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DESCRICAO_PRODUTO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID_UNIDADE;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NOME_UNIDADE_PRODUTOS;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID_CATEGORIA;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ESTOQUE_MINIMO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ESTOQUE_ATUAL;
+        private System.Windows.Forms.DataGridViewTextBoxColumn VALOR_COMPRA;
+        private System.Windows.Forms.DataGridViewTextBoxColumn VALOR_VENDA;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MARGEM;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ANOTACOES_PRODUTO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SITUACAO_PRODUTO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DATA_CADASTRO_PRODUTO;
     }
 }

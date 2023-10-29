@@ -29,10 +29,17 @@ namespace Interface
         private void ListarCategorias()
         //Método que lista as categorias no DataGridView.
         {
-            novoProduto = new RegraNegocio.ProdutoRegraNegocio();
-            bdsCategorias.DataSource = novoProduto.ListarCategorias();
-            bdnCategorias.BindingSource = bdsCategorias;
-            dtgCategorias.DataSource = bdsCategorias;
+            try
+            {
+                novoProduto = new RegraNegocio.ProdutoRegraNegocio();
+                bdsCategorias.DataSource = novoProduto.ListarCategorias();
+                bdnCategorias.BindingSource = bdsCategorias;
+                dtgCategorias.DataSource = bdsCategorias;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnNovo_Click(object sender, EventArgs e)

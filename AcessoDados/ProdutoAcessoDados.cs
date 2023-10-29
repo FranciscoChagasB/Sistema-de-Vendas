@@ -235,7 +235,7 @@ namespace AcessoDados
                     conexao.Open();
 
                     //Cria um texto com os comandos a serem inseridos no script.
-                    sql.Append("SELECT * FROM Unidade_produtos");
+                    sql.Append("SELECT * FROM Unidade");
                     sql.Append(" ORDER BY ID_UNIDADE_PRODUTOS");
 
                     //Cria o script com o os comandos inseridos no texto "sql.Append" e o executa.
@@ -263,10 +263,10 @@ namespace AcessoDados
                     conexao.Open();
 
                     //Cria um texto com os comandos a serem inseridos no script.
-                    sql.Append("INSERT INTO Produtos (CODIGO_BARRAS_PRODUTO, NOME_PRODUTO, DESCRICAO_PRODUTO, ID_UNIDADE, ID_CATEGORIA, ESTOQUE_MINIMO, ESTOQUE_ATUAL,");
+                    sql.Append("INSERT INTO Produtos (CODIGOBARRAS_PRODUTO, NOME_PRODUTO, DESCRICAO_PRODUTO, ID_UNIDADE, ID_CATEGORIA, ESTOQUE_MINIMO, ESTOQUE_ATUAL,");
                     sql.Append(" VALOR_COMPRA, VALOR_VENDA, MARGEM, ANOTACOES_PRODUTO, SITUACAO_PRODUTO, DATA_CADASTRO_PRODUTO)");
-                    sql.Append(" VALUES (@codigodebarras, @nomeproduto, @descricao, @idunidade, @idcategoria, @estoqueminimo, @estoqueatual, @valorcompra, @valorvenda, ");
-                    sql.Append(" @margem, @anotacoes, @situacao, @datacadastroproduto");
+                    sql.Append(" VALUES (@codigoBarras, @nome, @descricao, @idUnidade, @idCategoria, @estoqueMinimo, @estoqueAtual, @valorCompra, @valorVenda, @margem,");
+                    sql.Append(" @anotacoesProdutos, @situacaoProdutos, @dataCadastroProduto)");
 
                     //Configuração dos parâmetros inseridos com parâmetros no script.
                     comandoSql.Parameters.Add(new SqlParameter("@codigoBarras", codigoBarras));
@@ -295,8 +295,8 @@ namespace AcessoDados
             }
         }
 
-        public void Alterar(int idproduto, string codigoBarras, string nome, string descricao, int idUnidade, int idCategoria, int estoqueMinimo, int estoqueAtual,
-                           decimal valorCompra, decimal valorVenda, decimal margem, string anotacoesProdutos, bool situacaoProdutos, DateTime dataCadastroProduto) //parâmetros que serão inseridos.
+        public void Alterar(int idProduto, string codigoBarras, string nome, string descricao, int idUnidade, int idCategoria, int estoqueMinimo, int estoqueAtual,
+                            decimal valorCompra, decimal valorVenda, decimal margem, string anotacoesProdutos, bool situacaoProdutos, DateTime dataCadastroProduto) //parâmetros que serão inseridos.
         //Método com o comando sql para alterar algum produto existente no banco de dados.
         {
             try
@@ -307,14 +307,14 @@ namespace AcessoDados
                     conexao.Open();
 
                     //Cria um texto com os comandos a serem inseridos no script.
-                    sql.Append("UPDATE Produto");
-                    sql.Append("SET CODIGO_BARRAS_PRODUTO=@codigodebarras, NOME_PRODUTO=@nomeproduto, DESCRICAO_PRODUTO=@descricao, ID_UNIDADE=@idunidade, ID_CATEGORIA=@idcategoria,");
-                    sql.Append(" ESTOQUE_MINIMO=@estqoueminimo, ESTOQUE_ATUAL=@estoqueatual, VALOR_COMPRA=@valorcompra, VALOR_VENDA=@valorvenda, MARGEM=@margem,");
-                    sql.Append(" ANOTACOES_PRODUTO=@anotacoesproduto, SITUACAO_PRODUTO=@situacaoproduto, DATA_CADASTRO_PRODUTO=@datacadastroproduto");
-                    sql.Append(" WHERE (ID_PRODUTO=@idProduto");
+                    sql.Append("UPDATE Produtos");
+                    sql.Append(" SET CODIGOBARRAS_PRODUTO=@codigoBarras, NOME_PRODUTO=@nome, DESCRICAO_PRODUTO=@descricao,");
+                    sql.Append(" ID_UNIDADE=@idUnidade, ID_CATEGORIA=@idCategoria, ESTOQUE_MINIMO=@estoqueMinimo,");
+                    sql.Append(" ESTOQUE_ATUAL=@estoqueAtual, VALOR_COMPRA=@valorCompra, VALOR_VENDA=@valorVenda, MARGEM=@margem,");
+                    sql.Append(" ANOTACOES_PRODUTO=@anotacoesProdutos, SITUACAO_PRODUTO=@situacaoProdutos, DATA_CADASTRO_PRODUTO=@dataCadastroProduto");
+                    sql.Append(" WHERE (ID_PRODUTO = @idProduto)");
 
                     //Configuração dos parâmetros inseridos com parâmetros no script.
-                    comandoSql.Parameters.Add(new SqlParameter("@idProduto", idproduto));
                     comandoSql.Parameters.Add(new SqlParameter("@codigoBarras", codigoBarras));
                     comandoSql.Parameters.Add(new SqlParameter("@nome", nome));
                     comandoSql.Parameters.Add(new SqlParameter("@descricao", descricao));
@@ -328,6 +328,7 @@ namespace AcessoDados
                     comandoSql.Parameters.Add(new SqlParameter("@anotacoesProdutos", anotacoesProdutos));
                     comandoSql.Parameters.Add(new SqlParameter("@situacaoProdutos", situacaoProdutos));
                     comandoSql.Parameters.Add(new SqlParameter("@dataCadastroProduto", dataCadastroProduto));
+                    comandoSql.Parameters.Add(new SqlParameter("@idProduto", idProduto));
 
                     //Cria o script com o os comandos inseridos no texto "sql.Append" e o executa.
                     comandoSql.CommandText = sql.ToString(); //Converter texto para script sql server.
@@ -352,8 +353,11 @@ namespace AcessoDados
                     conexao.Open();
 
                     //Cria um texto com os comandos a serem inseridos no script.
-                    sql.Append("SELECT * FROM Produtos");
-                    sql.Append("ORDER BY ID_PRODUTO ASC");
+                    sql.Append("SELECT Produtos.ID_PRODUTO, Produtos.CODIGOBARRAS_PRODUTO, Produtos.NOME_PRODUTO, Produtos.DESCRICAO_PRODUTO,");
+                    sql.Append(" Produtos.ID_UNIDADE, Unidade.NOME_UNIDADE_PRODUTOS, Produtos.ID_CATEGORIA, Produtos.ESTOQUE_MINIMO, Produtos.ESTOQUE_ATUAL,");
+                    sql.Append(" Produtos.VALOR_COMPRA, Produtos.VALOR_VENDA, Produtos.MARGEM, Produtos.ANOTACOES_PRODUTO, Produtos.SITUACAO_PRODUTO, Produtos.DATA_CADASTRO_PRODUTO");
+                    sql.Append(" FROM (Produtos INNER JOIN Unidade ON Produtos.ID_UNIDADE = Unidade.ID_UNIDADE_PRODUTOS)");
+                    sql.Append(" ORDER BY Produtos.NOME_PRODUTO ASC");
 
                     //Cria o script com o os comandos inseridos no texto "sql.Append" e o executa.
                     comandoSql.CommandText = sql.ToString(); //Converter texto para script sql server.
@@ -379,8 +383,8 @@ namespace AcessoDados
                     conexao.Open();
 
                     //Cria um texto com os comandos a serem inseridos no script.
-                    sql.Append("DELETE from Produto");
-                    sql.Append("WHERE (ID_PRODUTO=@idProduto");
+                    sql.Append("DELETE FROM Produtos");
+                    sql.Append(" WHERE (ID_PRODUTO = @idProduto)");
 
                     //Configuração dos parâmetros inseridos com parâmetros no script.
                     comandoSql.Parameters.Add(new SqlParameter("idProduto", idProduto));
@@ -425,7 +429,7 @@ namespace AcessoDados
         }
 
         public DataTable PesquisaCodigoBarras(string codigoBarras) //parâmetros que serão inseridos.
-        //Método com o comando sql que irá selecionar e retornar dados com joins de consulta dos prodtuos que informamos o código de barras.
+        //Método com o comando sql que irá selecionar e retornar dados com joins de consulta dos produtos que informamos o código de barras.
         {
             try
             {
@@ -435,11 +439,11 @@ namespace AcessoDados
                     conexao.Open();
 
                     //Cria um texto com os comandos a serem inseridos no script.
-                    sql.Append("SELECT Produtos.ID_PRODUTO, Produtos.CODIGO_BARRAS_PRODUTO, Produtos.NOME_PRODUTO, Produtos.DESCRICAO_PRODUTO,");
-                    sql.Append(" Produtos.ID_UNIDADE, Unidade_produtos.NOME_UNIDADE_PRODUTOS, Produtos.ID_CATEGORIA, Produtos.ESTOQUE_MINIMO, Produtos.ESTOQUE_ATUAL,");
+                    sql.Append("SELECT Produtos.ID_PRODUTO, Produtos.CODIGOBARRAS_PRODUTO, Produtos.NOME_PRODUTO, Produtos.DESCRICAO_PRODUTO,");
+                    sql.Append(" Produtos.ID_UNIDADE, Unidade.NOME_UNIDADE_PRODUTOS, Produtos.ID_CATEGORIA, Produtos.ESTOQUE_MINIMO, Produtos.ESTOQUE_ATUAL,");
                     sql.Append(" Produtos.VALOR_COMPRA, Produtos.VALOR_VENDA, Produtos.MARGEM, Produtos.ANOTACOES_PRODUTO, Produtos.SITUACAO_PRODUTO, Produtos.DATA_CADASTRO_PRODUTO");
-                    sql.Append(" FROM (Produtos INNER JOIN Unidade_produtos ON Produtos.ID_UNIDADE = Unidade_produtos.ID_UNIDADE_PRODUTOS)");
-                    sql.Append(" WHERE Produtos.CODIGO_BARRAS_PRODUTO LIKE '%'+@codigoBarras+'%'");
+                    sql.Append(" FROM (Produtos INNER JOIN Unidade ON Produtos.ID_UNIDADE = Unidade.ID_UNIDADE_PRODUTOS)");
+                    sql.Append(" WHERE Produtos.CODIGOBARRAS_PRODUTO LIKE '%'+@codigoBarras+'%'");
                     sql.Append(" ORDER BY NOME_PRODUTO ASC");
 
                     //Configuração dos parâmetros inseridos com parâmetros no script.
@@ -459,7 +463,7 @@ namespace AcessoDados
         }
 
         public DataTable RetornarProduto(string codBarras) //parâmetros que serão inseridos.
-        //Método com o comando sql que irá selecionar e retornar todos dados dos prodtuos que informamos o código de barras.
+        //Método com o comando sql que irá selecionar e retornar todos dados dos produtos que informamos o código de barras.
         {
             try
             {
@@ -485,6 +489,98 @@ namespace AcessoDados
             catch (Exception)
             {
                 throw new Exception("Ocorreu um erro no método RetornarProduto. Caso o erro persista, entre em contato com o administrador do sistema");
+            }
+        }
+
+        public int RetornarEstoqueProduto(int idProduto) //parâmetros que serão inseridos.
+        //Método com o comando sql que irá selecionar e retornar todos dados do estoque que informamos o id.
+        {
+            try
+            {
+                using (SqlConnection conexao = new SqlConnection(Conexao.stringConexao))
+                {
+                    //Inicia a conexão com o banco de dados.
+                    conexao.Open();
+
+                    //Cria um texto com os comandos a serem inseridos no script.
+                    sql.Append("SELECT ESTOQUE_ATUAL FROM Produtos");
+                    sql.Append(" WHERE (ID_PRODUTO = @idProduto)");
+
+                    //Configuração dos parâmetros inseridos com parâmetros no script.
+                    comandoSql.Parameters.Add(new SqlParameter("@idProduto", idProduto));
+
+                    //Cria o script com o os comandos inseridos no texto "sql.Append" e o executa.
+                    comandoSql.CommandText = sql.ToString(); //Converter texto para script sql server.
+                    comandoSql.Connection = conexao; //Iniciar a conexão com o banco.
+                    int estoqueProduto = (Int32)comandoSql.ExecuteScalar(); //Executa o script.
+                    return estoqueProduto; //Retorna o DataTable com os dados.
+                }
+            }
+            catch (Exception)
+            {
+                throw new Exception("Ocorreu um erro no método RetornarEstoqueProduto. Caso o problema persista, entre em contato com o Administrador do Sistema.");
+            }
+        }
+
+        public void AtualizarEstoque(int idProduto, int estoqueAtual) //parâmetros que serão inseridos.
+        //Método com o comando sql que irá selecionar e atualizar todos dados do estoque que informamos o id.
+        {
+            try
+            {
+                using (SqlConnection conexao = new SqlConnection(Conexao.stringConexao))
+                {
+                    //Inicia a conexão com o banco de dados.
+                    conexao.Open();
+
+                    //Cria um texto com os comandos a serem inseridos no script.
+                    sql.Append("UPDATE Produtos");
+                    sql.Append(" SET ESTOQUE_ATUAL = @estoqueAtual");
+                    sql.Append(" WHERE (ID_PRODUTO = @idProduto)");
+
+                    //Configuração dos parâmetros inseridos com parâmetros no script.
+                    comandoSql.Parameters.Add(new SqlParameter("@idProduto", idProduto));
+                    comandoSql.Parameters.Add(new SqlParameter("@estoqueAtual", estoqueAtual));
+
+                    //Cria o script com o os comandos inseridos no texto "sql.Append" e o executa.
+                    comandoSql.CommandText = sql.ToString(); //Converter texto para script sql server.
+                    comandoSql.Connection = conexao; //Iniciar a conexão com o banco.
+                    comandoSql.ExecuteNonQuery(); //Executa o script.
+                }
+            }
+            catch (Exception)
+            {
+                throw new Exception("Ocorreu um erro no método AtualizarEstoque. Caso o problema persista, entre em contato com o Administrador do Sistema.");
+            }
+        }
+
+        public DataTable PesquisaNome(string nome) //parâmetros que serão inseridos.
+        //Método com o comando sql que irá selecionar e retornar todos dados dos produtos que informamos o nome.
+        {
+            try
+            {
+                using (SqlConnection conexao = new SqlConnection(Conexao.stringConexao))
+                {
+                    //Inicia a conexão com o banco de dados.
+                    conexao.Open();
+
+                    //Cria um texto com os comandos a serem inseridos no script.
+                    sql.Append("SELECT Produtos.*, NOME_CATEGORIA from Produtos INNER JOIN Categoria ON Produtos.ID_CATEGORIA = Categoria.ID_CATEGORIA");
+                    sql.Append(" WHERE Produtos.NOME_PRODUTO LIKE '%'+@nome+'%'");
+                    sql.Append(" ORDER BY NOME_PRODUTO ASC");
+
+                    //Configuração dos parâmetros inseridos com parâmetros no script.
+                    comandoSql.Parameters.Add(new SqlParameter("@nome", nome));
+
+                    //Cria o script com o os comandos inseridos no texto "sql.Append" e o executa.
+                    comandoSql.CommandText = sql.ToString(); //Converter texto para script sql server.
+                    comandoSql.Connection = conexao; //Iniciar a conexão com o banco.
+                    dadosTabela.Load(comandoSql.ExecuteReader()); //Executa o script.
+                    return dadosTabela; //Retorna o DataTable com os dados.
+                }
+            }
+            catch (Exception)
+            {
+                throw new Exception("Ocorreu um erro no método PesquisaNome. Caso o problema persista, entre em contato com o Administrador do Sistema.");
             }
         }
     }

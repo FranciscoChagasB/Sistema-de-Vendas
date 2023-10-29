@@ -170,16 +170,24 @@
   <metadata name="DESCRICAO_UNIDADE_PRODUTOS.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="ID_UNIDADE_PRODUTOS.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="NOME_UNIDADE_PRODUTOS.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="DESCRICAO_UNIDADE_PRODUTOS.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <metadata name="bdsUnidade.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>158, 17</value>
   </metadata>
+  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAABAAEAAAAAAAEAIADtAgAAFgAAAIlQTkcNChoKAAAADUlIRFIAAAEAAAABAAgGAAAAXHKoZgAAAAlw
+        SFlzAAALEwAACxMBAJqcGAAAAp9JREFUeJzt1LFNw1AARVG3iAHSfNk/iemADkbMHGyVcYIcWja450h3
+        hPeWBQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPjHZVzez+P8JanVsf3lus77vs2HpFbH
+        9h2AFM0BSOEcgBTOAUjhHIAUzgFI4RyAFM4BSOEcgBTOAUjhHIAUzgFI4RyAFM4BSOEcgBTOAUjhHIAU
+        zgFI4RyAFM4BSOEcgBTOAUjhHIAUzgFI4RyAFM4BSOEcgBTOAUjhHIAUzgFI4RyAFM4BSOEcgBTOAUjh
+        HIAUzgFI4Z4HMMZ4+TydXiW1Ora/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAf/Z1
+        3vZ1+5FUa96W6zrv+zYfklod23cAUjQHIIVzAFI4ByCFcwBSOAcghXMAUjgHIIVzAFI4ByCFcwBSOAcg
+        hXMAUjgHIIVzAFI4ByCFcwBSOAcghXMAUjgHIIVzAFI4ByCFcwBSOAcghXMAUjgHIIVzAFI4ByCFcwBS
+        OAcghXMAUjgHIIVzAFI4ByCFcwBSuOcB7Ou87ev2I6nWvC0AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAMCfMcbL5+n0KqnVsf3lus77vs2HpFbH9h2AFM0BSOEcgBTOAUjhHIAUzgFI4RyAFM4B
+        SOEcgBTOAUjhHIAUzgFI4RyAFM4BSOEcgBTOAUjhHIAUzgFI4RyAFM4BSOEcgBTOAUjhHIAUzgFI4RyA
+        FM4BSOEcgBTOAUjhHIAUzgFI4RyAFM4BSOEcgBTOAUjhHIAUzgFI4Z4HcBmXj7fz+VtSq2P7CwAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPCPX4trAFPfHej7AAAAAElFTkSuQmCC
+</value>
+  </data>
 </root>

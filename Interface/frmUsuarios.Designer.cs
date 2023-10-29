@@ -46,6 +46,14 @@
             this.label21 = new System.Windows.Forms.Label();
             this.cboFiltro = new System.Windows.Forms.ComboBox();
             this.dtgUsuarios = new System.Windows.Forms.DataGridView();
+            this.ID_USUARIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NOME_USUARIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DATA_CADASTRO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LOGIN_USUARIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SENHA_USUARIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.STATUS_USUARIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ID_NIVEL = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NOME_NIVEL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cboOrdenar = new System.Windows.Forms.ComboBox();
             this.txtNomeUsuario = new System.Windows.Forms.TextBox();
             this.btnPesquisar = new System.Windows.Forms.Button();
@@ -88,14 +96,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.bdsUsuarios = new System.Windows.Forms.BindingSource(this.components);
             this.bdsNiveis = new System.Windows.Forms.BindingSource(this.components);
-            this.ID_USUARIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NOME_USUARIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DATA_CADASTRO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LOGIN_USUARIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SENHA_USUARIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.STATUS_USUARIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ID_NIVEL = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NOME_NIVEL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bdnUsuarios)).BeginInit();
             this.bdnUsuarios.SuspendLayout();
@@ -335,6 +335,80 @@
             this.dtgUsuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgUsuarios.Size = new System.Drawing.Size(1253, 470);
             this.dtgUsuarios.TabIndex = 208;
+            // 
+            // ID_USUARIO
+            // 
+            this.ID_USUARIO.DataPropertyName = "ID_USUARIO";
+            this.ID_USUARIO.HeaderText = "Código";
+            this.ID_USUARIO.MinimumWidth = 6;
+            this.ID_USUARIO.Name = "ID_USUARIO";
+            this.ID_USUARIO.ReadOnly = true;
+            this.ID_USUARIO.Width = 70;
+            // 
+            // NOME_USUARIO
+            // 
+            this.NOME_USUARIO.DataPropertyName = "NOME_USUARIO";
+            this.NOME_USUARIO.HeaderText = "Nome";
+            this.NOME_USUARIO.MinimumWidth = 6;
+            this.NOME_USUARIO.Name = "NOME_USUARIO";
+            this.NOME_USUARIO.ReadOnly = true;
+            this.NOME_USUARIO.Width = 240;
+            // 
+            // DATA_CADASTRO
+            // 
+            this.DATA_CADASTRO.DataPropertyName = "DATA_CADASTRO";
+            this.DATA_CADASTRO.HeaderText = "Data de Cadastro";
+            this.DATA_CADASTRO.MinimumWidth = 6;
+            this.DATA_CADASTRO.Name = "DATA_CADASTRO";
+            this.DATA_CADASTRO.ReadOnly = true;
+            this.DATA_CADASTRO.Width = 140;
+            // 
+            // LOGIN_USUARIO
+            // 
+            this.LOGIN_USUARIO.DataPropertyName = "LOGIN_USUARIO";
+            this.LOGIN_USUARIO.HeaderText = "Login";
+            this.LOGIN_USUARIO.MinimumWidth = 6;
+            this.LOGIN_USUARIO.Name = "LOGIN_USUARIO";
+            this.LOGIN_USUARIO.ReadOnly = true;
+            this.LOGIN_USUARIO.Width = 190;
+            // 
+            // SENHA_USUARIO
+            // 
+            this.SENHA_USUARIO.DataPropertyName = "SENHA_USUARIO";
+            this.SENHA_USUARIO.HeaderText = "Senha";
+            this.SENHA_USUARIO.MinimumWidth = 6;
+            this.SENHA_USUARIO.Name = "SENHA_USUARIO";
+            this.SENHA_USUARIO.ReadOnly = true;
+            this.SENHA_USUARIO.Visible = false;
+            this.SENHA_USUARIO.Width = 125;
+            // 
+            // STATUS_USUARIO
+            // 
+            this.STATUS_USUARIO.DataPropertyName = "STATUS_USUARIO";
+            this.STATUS_USUARIO.HeaderText = "Status";
+            this.STATUS_USUARIO.MinimumWidth = 6;
+            this.STATUS_USUARIO.Name = "STATUS_USUARIO";
+            this.STATUS_USUARIO.ReadOnly = true;
+            this.STATUS_USUARIO.Width = 120;
+            // 
+            // ID_NIVEL
+            // 
+            this.ID_NIVEL.DataPropertyName = "ID_NIVEL";
+            this.ID_NIVEL.HeaderText = "Código Nivel";
+            this.ID_NIVEL.MinimumWidth = 6;
+            this.ID_NIVEL.Name = "ID_NIVEL";
+            this.ID_NIVEL.ReadOnly = true;
+            this.ID_NIVEL.Visible = false;
+            this.ID_NIVEL.Width = 125;
+            // 
+            // NOME_NIVEL
+            // 
+            this.NOME_NIVEL.DataPropertyName = "NOME_NIVEL";
+            this.NOME_NIVEL.HeaderText = "Nível";
+            this.NOME_NIVEL.MinimumWidth = 6;
+            this.NOME_NIVEL.Name = "NOME_NIVEL";
+            this.NOME_NIVEL.ReadOnly = true;
+            this.NOME_NIVEL.Width = 150;
             // 
             // cboOrdenar
             // 
@@ -832,80 +906,6 @@
             this.label8.TabIndex = 207;
             this.label8.Text = "Código do Nível:";
             // 
-            // ID_USUARIO
-            // 
-            this.ID_USUARIO.DataPropertyName = "ID_USUARIO";
-            this.ID_USUARIO.HeaderText = "Código";
-            this.ID_USUARIO.MinimumWidth = 6;
-            this.ID_USUARIO.Name = "ID_USUARIO";
-            this.ID_USUARIO.ReadOnly = true;
-            this.ID_USUARIO.Width = 70;
-            // 
-            // NOME_USUARIO
-            // 
-            this.NOME_USUARIO.DataPropertyName = "NOME_USUARIO";
-            this.NOME_USUARIO.HeaderText = "Nome";
-            this.NOME_USUARIO.MinimumWidth = 6;
-            this.NOME_USUARIO.Name = "NOME_USUARIO";
-            this.NOME_USUARIO.ReadOnly = true;
-            this.NOME_USUARIO.Width = 240;
-            // 
-            // DATA_CADASTRO
-            // 
-            this.DATA_CADASTRO.DataPropertyName = "DATA_CADASTRO";
-            this.DATA_CADASTRO.HeaderText = "Data de Cadastro";
-            this.DATA_CADASTRO.MinimumWidth = 6;
-            this.DATA_CADASTRO.Name = "DATA_CADASTRO";
-            this.DATA_CADASTRO.ReadOnly = true;
-            this.DATA_CADASTRO.Width = 140;
-            // 
-            // LOGIN_USUARIO
-            // 
-            this.LOGIN_USUARIO.DataPropertyName = "LOGIN_USUARIO";
-            this.LOGIN_USUARIO.HeaderText = "Login";
-            this.LOGIN_USUARIO.MinimumWidth = 6;
-            this.LOGIN_USUARIO.Name = "LOGIN_USUARIO";
-            this.LOGIN_USUARIO.ReadOnly = true;
-            this.LOGIN_USUARIO.Width = 190;
-            // 
-            // SENHA_USUARIO
-            // 
-            this.SENHA_USUARIO.DataPropertyName = "SENHA_USUARIO";
-            this.SENHA_USUARIO.HeaderText = "Senha";
-            this.SENHA_USUARIO.MinimumWidth = 6;
-            this.SENHA_USUARIO.Name = "SENHA_USUARIO";
-            this.SENHA_USUARIO.ReadOnly = true;
-            this.SENHA_USUARIO.Visible = false;
-            this.SENHA_USUARIO.Width = 125;
-            // 
-            // STATUS_USUARIO
-            // 
-            this.STATUS_USUARIO.DataPropertyName = "STATUS_USUARIO";
-            this.STATUS_USUARIO.HeaderText = "Status";
-            this.STATUS_USUARIO.MinimumWidth = 6;
-            this.STATUS_USUARIO.Name = "STATUS_USUARIO";
-            this.STATUS_USUARIO.ReadOnly = true;
-            this.STATUS_USUARIO.Width = 120;
-            // 
-            // ID_NIVEL
-            // 
-            this.ID_NIVEL.DataPropertyName = "ID_NIVEL";
-            this.ID_NIVEL.HeaderText = "Código Nivel";
-            this.ID_NIVEL.MinimumWidth = 6;
-            this.ID_NIVEL.Name = "ID_NIVEL";
-            this.ID_NIVEL.ReadOnly = true;
-            this.ID_NIVEL.Visible = false;
-            this.ID_NIVEL.Width = 125;
-            // 
-            // NOME_NIVEL
-            // 
-            this.NOME_NIVEL.DataPropertyName = "NOME_NIVEL";
-            this.NOME_NIVEL.HeaderText = "Nível";
-            this.NOME_NIVEL.MinimumWidth = 6;
-            this.NOME_NIVEL.Name = "NOME_NIVEL";
-            this.NOME_NIVEL.ReadOnly = true;
-            this.NOME_NIVEL.Width = 150;
-            // 
             // frmUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -914,8 +914,10 @@
             this.Controls.Add(this.tbcUsuarios);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmUsuarios";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gerenciador de Usuários";

@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -14,15 +16,28 @@ namespace Interface
         [STAThread]
         static void Main()
         {
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            frmLogin formularioLogin = new frmLogin();
-            formularioLogin.ShowDialog();
+            RegraNegocio.BancoSqlRegraNegocio novoBanco = new RegraNegocio.BancoSqlRegraNegocio();
+            DataTable dadosTabela = new DataTable();
 
-            if (formularioLogin.DialogResult == DialogResult.OK)
+            dadosTabela = novoBanco.VerificarBanco();
+
+            if (dadosTabela.Rows.Count <= 0)
             {
-                Application.Run(new frmPrincipal(formularioLogin.idUsuario));
+                novoBanco.CriaBanco();
+                novoBanco.CriaNiveis();
+                novoBanco.CriaUsuario();
+            }
+
+            frmLogin frmLogin = new frmLogin();
+            frmLogin.ShowDialog();
+
+            if (frmLogin.DialogResult == DialogResult.OK)
+            {
+                Application.Run(new frmPrincipal(frmLogin.idUsuario));
             }
             else
             {
