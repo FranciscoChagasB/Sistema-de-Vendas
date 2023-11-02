@@ -44,11 +44,13 @@
     <Compile Include="BancoSqlRegraNegocio.cs" />
     <Compile Include="ClientesRegraNegocio.cs" />
     <Compile Include="Criptografia.cs" />
+    <Compile Include="Fiscal.cs" />
     <Compile Include="FuncionariosRegraNegocio.cs" />
     <Compile Include="NiveisRegraNegocio.cs" />
     <Compile Include="ProdutoRegraNegocio.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UsuariosRegraNegocio.cs" />
+    <Compile Include="VendasRegraNegocio.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AcessoDados\AcessoDados.csproj">
