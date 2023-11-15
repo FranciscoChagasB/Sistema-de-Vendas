@@ -76,6 +76,18 @@
     <Compile Include="frmNiveis.Designer.cs">
       <DependentUpon>frmNiveis.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmPesClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPesClientes.Designer.cs">
+      <DependentUpon>frmPesClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPesVendas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPesVendas.Designer.cs">
+      <DependentUpon>frmPesVendas.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -122,6 +134,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmNiveis.resx">
       <DependentUpon>frmNiveis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPesClientes.resx">
+      <DependentUpon>frmPesClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPesVendas.resx">
+      <DependentUpon>frmPesVendas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
@@ -220,6 +238,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\6586148_accept_check_good_mark_ok_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1034365_sale_buy_price_tag_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\6586120_add_buy_cart_ecommerce_shop_icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

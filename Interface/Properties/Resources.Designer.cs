@@ -63,6 +63,16 @@ namespace Interface.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _1034365_sale_buy_price_tag_icon {
+            get {
+                object obj = ResourceManager.GetObject("1034365_sale_buy_price_tag_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _17439_add_cart_ecommerce_shopping_icon {
             get {
                 object obj = ResourceManager.GetObject("17439_add_cart_ecommerce_shopping_icon", resourceCulture);
@@ -76,6 +86,16 @@ namespace Interface.Properties {
         internal static System.Drawing.Bitmap _17440_cart_ecommerce_remove_shopping_icon {
             get {
                 object obj = ResourceManager.GetObject("17440_cart_ecommerce_remove_shopping_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _6586120_add_buy_cart_ecommerce_shop_icon {
+            get {
+                object obj = ResourceManager.GetObject("6586120_add_buy_cart_ecommerce_shop_icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

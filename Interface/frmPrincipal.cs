@@ -116,11 +116,26 @@ namespace Interface
             formCategorias.ShowDialog();
         }
 
+
         private void btnCategoria_Click(object sender, EventArgs e)
         //Ação do botão btnCategoria que inicializa o formulário frmCategorias.
         {
             frmCategorias formCategorias = new frmCategorias();
             formCategorias.ShowDialog();
+        }
+
+        private void mstripVendas_Click(object sender, EventArgs e)
+        //Ação do botão de menu mstripVendas que inicializa o formulário frmVendas.
+        {
+            frmVendas formVendas = new frmVendas();
+            formVendas.ShowDialog();
+        }
+
+        private void btnVendas_Click(object sender, EventArgs e)
+        //Ação do botão btnVendas que inicializa o formulário frmVendas.
+        {
+            frmVendas formVendas = new frmVendas();
+            formVendas.ShowDialog();
         }
     }
 }

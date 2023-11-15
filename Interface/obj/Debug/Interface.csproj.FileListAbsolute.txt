@@ -86,3 +86,4 @@ D:\Downloads\Sistema de Vendas\Sistema-de-Vendas\Interface\obj\Debug\Interface.c
 D:\Downloads\Sistema de Vendas\Sistema-de-Vendas\Interface\obj\Debug\Interface.csproj.CopyComplete
 D:\Downloads\Sistema de Vendas\Sistema-de-Vendas\Interface\obj\Debug\Interface.exe
 D:\Downloads\Sistema de Vendas\Sistema-de-Vendas\Interface\obj\Debug\Interface.pdb
+D:\Downloads\Sistema de Vendas\Sistema-de-Vendas\Interface\obj\Debug\Interface.frmVendas.resources
