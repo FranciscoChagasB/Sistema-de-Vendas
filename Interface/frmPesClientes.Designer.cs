@@ -30,11 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPesClientes));
             this.dtgClientes = new System.Windows.Forms.DataGridView();
-            this.rbCnpj = new System.Windows.Forms.RadioButton();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.rbCpf = new System.Windows.Forms.RadioButton();
-            this.txtPesquisa = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.ID_CLIENTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EMAIL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CEP = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,6 +46,11 @@
             this.DATA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CPF = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CNPJ = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rbCnpj = new System.Windows.Forms.RadioButton();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.rbCpf = new System.Windows.Forms.RadioButton();
+            this.txtPesquisa = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dtgClientes)).BeginInit();
             this.groupBox3.SuspendLayout();
             this.SuspendLayout();
@@ -90,69 +90,7 @@
             this.dtgClientes.Size = new System.Drawing.Size(595, 346);
             this.dtgClientes.TabIndex = 59;
             this.dtgClientes.TabStop = false;
-            // 
-            // rbCnpj
-            // 
-            this.rbCnpj.AutoSize = true;
-            this.rbCnpj.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbCnpj.Location = new System.Drawing.Point(85, 78);
-            this.rbCnpj.Margin = new System.Windows.Forms.Padding(4);
-            this.rbCnpj.Name = "rbCnpj";
-            this.rbCnpj.Size = new System.Drawing.Size(74, 24);
-            this.rbCnpj.TabIndex = 2;
-            this.rbCnpj.TabStop = true;
-            this.rbCnpj.Text = "CNPJ";
-            this.rbCnpj.UseVisualStyleBackColor = true;
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.rbCnpj);
-            this.groupBox3.Controls.Add(this.rbCpf);
-            this.groupBox3.Controls.Add(this.txtPesquisa);
-            this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(13, 2);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(4);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox3.Size = new System.Drawing.Size(595, 114);
-            this.groupBox3.TabIndex = 58;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Pesquisa";
-            // 
-            // rbCpf
-            // 
-            this.rbCpf.AutoSize = true;
-            this.rbCpf.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbCpf.Location = new System.Drawing.Point(8, 78);
-            this.rbCpf.Margin = new System.Windows.Forms.Padding(4);
-            this.rbCpf.Name = "rbCpf";
-            this.rbCpf.Size = new System.Drawing.Size(63, 24);
-            this.rbCpf.TabIndex = 2;
-            this.rbCpf.TabStop = true;
-            this.rbCpf.Text = "CPF";
-            this.rbCpf.UseVisualStyleBackColor = true;
-            // 
-            // txtPesquisa
-            // 
-            this.txtPesquisa.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtPesquisa.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPesquisa.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.txtPesquisa.Location = new System.Drawing.Point(8, 43);
-            this.txtPesquisa.Margin = new System.Windows.Forms.Padding(4);
-            this.txtPesquisa.MaxLength = 50;
-            this.txtPesquisa.Name = "txtPesquisa";
-            this.txtPesquisa.Size = new System.Drawing.Size(567, 26);
-            this.txtPesquisa.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(149, 507);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(338, 23);
-            this.label1.TabIndex = 60;
-            this.label1.Text = "Clique duplo para selecionar um cliente !";
+            this.dtgClientes.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgClientes_CellDoubleClick);
             // 
             // ID_CLIENTE
             // 
@@ -161,6 +99,7 @@
             this.ID_CLIENTE.MinimumWidth = 6;
             this.ID_CLIENTE.Name = "ID_CLIENTE";
             this.ID_CLIENTE.ReadOnly = true;
+            this.ID_CLIENTE.Width = 125;
             // 
             // EMAIL
             // 
@@ -309,6 +248,70 @@
             this.CNPJ.ReadOnly = true;
             this.CNPJ.Visible = false;
             this.CNPJ.Width = 125;
+            // 
+            // rbCnpj
+            // 
+            this.rbCnpj.AutoSize = true;
+            this.rbCnpj.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbCnpj.Location = new System.Drawing.Point(85, 78);
+            this.rbCnpj.Margin = new System.Windows.Forms.Padding(4);
+            this.rbCnpj.Name = "rbCnpj";
+            this.rbCnpj.Size = new System.Drawing.Size(74, 24);
+            this.rbCnpj.TabIndex = 2;
+            this.rbCnpj.TabStop = true;
+            this.rbCnpj.Text = "CNPJ";
+            this.rbCnpj.UseVisualStyleBackColor = true;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.rbCnpj);
+            this.groupBox3.Controls.Add(this.rbCpf);
+            this.groupBox3.Controls.Add(this.txtPesquisa);
+            this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox3.Location = new System.Drawing.Point(13, 2);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox3.Size = new System.Drawing.Size(595, 114);
+            this.groupBox3.TabIndex = 58;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Pesquisa";
+            // 
+            // rbCpf
+            // 
+            this.rbCpf.AutoSize = true;
+            this.rbCpf.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbCpf.Location = new System.Drawing.Point(8, 78);
+            this.rbCpf.Margin = new System.Windows.Forms.Padding(4);
+            this.rbCpf.Name = "rbCpf";
+            this.rbCpf.Size = new System.Drawing.Size(63, 24);
+            this.rbCpf.TabIndex = 2;
+            this.rbCpf.TabStop = true;
+            this.rbCpf.Text = "CPF";
+            this.rbCpf.UseVisualStyleBackColor = true;
+            // 
+            // txtPesquisa
+            // 
+            this.txtPesquisa.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtPesquisa.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPesquisa.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.txtPesquisa.Location = new System.Drawing.Point(8, 43);
+            this.txtPesquisa.Margin = new System.Windows.Forms.Padding(4);
+            this.txtPesquisa.MaxLength = 50;
+            this.txtPesquisa.Name = "txtPesquisa";
+            this.txtPesquisa.Size = new System.Drawing.Size(567, 26);
+            this.txtPesquisa.TabIndex = 0;
+            this.txtPesquisa.TextChanged += new System.EventHandler(this.txtPesquisa_TextChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(149, 507);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(338, 23);
+            this.label1.TabIndex = 60;
+            this.label1.Text = "Clique duplo para selecionar um cliente !";
             // 
             // frmPesClientes
             // 

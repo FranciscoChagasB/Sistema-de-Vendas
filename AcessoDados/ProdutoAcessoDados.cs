@@ -474,7 +474,7 @@ namespace AcessoDados
 
                     //Cria um texto com os comandos a serem inseridos no script.
                     sql.Append("SELECT * FROM Produtos");
-                    sql.Append(" WHERE CODIGO_DE_BARRAS = @codBarras");
+                    sql.Append(" WHERE CODIGOBARRAS_PRODUTO = @codBarras");
 
                     //Configuração dos parâmetros inseridos com parâmetros no script.
                     comandoSql.Parameters.Add(new SqlParameter("codBarras", codBarras));

@@ -23,6 +23,11 @@ namespace Interface
         int IRetorno;
         public string documentoCliente;
 
+        string auxAcrescimoDesconto = "";
+        string valorAcrescimoDesconto = "0";
+        private DataGridView dadosProdutos;
+        private int idVenda;
+
         private void frmVendas_Load(object sender, EventArgs e)
         {
             idCliente = 0;
@@ -89,7 +94,7 @@ namespace Interface
         {
             try
             {
-                novoProduto = new RegraNegocio.ProdutosRegraNegocio();
+                novoProduto = new RegraNegocio.ProdutoRegraNegocio();
                 DataTable dadosTabelaProdutos = new DataTable();
                 dadosTabelaProdutos = novoProduto.RetornarProduto(txtCodBarras.Text);
 
@@ -199,6 +204,118 @@ namespace Interface
             pesquisas.ShowDialog();
         }
 
+        private void btnRemover_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (MessageBox.Show("Deseja realmente excluir este item?", "Deseja excluir?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    //Soma a quantidade que seria comprada do produto à quantidade que já existe em estoque.
+                    novoProduto = new RegraNegocio.ProdutoRegraNegocio();
+                    int estoqueAtual = novoProduto.RetornarEstoqueProduto(Convert.ToInt32(dtgVendas.Rows[dtgVendas.CurrentCell.RowIndex].Cells["ID_PRODUTO"].Value));
+                    estoqueAtual = estoqueAtual + Convert.ToInt32(dtgVendas.Rows[dtgVendas.CurrentCell.RowIndex].Cells["QUANTIDADE"].Value);
+
+                    //Atualiza o estoque, retornando para ele a quantidade que seria comprada do produto.
+                    novoProduto = new RegraNegocio.ProdutoRegraNegocio();
+                    novoProduto.AtualizarEstoque(Convert.ToInt32(dtgVendas.Rows[dtgVendas.CurrentCell.RowIndex].Cells["ID_PRODUTO"].Value), estoqueAtual);
+
+                    //Exclui o item.
+                    novaVenda = new RegraNegocio.VendasRegraNegocio();
+                    novaVenda.ExcluirDetalhes(Convert.ToInt32(dtgVendas.Rows[dtgVendas.CurrentCell.RowIndex].Cells["ID_DETALHES"].Value));
+
+                    MessageBox.Show("Item excluído com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    ListarVendas();
+
+                    lblItem.Text = "";
+                    lblDescricao.Text = "";
+                    lblValor.Text = "";
+                    lblQuantidade.Text = "";
+                    lblSubtotal.Text = "";
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnFinalizar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (dtgVendas.Rows.Count == 0)
+                {
+                    MessageBox.Show("Nenhum produto foi comprado. Impossível finalizar venda",
+                        "Sem produtos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+
+                else if (MessageBox.Show("Deseja realmente finalizar a venda?",
+                        "Finalizar venda?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    if (cpfCliente != "")
+                    {
+                        documentoCliente = cpfCliente;
+                    }
+                    else
+                    {
+                        documentoCliente = cnpjCliente;
+                    }
+
+                    frmFinVenda finalizarVenda = new frmFinVenda(lblValorSubtotal.Text, dtgVendas,
+                            documentoCliente, idCliente, idUsuario, Convert.ToInt32(dtgVendas.Rows[0].Cells["ID_VENDA"].Value), this);
+
+                    finalizarVenda.ShowDialog();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+        }
+
+        private void btnSalvar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (idCliente == 0)
+                {
+                    MessageBox.Show("Informe um cliente para a venda!", "Cliente necessário", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    frmPesClientes pesquisaCliente = new frmPesClientes(this);
+                    pesquisaCliente.ShowDialog();
+                }
+                else
+                {
+                    IRetorno = RegraNegocio.Fiscal.Bematech_FI_AbreCupom(documentoCliente);
+                    RegraNegocio.Fiscal.Analisa_iRetorno(IRetorno);
+
+                    for (int i = 0; i < dtgVendas.Rows.Count; i++)
+                    {
+                        IRetorno = RegraNegocio.Fiscal.Bematech_FI_VendeItem(dtgVendas.Rows[i].Cells["CODIGO_BARRAS"].Value.ToString(),
+                            dtgVendas.Rows[i].Cells["NOME_PRODUTO"].Value.ToString(), "FF", "I",
+                            dtgVendas.Rows[i].Cells["QUANTIDADE"].Value.ToString(), 2,
+                            dtgVendas.Rows[i].Cells["VALOR_VENDA"].Value.ToString(), "%", "0");
+
+                        RegraNegocio.Fiscal.Analisa_iRetorno(IRetorno);
+                    }
+
+                    IRetorno = RegraNegocio.Fiscal.Bematech_FI_FechaCupom("Dinheiro", "A", "%", "0000", lblValorSubtotal.Text.Substring(3), "Pagamento a crédito com vencimento para 30 dias. Obrigado! Volte sempre!");
+                    RegraNegocio.Fiscal.Analisa_iRetorno(IRetorno);
+
+                    novaVenda.AlterarVenda(Convert.ToInt32(dtgVendas.Rows[0].Cells["ID_VENDA"].Value), idUsuario, idCliente, DateTime.Now, false);
+
+                    MessageBox.Show("Venda finalizada com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    this.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+        }
+
         public void ListarVendas()
         {
             try
@@ -212,7 +329,9 @@ namespace Interface
                 novaVenda = new RegraNegocio.VendasRegraNegocio();
                 DataTable dadosTabelaDetalhes = new DataTable();
                 dadosTabelaDetalhes = novaVenda.RetornarDetalhes(Convert.ToInt32(dadosTabelaVendas.Rows[0]["ID_VENDA"].ToString()));
-                dtgVendas.DataSource = dadosTabelaDetalhes;
+                bdsVendas.DataSource = dadosTabelaDetalhes;
+                bdnVendas.BindingSource = bdsVendas;
+                dtgVendas.DataSource = bdsVendas;
 
                 for (int i = 0; i < dtgVendas.Rows.Count; i++)
                 {

@@ -438,6 +438,37 @@ namespace AcessoDados
             }
         }
 
+        public DataTable PesquisaCpf(string nome)
+        //Método com o comando sql que irá selecionar e retornar os dados dos clientes CADASTRADOS COM CPF que informamos o nome.
+        {
+            try
+            {
+                using (SqlConnection conexao = new SqlConnection(Conexao.stringConexao))
+                {
+                    //Inicia a conexão com o banco de dados.
+                    conexao.Open();
+
+                    //Cria um texto com os comandos a serem inseridos no script.
+                    sql.Append("SELECT Clientes.*, Pessoa_fisica.*  FROM Clientes INNER JOIN Pessoa_fisica");
+                    sql.Append(" ON Clientes.ID_CLIENTE = Pessoa_fisica.ID_CLIENTE");
+                    sql.Append(" WHERE NOME_CLIENTE LIKE '%'+@nome+'%'");
+
+                    //Configuração dos parâmetros inseridos com parâmetros no script.
+                    comandoSql.Parameters.Add(new SqlParameter("@nome", nome));
+
+                    //Cria o script com o os comandos inseridos no texto "sql.Append" e o executa.
+                    comandoSql.CommandText = sql.ToString(); //Converter texto para script sql server.
+                    comandoSql.Connection = conexao; //Iniciar a conexão com o banco.
+                    dadosTabela.Load(comandoSql.ExecuteReader()); //Executa o script.
+                    return dadosTabela; //Retorna o DataTable com os dados.
+                }
+            }
+            catch (Exception)
+            {
+                throw new Exception("Ocorreu um erro no método PesquisaCPF. Caso o problema persista, entre em contato com o Administrador do Sistema.");
+            }
+        }
+
         public DataTable PesquisaCnpj(string nome, string ordem)
         //Método com o comando sql que irá selecionar e retornar os dados dos clientes CADASTRADOS COM CNPJ que informamos o nome.
         {
@@ -468,6 +499,37 @@ namespace AcessoDados
                             sql.Append(" ORDER BY NOME_CLIENTE");
                             break;
                     }
+
+                    //Configuração dos parâmetros inseridos com parâmetros no script.
+                    comandoSql.Parameters.Add(new SqlParameter("@nome", nome));
+
+                    //Cria o script com o os comandos inseridos no texto "sql.Append" e o executa.
+                    comandoSql.CommandText = sql.ToString(); //Converter texto para script sql server.
+                    comandoSql.Connection = conexao; //Iniciar a conexão com o banco.
+                    dadosTabela.Load(comandoSql.ExecuteReader()); //Executa o script.
+                    return dadosTabela; //Retorna o DataTable com os dados.
+                }
+            }
+            catch (Exception)
+            {
+                throw new Exception("Ocorreu um erro no método PesquisaCnpj. Caso o problema persista, entre em contato com o Administrador do Sistema.");
+            }
+        }
+
+        public DataTable PesquisaCnpj(string nome)
+        //Método com o comando sql que irá selecionar e retornar os dados dos clientes CADASTRADOS COM CNPJ que informamos o nome.
+        {
+            try
+            {
+                using (SqlConnection conexao = new SqlConnection(Conexao.stringConexao))
+                {
+                    //Inicia a conexão com o banco de dados.
+                    conexao.Open();
+
+                    //Cria um texto com os comandos a serem inseridos no script.
+                    sql.Append("SELECT Clientes.*, Pessoa_juridica.*  FROM Clientes INNER JOIN Pessoa_juridica");
+                    sql.Append(" ON Clientes.ID_CLIENTE = Pessoa_juridica.ID_CLIENTE");
+                    sql.Append(" WHERE NOME_CLIENTE LIKE '%'+@nome+'%'");
 
                     //Configuração dos parâmetros inseridos com parâmetros no script.
                     comandoSql.Parameters.Add(new SqlParameter("@nome", nome));

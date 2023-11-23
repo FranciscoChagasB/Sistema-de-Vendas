@@ -216,6 +216,25 @@ namespace RegraNegocio
             }
         }
 
+        public DataTable PesquisaCpf(string nome) //Parâmetros a serem adicionados.
+        //Método que irá retornar os clientes CADASTRADOS COM CPF que informamos o nome, em ordem x que informamos.
+        {
+            try
+            {
+                //Cria o DataTable que irá armazenar os clientes cadastrados com cpf existentes no banco de dados acessando a camada AcessoDados.
+                novoCliente = new AcessoDados.ClientesAcessoDados();
+                DataTable dadosTabela = new DataTable();
+
+                //Retorna os clientes com o nome similar ao informado acessando o método PesquisaCpf na camada AcessoDados.
+                dadosTabela = novoCliente.PesquisaCpf(nome); //Parâmetros indicados no método.
+                return dadosTabela;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
         public DataTable PesquisaCnpj(string nome, string ordem) //Parâmetros a serem adicionados.
         //Método que irá retornar os clientes CADASTRADOS COM CNPJ que informamos o nome, em ordem x que informamos.
         {
@@ -227,6 +246,25 @@ namespace RegraNegocio
 
                 //Retorna os clientes com o nome similar ao informado acessando o método PesquisaCnpj na camada AcessoDados.
                 dadosTabela = novoCliente.PesquisaCnpj(nome, ordem); //Parâmetros indicados no método.
+                return dadosTabela;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public DataTable PesquisaCnpj(string nome) //Parâmetros a serem adicionados.
+        //Método que irá retornar os clientes CADASTRADOS COM CNPJ que informamos o nome, em ordem x que informamos.
+        {
+            try
+            {
+                //Cria o DataTable que irá armazenar os clientes cadastrados com cnpj existentes no banco de dados acessando a camada AcessoDados.
+                novoCliente = new AcessoDados.ClientesAcessoDados();
+                DataTable dadosTabela = new DataTable();
+
+                //Retorna os clientes com o nome similar ao informado acessando o método PesquisaCnpj na camada AcessoDados.
+                dadosTabela = novoCliente.PesquisaCnpj(nome); //Parâmetros indicados no método.
                 return dadosTabela;
             }
             catch (Exception ex)

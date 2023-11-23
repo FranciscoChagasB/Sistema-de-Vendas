@@ -32,7 +32,6 @@ namespace Interface
                 novoBanco.CriaUsuario();
             }
 
-            /*
             frmLogin frmLogin = new frmLogin();
             frmLogin.ShowDialog();
 
@@ -44,9 +43,7 @@ namespace Interface
             {
                 Application.Exit();
             }
-            */
 
-            Application.Run(new frmPrincipal(1));
         }
     }
 }

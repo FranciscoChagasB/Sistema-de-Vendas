@@ -41,39 +41,43 @@
             this.mstripProdutos = new System.Windows.Forms.ToolStripMenuItem();
             this.mstripUnidades = new System.Windows.Forms.ToolStripMenuItem();
             this.mstripCategorias = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiVendas = new System.Windows.Forms.ToolStripMenuItem();
+            this.mstripVendas = new System.Windows.Forms.ToolStripMenuItem();
             this.tbcPrincipal = new System.Windows.Forms.TabControl();
             this.tbpageClientes = new System.Windows.Forms.TabPage();
             this.tstripClientes = new System.Windows.Forms.ToolStrip();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.btnClientes = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.tbpageUsuarios = new System.Windows.Forms.TabPage();
             this.tstripUsuarios = new System.Windows.Forms.ToolStrip();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.btnUsuarios = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.btnNiveis = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.tbpageFuncionarios = new System.Windows.Forms.TabPage();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
+            this.btnFuncionarios = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
             this.tbpageProdutos = new System.Windows.Forms.TabPage();
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
             this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
+            this.btnProdutos = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator9 = new System.Windows.Forms.ToolStripSeparator();
+            this.btnUnidade = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator10 = new System.Windows.Forms.ToolStripSeparator();
-            this.tsmiVendas = new System.Windows.Forms.ToolStripMenuItem();
-            this.mstripVendas = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnCategoria = new System.Windows.Forms.ToolStripButton();
             this.tbpageVendas = new System.Windows.Forms.TabPage();
             this.toolStrip3 = new System.Windows.Forms.ToolStrip();
             this.toolStripSeparator11 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator12 = new System.Windows.Forms.ToolStripSeparator();
-            this.btnClientes = new System.Windows.Forms.ToolStripButton();
-            this.btnUsuarios = new System.Windows.Forms.ToolStripButton();
-            this.btnNiveis = new System.Windows.Forms.ToolStripButton();
-            this.btnFuncionarios = new System.Windows.Forms.ToolStripButton();
-            this.btnProdutos = new System.Windows.Forms.ToolStripButton();
-            this.btnUnidade = new System.Windows.Forms.ToolStripButton();
-            this.btnCategoria = new System.Windows.Forms.ToolStripButton();
             this.btnVendas = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator12 = new System.Windows.Forms.ToolStripSeparator();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.lblUsuario = new System.Windows.Forms.ToolStripStatusLabel();
+            this.lblNivel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.lblData = new System.Windows.Forms.ToolStripStatusLabel();
             this.mstripPrincipal.SuspendLayout();
             this.tbcPrincipal.SuspendLayout();
             this.tbpageClientes.SuspendLayout();
@@ -86,6 +90,7 @@
             this.toolStrip2.SuspendLayout();
             this.tbpageVendas.SuspendLayout();
             this.toolStrip3.SuspendLayout();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // mstripPrincipal
@@ -187,6 +192,21 @@
             this.mstripCategorias.Text = "Categorias";
             this.mstripCategorias.Click += new System.EventHandler(this.mstripCategorias_Click);
             // 
+            // tsmiVendas
+            // 
+            this.tsmiVendas.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mstripVendas});
+            this.tsmiVendas.Name = "tsmiVendas";
+            this.tsmiVendas.Size = new System.Drawing.Size(150, 24);
+            this.tsmiVendas.Text = "Registro de Vendas";
+            // 
+            // mstripVendas
+            // 
+            this.mstripVendas.Name = "mstripVendas";
+            this.mstripVendas.Size = new System.Drawing.Size(139, 26);
+            this.mstripVendas.Text = "Vendas";
+            this.mstripVendas.Click += new System.EventHandler(this.mstripVendas_Click);
+            // 
             // tbcPrincipal
             // 
             this.tbcPrincipal.Controls.Add(this.tbpageClientes);
@@ -231,6 +251,16 @@
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(6, 84);
             // 
+            // btnClientes
+            // 
+            this.btnClientes.Image = global::Interface.Properties.Resources.clientes;
+            this.btnClientes.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btnClientes.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnClientes.Name = "btnClientes";
+            this.btnClientes.Size = new System.Drawing.Size(113, 81);
+            this.btnClientes.Text = "Clientes";
+            this.btnClientes.Click += new System.EventHandler(this.btnClientes_Click);
+            // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
@@ -268,10 +298,30 @@
             this.toolStripSeparator3.Name = "toolStripSeparator3";
             this.toolStripSeparator3.Size = new System.Drawing.Size(6, 84);
             // 
+            // btnUsuarios
+            // 
+            this.btnUsuarios.Image = global::Interface.Properties.Resources.user_img;
+            this.btnUsuarios.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btnUsuarios.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnUsuarios.Name = "btnUsuarios";
+            this.btnUsuarios.Size = new System.Drawing.Size(117, 81);
+            this.btnUsuarios.Text = "Usuários";
+            this.btnUsuarios.Click += new System.EventHandler(this.btnUsuarios_Click);
+            // 
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
             this.toolStripSeparator4.Size = new System.Drawing.Size(6, 84);
+            // 
+            // btnNiveis
+            // 
+            this.btnNiveis.Image = global::Interface.Properties.Resources.niveis_img;
+            this.btnNiveis.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btnNiveis.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnNiveis.Name = "btnNiveis";
+            this.btnNiveis.Size = new System.Drawing.Size(101, 81);
+            this.btnNiveis.Text = "Níveis";
+            this.btnNiveis.Click += new System.EventHandler(this.btnNiveis_Click);
             // 
             // toolStripSeparator5
             // 
@@ -305,6 +355,16 @@
             // 
             this.toolStripSeparator6.Name = "toolStripSeparator6";
             this.toolStripSeparator6.Size = new System.Drawing.Size(6, 84);
+            // 
+            // btnFuncionarios
+            // 
+            this.btnFuncionarios.Image = global::Interface.Properties.Resources.funcionarios;
+            this.btnFuncionarios.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btnFuncionarios.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnFuncionarios.Name = "btnFuncionarios";
+            this.btnFuncionarios.Size = new System.Drawing.Size(144, 81);
+            this.btnFuncionarios.Text = "Funcionários";
+            this.btnFuncionarios.Click += new System.EventHandler(this.btnFuncionarios_Click);
             // 
             // toolStripSeparator7
             // 
@@ -342,30 +402,45 @@
             this.toolStripSeparator8.Name = "toolStripSeparator8";
             this.toolStripSeparator8.Size = new System.Drawing.Size(6, 84);
             // 
+            // btnProdutos
+            // 
+            this.btnProdutos.Image = global::Interface.Properties.Resources.produtos;
+            this.btnProdutos.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btnProdutos.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnProdutos.Name = "btnProdutos";
+            this.btnProdutos.Size = new System.Drawing.Size(120, 81);
+            this.btnProdutos.Text = "Produtos";
+            this.btnProdutos.Click += new System.EventHandler(this.btnProdutos_Click);
+            // 
             // toolStripSeparator9
             // 
             this.toolStripSeparator9.Name = "toolStripSeparator9";
             this.toolStripSeparator9.Size = new System.Drawing.Size(6, 84);
+            // 
+            // btnUnidade
+            // 
+            this.btnUnidade.Image = global::Interface.Properties.Resources.unidade;
+            this.btnUnidade.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btnUnidade.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnUnidade.Name = "btnUnidade";
+            this.btnUnidade.Size = new System.Drawing.Size(117, 81);
+            this.btnUnidade.Text = "Unidade";
+            this.btnUnidade.Click += new System.EventHandler(this.btnUnidade_Click);
             // 
             // toolStripSeparator10
             // 
             this.toolStripSeparator10.Name = "toolStripSeparator10";
             this.toolStripSeparator10.Size = new System.Drawing.Size(6, 84);
             // 
-            // tsmiVendas
+            // btnCategoria
             // 
-            this.tsmiVendas.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mstripVendas});
-            this.tsmiVendas.Name = "tsmiVendas";
-            this.tsmiVendas.Size = new System.Drawing.Size(150, 24);
-            this.tsmiVendas.Text = "Registro de Vendas";
-            // 
-            // mstripVendas
-            // 
-            this.mstripVendas.Name = "mstripVendas";
-            this.mstripVendas.Size = new System.Drawing.Size(224, 26);
-            this.mstripVendas.Text = "Vendas";
-            this.mstripVendas.Click += new System.EventHandler(this.mstripVendas_Click);
+            this.btnCategoria.Image = global::Interface.Properties.Resources.categorias;
+            this.btnCategoria.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btnCategoria.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnCategoria.Name = "btnCategoria";
+            this.btnCategoria.Size = new System.Drawing.Size(126, 81);
+            this.btnCategoria.Text = "Categoria";
+            this.btnCategoria.Click += new System.EventHandler(this.btnCategoria_Click);
             // 
             // tbpageVendas
             // 
@@ -395,81 +470,6 @@
             this.toolStripSeparator11.Name = "toolStripSeparator11";
             this.toolStripSeparator11.Size = new System.Drawing.Size(6, 84);
             // 
-            // toolStripSeparator12
-            // 
-            this.toolStripSeparator12.Name = "toolStripSeparator12";
-            this.toolStripSeparator12.Size = new System.Drawing.Size(6, 84);
-            // 
-            // btnClientes
-            // 
-            this.btnClientes.Image = global::Interface.Properties.Resources.clientes;
-            this.btnClientes.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.btnClientes.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnClientes.Name = "btnClientes";
-            this.btnClientes.Size = new System.Drawing.Size(113, 81);
-            this.btnClientes.Text = "Clientes";
-            this.btnClientes.Click += new System.EventHandler(this.btnClientes_Click);
-            // 
-            // btnUsuarios
-            // 
-            this.btnUsuarios.Image = global::Interface.Properties.Resources.user_img;
-            this.btnUsuarios.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.btnUsuarios.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnUsuarios.Name = "btnUsuarios";
-            this.btnUsuarios.Size = new System.Drawing.Size(117, 81);
-            this.btnUsuarios.Text = "Usuários";
-            this.btnUsuarios.Click += new System.EventHandler(this.btnUsuarios_Click);
-            // 
-            // btnNiveis
-            // 
-            this.btnNiveis.Image = global::Interface.Properties.Resources.niveis_img;
-            this.btnNiveis.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.btnNiveis.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnNiveis.Name = "btnNiveis";
-            this.btnNiveis.Size = new System.Drawing.Size(101, 81);
-            this.btnNiveis.Text = "Níveis";
-            this.btnNiveis.Click += new System.EventHandler(this.btnNiveis_Click);
-            // 
-            // btnFuncionarios
-            // 
-            this.btnFuncionarios.Image = global::Interface.Properties.Resources.funcionarios;
-            this.btnFuncionarios.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.btnFuncionarios.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnFuncionarios.Name = "btnFuncionarios";
-            this.btnFuncionarios.Size = new System.Drawing.Size(144, 81);
-            this.btnFuncionarios.Text = "Funcionários";
-            this.btnFuncionarios.Click += new System.EventHandler(this.btnFuncionarios_Click);
-            // 
-            // btnProdutos
-            // 
-            this.btnProdutos.Image = global::Interface.Properties.Resources.produtos;
-            this.btnProdutos.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.btnProdutos.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnProdutos.Name = "btnProdutos";
-            this.btnProdutos.Size = new System.Drawing.Size(120, 81);
-            this.btnProdutos.Text = "Produtos";
-            this.btnProdutos.Click += new System.EventHandler(this.btnProdutos_Click);
-            // 
-            // btnUnidade
-            // 
-            this.btnUnidade.Image = global::Interface.Properties.Resources.unidade;
-            this.btnUnidade.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.btnUnidade.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnUnidade.Name = "btnUnidade";
-            this.btnUnidade.Size = new System.Drawing.Size(117, 81);
-            this.btnUnidade.Text = "Unidade";
-            this.btnUnidade.Click += new System.EventHandler(this.btnUnidade_Click);
-            // 
-            // btnCategoria
-            // 
-            this.btnCategoria.Image = global::Interface.Properties.Resources.categorias;
-            this.btnCategoria.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.btnCategoria.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnCategoria.Name = "btnCategoria";
-            this.btnCategoria.Size = new System.Drawing.Size(126, 81);
-            this.btnCategoria.Text = "Categoria";
-            this.btnCategoria.Click += new System.EventHandler(this.btnCategoria_Click);
-            // 
             // btnVendas
             // 
             this.btnVendas.Image = global::Interface.Properties.Resources._1034365_sale_buy_price_tag_icon;
@@ -480,12 +480,56 @@
             this.btnVendas.Text = "Vendas";
             this.btnVendas.Click += new System.EventHandler(this.btnVendas_Click);
             // 
+            // toolStripSeparator12
+            // 
+            this.toolStripSeparator12.Name = "toolStripSeparator12";
+            this.toolStripSeparator12.Size = new System.Drawing.Size(6, 84);
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.lblUsuario,
+            this.lblNivel,
+            this.lblData});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 808);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 19, 0);
+            this.statusStrip1.Size = new System.Drawing.Size(1685, 30);
+            this.statusStrip1.TabIndex = 8;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // lblUsuario
+            // 
+            this.lblUsuario.BorderSides = ((System.Windows.Forms.ToolStripStatusLabelBorderSides)((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left | System.Windows.Forms.ToolStripStatusLabelBorderSides.Right)));
+            this.lblUsuario.BorderStyle = System.Windows.Forms.Border3DStyle.Etched;
+            this.lblUsuario.Name = "lblUsuario";
+            this.lblUsuario.Size = new System.Drawing.Size(155, 24);
+            this.lblUsuario.Text = "toolStripStatusLabel1";
+            // 
+            // lblNivel
+            // 
+            this.lblNivel.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Right;
+            this.lblNivel.BorderStyle = System.Windows.Forms.Border3DStyle.Etched;
+            this.lblNivel.Name = "lblNivel";
+            this.lblNivel.Size = new System.Drawing.Size(155, 24);
+            this.lblNivel.Text = "toolStripStatusLabel1";
+            // 
+            // lblData
+            // 
+            this.lblData.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Right;
+            this.lblData.BorderStyle = System.Windows.Forms.Border3DStyle.Etched;
+            this.lblData.Name = "lblData";
+            this.lblData.Size = new System.Drawing.Size(155, 24);
+            this.lblData.Text = "toolStripStatusLabel1";
+            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.ClientSize = new System.Drawing.Size(1685, 838);
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.tbcPrincipal);
             this.Controls.Add(this.mstripPrincipal);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -497,6 +541,7 @@
             this.Name = "frmPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sistema de Vendas";
+            this.Load += new System.EventHandler(this.frmPrincipal_Load);
             this.mstripPrincipal.ResumeLayout(false);
             this.mstripPrincipal.PerformLayout();
             this.tbcPrincipal.ResumeLayout(false);
@@ -515,6 +560,8 @@
             this.tbpageVendas.ResumeLayout(false);
             this.toolStrip3.ResumeLayout(false);
             this.toolStrip3.PerformLayout();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -567,6 +614,10 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator11;
         private System.Windows.Forms.ToolStripButton btnVendas;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator12;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel lblUsuario;
+        private System.Windows.Forms.ToolStripStatusLabel lblNivel;
+        private System.Windows.Forms.ToolStripStatusLabel lblData;
     }
 }
 

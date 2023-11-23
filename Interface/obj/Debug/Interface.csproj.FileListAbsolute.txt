@@ -87,3 +87,6 @@ D:\Downloads\Sistema de Vendas\Sistema-de-Vendas\Interface\obj\Debug\Interface.c
 D:\Downloads\Sistema de Vendas\Sistema-de-Vendas\Interface\obj\Debug\Interface.exe
 D:\Downloads\Sistema de Vendas\Sistema-de-Vendas\Interface\obj\Debug\Interface.pdb
 D:\Downloads\Sistema de Vendas\Sistema-de-Vendas\Interface\obj\Debug\Interface.frmVendas.resources
+D:\Downloads\Sistema de Vendas\Sistema-de-Vendas\Interface\obj\Debug\Interface.frmPesClientes.resources
+D:\Downloads\Sistema de Vendas\Sistema-de-Vendas\Interface\obj\Debug\Interface.frmPesVendas.resources
+D:\Downloads\Sistema de Vendas\Sistema-de-Vendas\Interface\obj\Debug\Interface.frmFinVenda.resources

@@ -347,6 +347,21 @@ namespace RegraNegocio
             }
         }
 
+        public DataTable PesquisaNome(string nome)
+        {
+            try
+            {
+                novoProduto = new AcessoDados.ProdutoAcessoDados();
+                DataTable dadosTabela = new DataTable();
+
+                dadosTabela = novoProduto.PesquisaNome(nome);
+                return dadosTabela;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
         public DataTable PesquisaCodigoBarras(string codigoBarras) //Parâmetros do método.
         //Método que irá Pesquisar um produto pelo código de barras.
         {

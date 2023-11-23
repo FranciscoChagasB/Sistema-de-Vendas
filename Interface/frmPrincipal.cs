@@ -127,15 +127,43 @@ namespace Interface
         private void mstripVendas_Click(object sender, EventArgs e)
         //Ação do botão de menu mstripVendas que inicializa o formulário frmVendas.
         {
-            frmVendas formVendas = new frmVendas();
+            frmVendas formVendas = new frmVendas(idUsuario, nomeUsuario);
             formVendas.ShowDialog();
         }
 
         private void btnVendas_Click(object sender, EventArgs e)
         //Ação do botão btnVendas que inicializa o formulário frmVendas.
         {
-            frmVendas formVendas = new frmVendas();
+            frmVendas formVendas = new frmVendas(idUsuario, nomeUsuario);
             formVendas.ShowDialog();
+        }
+
+        private void frmPrincipal_Load(object sender, EventArgs e)
+        //Inicia o formulário com os dados do usuário logado.
+        {
+            CarregarDados();
+        }
+
+        public void CarregarDados()
+        //Método para guardar informações do usuário que está logado.
+        {
+            try
+            {
+                novoUsuario = new RegraNegocio.UsuariosRegraNegocio();
+                DataTable dadosTabela = new DataTable();
+                dadosTabela = novoUsuario.RetornarUsuario(idUsuario);
+
+                nomeUsuario = dadosTabela.Rows[0]["NOME_USUARIO"].ToString();
+                nivelUsuario = dadosTabela.Rows[0]["NOME_NIVEL"].ToString();
+
+                lblUsuario.Text = "Usuário: " + nomeUsuario;
+                lblNivel.Text = "Nível: " + nivelUsuario;
+                lblData.Text = DateTime.Today.ToShortDateString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

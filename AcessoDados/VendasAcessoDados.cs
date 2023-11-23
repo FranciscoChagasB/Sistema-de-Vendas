@@ -233,7 +233,7 @@ namespace AcessoDados
                 {
                     conexao.Open();
 
-                    sql.Append("SELECT Produtos.CODIGO_BARRAS_PRODUTO, Produtos.NOME_PRODUTO, Produtos.DESCRICAO_PRODUTO, Produtos.VALOR_VENDA, Detalhes_vendas.*");
+                    sql.Append("SELECT Produtos.CODIGOBARRAS_PRODUTO, Produtos.NOME_PRODUTO, Produtos.DESCRICAO_PRODUTO, Produtos.VALOR_VENDA, Detalhes_vendas.*");
                     sql.Append(" FROM Detalhes_vendas INNER JOIN Produtos ON Detalhes_vendas.ID_PRODUTO = Produtos.ID_PRODUTO");
                     sql.Append(" WHERE ID_VENDA = @idVenda");
                     sql.Append(" ORDER BY ID_DETALHES DESC");

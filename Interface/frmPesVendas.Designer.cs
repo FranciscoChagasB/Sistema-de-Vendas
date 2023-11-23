@@ -39,8 +39,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtQuantidade = new System.Windows.Forms.TextBox();
             this.dtgPesquisa = new System.Windows.Forms.DataGridView();
-            this.txtPesquisaProduto = new System.Windows.Forms.TextBox();
-            this.btnAdicionar = new System.Windows.Forms.Button();
             this.ID_PRODUTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CODIGO_BARRAS = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DATA = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -57,6 +55,8 @@
             this.MARGEM = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SITUACAO_PRODUTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ANOTACOES_PRODUTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtPesquisaProduto = new System.Windows.Forms.TextBox();
+            this.btnAdicionar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtgPesquisa)).BeginInit();
             this.SuspendLayout();
             // 
@@ -167,32 +167,6 @@
             this.dtgPesquisa.Size = new System.Drawing.Size(601, 255);
             this.dtgPesquisa.TabIndex = 50;
             this.dtgPesquisa.TabStop = false;
-            // 
-            // txtPesquisaProduto
-            // 
-            this.txtPesquisaProduto.BackColor = System.Drawing.SystemColors.Window;
-            this.txtPesquisaProduto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtPesquisaProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPesquisaProduto.Location = new System.Drawing.Point(13, 33);
-            this.txtPesquisaProduto.Margin = new System.Windows.Forms.Padding(4);
-            this.txtPesquisaProduto.MaxLength = 13;
-            this.txtPesquisaProduto.Name = "txtPesquisaProduto";
-            this.txtPesquisaProduto.Size = new System.Drawing.Size(601, 46);
-            this.txtPesquisaProduto.TabIndex = 45;
-            // 
-            // btnAdicionar
-            // 
-            this.btnAdicionar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdicionar.Image = global::Interface.Properties.Resources._17439_add_cart_ecommerce_shopping_icon;
-            this.btnAdicionar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdicionar.Location = new System.Drawing.Point(449, 476);
-            this.btnAdicionar.Margin = new System.Windows.Forms.Padding(4);
-            this.btnAdicionar.Name = "btnAdicionar";
-            this.btnAdicionar.Size = new System.Drawing.Size(165, 50);
-            this.btnAdicionar.TabIndex = 53;
-            this.btnAdicionar.Text = "Adicionar";
-            this.btnAdicionar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAdicionar.UseVisualStyleBackColor = true;
             // 
             // ID_PRODUTO
             // 
@@ -360,6 +334,34 @@
             this.ANOTACOES_PRODUTO.Visible = false;
             this.ANOTACOES_PRODUTO.Width = 125;
             // 
+            // txtPesquisaProduto
+            // 
+            this.txtPesquisaProduto.BackColor = System.Drawing.SystemColors.Window;
+            this.txtPesquisaProduto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtPesquisaProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPesquisaProduto.Location = new System.Drawing.Point(13, 33);
+            this.txtPesquisaProduto.Margin = new System.Windows.Forms.Padding(4);
+            this.txtPesquisaProduto.MaxLength = 13;
+            this.txtPesquisaProduto.Name = "txtPesquisaProduto";
+            this.txtPesquisaProduto.Size = new System.Drawing.Size(601, 46);
+            this.txtPesquisaProduto.TabIndex = 45;
+            this.txtPesquisaProduto.TextChanged += new System.EventHandler(this.txtPesquisaProduto_TextChanged);
+            // 
+            // btnAdicionar
+            // 
+            this.btnAdicionar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdicionar.Image = global::Interface.Properties.Resources._17439_add_cart_ecommerce_shopping_icon;
+            this.btnAdicionar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAdicionar.Location = new System.Drawing.Point(449, 476);
+            this.btnAdicionar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAdicionar.Name = "btnAdicionar";
+            this.btnAdicionar.Size = new System.Drawing.Size(165, 50);
+            this.btnAdicionar.TabIndex = 53;
+            this.btnAdicionar.Text = "Adicionar";
+            this.btnAdicionar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAdicionar.UseVisualStyleBackColor = true;
+            this.btnAdicionar.Click += new System.EventHandler(this.btnAdicionar_Click);
+            // 
             // frmPesVendas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -381,6 +383,7 @@
             this.MinimizeBox = false;
             this.Name = "frmPesVendas";
             this.Text = "Pesquisa Venda";
+            this.Load += new System.EventHandler(this.frmPesVendas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtgPesquisa)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
