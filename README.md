@@ -27,5 +27,4 @@ As funcionalidades que o sistema terá serão:
 - Cadastro de usuários: permite cadastrar e gerenciar informações e níveis de acesso sobre os usuários do sistema.
 - Controle de estoque: permite controlar o estoque de produtos da empresa, monitorando a quantidade de produtos em estoque, identificando os produtos que estão em falta e gerando alertas para a reposição dos produtos.
 - Gestão financeira: permite gerenciar as finanças da empresa, registrando receitas, despesas, pagamentos, contas a receber, contas a pagar, entre outras operações financeiras.
-- Geração de relatórios: permite gerar relatórios gerenciais com informações sobre vendas, estoque, finanças, entre outros dados relevantes para a tomada de decisão.
 - Emissão de notas fiscais: permite gerar e imprimir uma nota fiscal com os dados da venda, funcionário e empresa.
