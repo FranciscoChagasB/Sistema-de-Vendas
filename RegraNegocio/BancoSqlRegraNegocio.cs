@@ -29,11 +29,11 @@ namespace RegraNegocio
         {
             try
             {
-                string caminhoScriptBanco = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location) + @"\Resources\ScriptBancoConstrucao.sql";
+                string caminhoScriptBanco = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location) + @"\Resources\ScriptBanco.sql";
                 FileInfo arquivoBanco = new FileInfo(caminhoScriptBanco);
                 string scriptBancoAjustado = arquivoBanco.OpenText().ReadToEnd().Replace("GO", "");
 
-                string caminhoScriptTabelas = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location) + @"\Resources\ScriptTabelasConstrucao.sql";
+                string caminhoScriptTabelas = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location) + @"\Resources\ScriptTabelas.sql";
                 FileInfo arquivoTabelas = new FileInfo(caminhoScriptTabelas);
                 string scriptTabelasAjustado = arquivoTabelas.OpenText().ReadToEnd().Replace("GO", "").Replace("CAR", "CARGO").Replace("Car", "Cargo").Replace("CATERIA", "CATEGORIA").Replace("Cateria", "Categoria").Replace("CODI", "CODIGO");
 
